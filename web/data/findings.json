@@ -1,0 +1,86 @@
+[
+ {
+  "rule": "R1",
+  "type": "airflow_insufficient",
+  "category": "building",
+  "room": "2.03",
+  "period": "winter",
+  "start": "2026-02-05",
+  "days": 7,
+  "evidence": "CO2 up to 2783 ppm while airflow stayed at 24 L/s (min 24, design 129 L/s) on 7 days",
+  "diagnosis": "VAV damper / actuator not responding to CO2 demand",
+  "src": "FDD"
+ },
+ {
+  "rule": "R2",
+  "type": "co2_sensor_drift",
+  "category": "sensor",
+  "room": "2.11",
+  "period": "winter",
+  "start": "2026-02-04",
+  "slope_ppm_day": 14.3,
+  "r2": 0.94,
+  "evidence": "night baseline rose from 442 to 625 ppm (14.3 ppm/day, R2 0.94) in an empty room",
+  "diagnosis": "CO2 sensor drift: recalibrate / replace (VAV is over-ventilating on it)",
+  "src": "FDD"
+ },
+ {
+  "rule": "R3",
+  "type": "ahu_out_of_hours",
+  "category": "building",
+  "room": "storey:3",
+  "period": "winter",
+  "start": "2026-02-09",
+  "nights": 7,
+  "evidence": "100 % of storey-3 rooms ventilated at 284 L/s median with nobody in, 7 nights; ~96 kWh fan energy wasted",
+  "diagnosis": "AHU zone schedule overridden (manual / BMS time program)",
+  "src": "FDD"
+ },
+ {
+  "rule": "R4",
+  "type": "solar_gain_increase",
+  "category": "building",
+  "room": "1.05",
+  "period": "summer",
+  "start": "2026-06-22",
+  "evidence": "effective solar aperture (inverse energy balance) rose from 1.1 to 3.4 m2 (x3.2) from 2026-06-22; peer rooms unchanged (median x0.53)",
+  "diagnosis": "external solar shading not deploying (motor / control / wind lock)",
+  "src": "FDD"
+ },
+ {
+  "rule": "R5",
+  "type": "heating_no_setback",
+  "category": "building",
+  "room": "2.29",
+  "period": "winter",
+  "start": "2026-02-08",
+  "nights": 8,
+  "evidence": "night temperature 29.6 C on 8 nights (setback 19 C; other rooms 20.8 C the same nights)",
+  "diagnosis": "radiator valve / thermostat stuck open",
+  "src": "FDD"
+ },
+ {
+  "rule": "QC",
+  "type": "gateway_outage",
+  "category": "data",
+  "room": "storey:2",
+  "period": "summer",
+  "start": "2026-06-24 09:00:00",
+  "end": "2026-06-24 14:55:00",
+  "src": "QC",
+  "evidence": "gateway outage for 6.0 h on 22 rooms",
+  "diagnosis": "data issue: not reported as a building fault"
+ },
+ {
+  "rule": "QC",
+  "type": "flatline",
+  "category": "data",
+  "room": "3.04",
+  "period": "summer",
+  "start": "2026-06-19 00:05:00",
+  "end": "2026-06-21 22:00:00",
+  "src": "QC",
+  "evidence": "flatline for 70.0 h",
+  "diagnosis": "data issue: not reported as a building fault"
+ }
+]

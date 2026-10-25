@@ -1,0 +1,427 @@
+{
+ "0.05": {
+  "kind": "meeting",
+  "storey": "0",
+  "area_m2": 52.29,
+  "volume_m3": 180.4,
+  "persons": 15,
+  "q_design_ls": 141.6,
+  "q_min_ls": 36.6,
+  "facades": {},
+  "type": "MEETINGROOM (15P)"
+ },
+ "0.06": {
+  "kind": "multipurpose",
+  "storey": "0",
+  "area_m2": 260.97,
+  "volume_m3": 879.5,
+  "persons": 65,
+  "q_design_ls": 637.7,
+  "q_min_ls": 182.7,
+  "facades": {},
+  "type": "MULTI PURPOSE SPACE"
+ },
+ "0.07": {
+  "kind": "multipurpose",
+  "storey": "0",
+  "area_m2": 66.02,
+  "volume_m3": 227.8,
+  "persons": 17,
+  "q_design_ls": 165.2,
+  "q_min_ls": 46.2,
+  "facades": {},
+  "type": "MULTI PURPOSE SPACE"
+ },
+ "0.10": {
+  "kind": "multipurpose",
+  "storey": "0",
+  "area_m2": 103.23,
+  "volume_m3": 356.1,
+  "persons": 26,
+  "q_design_ls": 254.3,
+  "q_min_ls": 72.3,
+  "facades": {},
+  "type": "MULTI PURPOSE SPACE"
+ },
+ "0.11": {
+  "kind": "auditorium",
+  "storey": "0",
+  "area_m2": 165.83,
+  "volume_m3": 459.4,
+  "persons": 83,
+  "q_design_ls": 697.1,
+  "q_min_ls": 116.1,
+  "facades": {},
+  "type": "BELOW AUDITORIUM"
+ },
+ "0.16": {
+  "kind": "multipurpose",
+  "storey": "0",
+  "area_m2": 197.27,
+  "volume_m3": 680.6,
+  "persons": 49,
+  "q_design_ls": 481.1,
+  "q_min_ls": 138.1,
+  "facades": {},
+  "type": "MULTI PURPOSE SPACE"
+ },
+ "1.05": {
+  "kind": "meeting",
+  "storey": "1",
+  "area_m2": 53.36,
+  "volume_m3": 184.4,
+  "persons": 15,
+  "q_design_ls": 142.4,
+  "q_min_ls": 37.4,
+  "facades": {
+   "N": 21.8,
+   "W": 30.3
+  },
+  "type": "MEETINGROOM (15P)"
+ },
+ "1.07": {
+  "kind": "atrium",
+  "storey": "1",
+  "area_m2": 169.68,
+  "volume_m3": 586.2,
+  "persons": 11,
+  "q_design_ls": 195.8,
+  "q_min_ls": 118.8,
+  "facades": {
+   "E": 77.7
+  },
+  "type": "ATRIUM"
+ },
+ "1.08": {
+  "kind": "multipurpose",
+  "storey": "1",
+  "area_m2": 105.29,
+  "volume_m3": 363.8,
+  "persons": 26,
+  "q_design_ls": 255.7,
+  "q_min_ls": 73.7,
+  "facades": {},
+  "type": "MULTI PURPOSE SPACE"
+ },
+ "1.09": {
+  "kind": "multipurpose",
+  "storey": "1",
+  "area_m2": 269.47,
+  "volume_m3": 931.0,
+  "persons": 67,
+  "q_design_ls": 657.6,
+  "q_min_ls": 188.6,
+  "facades": {},
+  "type": "MULTI PURPOSE SPACE"
+ },
+ "1.12": {
+  "kind": "office",
+  "storey": "1",
+  "area_m2": 19.82,
+  "volume_m3": 68.9,
+  "persons": 6,
+  "q_design_ls": 55.9,
+  "q_min_ls": 13.9,
+  "facades": {
+   "W": 11.1
+  },
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "1.13": {
+  "kind": "office",
+  "storey": "1",
+  "area_m2": 91.55,
+  "volume_m3": 318.1,
+  "persons": 9,
+  "q_design_ls": 127.1,
+  "q_min_ls": 64.1,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "1.14": {
+  "kind": "office",
+  "storey": "1",
+  "area_m2": 20.35,
+  "volume_m3": 70.7,
+  "persons": 6,
+  "q_design_ls": 56.2,
+  "q_min_ls": 14.2,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "2.03": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 33.72,
+  "volume_m3": 117.2,
+  "persons": 15,
+  "q_design_ls": 128.6,
+  "q_min_ls": 23.6,
+  "facades": {
+   "N": 22.0,
+   "W": 18.5
+  },
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.05": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 50.25,
+  "volume_m3": 174.6,
+  "persons": 15,
+  "q_design_ls": 140.2,
+  "q_min_ls": 35.2,
+  "facades": {
+   "N": 32.8
+  },
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.06": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 50.25,
+  "volume_m3": 174.6,
+  "persons": 15,
+  "q_design_ls": 140.2,
+  "q_min_ls": 35.2,
+  "facades": {
+   "N": 32.8
+  },
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.07": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 50.25,
+  "volume_m3": 174.6,
+  "persons": 15,
+  "q_design_ls": 140.2,
+  "q_min_ls": 35.2,
+  "facades": {
+   "N": 32.8
+  },
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.11": {
+  "kind": "office",
+  "storey": "2",
+  "area_m2": 29.6,
+  "volume_m3": 102.9,
+  "persons": 6,
+  "q_design_ls": 62.7,
+  "q_min_ls": 20.7,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "2.12": {
+  "kind": "office",
+  "storey": "2",
+  "area_m2": 29.6,
+  "volume_m3": 102.9,
+  "persons": 6,
+  "q_design_ls": 62.7,
+  "q_min_ls": 20.7,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "2.13": {
+  "kind": "office",
+  "storey": "2",
+  "area_m2": 29.59,
+  "volume_m3": 102.8,
+  "persons": 6,
+  "q_design_ls": 62.7,
+  "q_min_ls": 20.7,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "2.14": {
+  "kind": "office",
+  "storey": "2",
+  "area_m2": 29.59,
+  "volume_m3": 102.8,
+  "persons": 6,
+  "q_design_ls": 62.7,
+  "q_min_ls": 20.7,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "2.15": {
+  "kind": "office",
+  "storey": "2",
+  "area_m2": 39.58,
+  "volume_m3": 137.5,
+  "persons": 6,
+  "q_design_ls": 69.7,
+  "q_min_ls": 27.7,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "2.16": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 26.79,
+  "volume_m3": 93.1,
+  "persons": 15,
+  "q_design_ls": 123.8,
+  "q_min_ls": 18.8,
+  "facades": {},
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.17": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 26.54,
+  "volume_m3": 92.2,
+  "persons": 15,
+  "q_design_ls": 123.6,
+  "q_min_ls": 18.6,
+  "facades": {},
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.18": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 27.41,
+  "volume_m3": 95.2,
+  "persons": 15,
+  "q_design_ls": 124.2,
+  "q_min_ls": 19.2,
+  "facades": {},
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.19": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 28.23,
+  "volume_m3": 98.1,
+  "persons": 15,
+  "q_design_ls": 124.8,
+  "q_min_ls": 19.8,
+  "facades": {},
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.20": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 25.16,
+  "volume_m3": 87.4,
+  "persons": 15,
+  "q_design_ls": 122.6,
+  "q_min_ls": 17.6,
+  "facades": {},
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.21": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 24.18,
+  "volume_m3": 84.0,
+  "persons": 15,
+  "q_design_ls": 121.9,
+  "q_min_ls": 16.9,
+  "facades": {},
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.22": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 23.68,
+  "volume_m3": 82.3,
+  "persons": 15,
+  "q_design_ls": 121.6,
+  "q_min_ls": 16.6,
+  "facades": {},
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.24": {
+  "kind": "office",
+  "storey": "2",
+  "area_m2": 74.25,
+  "volume_m3": 258.0,
+  "persons": 7,
+  "q_design_ls": 101.0,
+  "q_min_ls": 52.0,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "2.26": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 36.66,
+  "volume_m3": 127.4,
+  "persons": 15,
+  "q_design_ls": 130.7,
+  "q_min_ls": 25.7,
+  "facades": {},
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.27": {
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 38.05,
+  "volume_m3": 132.2,
+  "persons": 15,
+  "q_design_ls": 131.6,
+  "q_min_ls": 26.6,
+  "facades": {},
+  "type": "MEETINGROOM (15P)"
+ },
+ "2.29": {
+  "kind": "office",
+  "storey": "2",
+  "area_m2": 19.82,
+  "volume_m3": 68.9,
+  "persons": 6,
+  "q_design_ls": 55.9,
+  "q_min_ls": 13.9,
+  "facades": {
+   "W": 11.2
+  },
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "2.30": {
+  "kind": "office",
+  "storey": "2",
+  "area_m2": 91.55,
+  "volume_m3": 318.1,
+  "persons": 9,
+  "q_design_ls": 127.1,
+  "q_min_ls": 64.1,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "2.31": {
+  "kind": "office",
+  "storey": "2",
+  "area_m2": 20.35,
+  "volume_m3": 70.7,
+  "persons": 6,
+  "q_design_ls": 56.2,
+  "q_min_ls": 14.2,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ },
+ "3.03": {
+  "kind": "multipurpose",
+  "storey": "3",
+  "area_m2": 108.82,
+  "volume_m3": 378.2,
+  "persons": 27,
+  "q_design_ls": 265.2,
+  "q_min_ls": 76.2,
+  "facades": {},
+  "type": "MULTI PURPOSE SPACE"
+ },
+ "3.04": {
+  "kind": "office",
+  "storey": "3",
+  "area_m2": 341.53,
+  "volume_m3": 1186.8,
+  "persons": 34,
+  "q_design_ls": 477.1,
+  "q_min_ls": 239.1,
+  "facades": {},
+  "type": "CELLULAR OFFICE (6P)"
+ }
+}

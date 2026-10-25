@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "indeklima-twin": {
+      "command": "python",
+      "args": [
+        "<path-to-repo>/src/mcp_server.py"
+      ]
+    }
+  }
+}

@@ -1,0 +1,466 @@
+{
+ "rooms_monitored": 37,
+ "messages": 896724,
+ "completeness": 0.9928,
+ "spikes_removed": 403,
+ "co2_within_II": {
+  "summer": 1.0,
+  "winter": 0.991
+ },
+ "t_within_II": {
+  "summer": 0.64,
+  "winter": 0.938
+ },
+ "findings": 7,
+ "building_faults": 5,
+ "recall": "7/7",
+ "false_alarms": 0,
+ "ach": {
+  "n_windows": 372,
+  "median_abs_err": 0.0993,
+  "p90_abs_err": 0.2153,
+  "bias": -0.0663,
+  "vav_vs_true_median_abs_err": 0.0182
+ },
+ "robustness": [
+  {
+   "seed": 1,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.1101,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 2,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.0961,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 3,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.0975,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 4,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.0958,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 5,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.0898,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 6,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.1051,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 7,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.0806,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 8,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.0928,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 9,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.1044,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 10,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.09,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 11,
+   "held_out": true,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.1,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 12,
+   "held_out": true,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.0994,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 13,
+   "held_out": true,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.112,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 14,
+   "held_out": true,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.0997,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 15,
+   "held_out": true,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.1001,
+   "missed": [],
+   "false": []
+  },
+  {
+   "seed": 308,
+   "held_out": false,
+   "recall_building": "5/5",
+   "recall_data": "2/2",
+   "false_alarms": 0,
+   "ach_median_abs_err": 0.0993,
+   "missed": [],
+   "false": []
+  }
+ ],
+ "comfort_issues": [
+  {
+   "room": "0.05",
+   "period": "summer",
+   "t_within_II": 0.554,
+   "hours_above_26": 0.8
+  },
+  {
+   "room": "0.06",
+   "period": "summer",
+   "t_within_II": 0.5730000000000001,
+   "hours_above_26": 0.30000000000000004
+  },
+  {
+   "room": "0.07",
+   "period": "summer",
+   "t_within_II": 0.589,
+   "hours_above_26": 0.5
+  },
+  {
+   "room": "0.10",
+   "period": "summer",
+   "t_within_II": 0.422,
+   "hours_above_26": 0.0
+  },
+  {
+   "room": "0.11",
+   "period": "summer",
+   "t_within_II": 0.708,
+   "hours_above_26": 1.0
+  },
+  {
+   "room": "0.16",
+   "period": "summer",
+   "t_within_II": 0.526,
+   "hours_above_26": 0.0
+  },
+  {
+   "room": "1.05",
+   "period": "summer",
+   "t_within_II": 0.46900000000000003,
+   "hours_above_26": 12.6
+  },
+  {
+   "room": "1.05",
+   "period": "winter",
+   "t_within_II": 0.784,
+   "hours_above_26": 0.0
+  },
+  {
+   "room": "1.07",
+   "period": "summer",
+   "t_within_II": 0.713,
+   "hours_above_26": 8.8
+  },
+  {
+   "room": "1.07",
+   "period": "winter",
+   "t_within_II": 0.754,
+   "hours_above_26": 0.0
+  },
+  {
+   "room": "1.08",
+   "period": "summer",
+   "t_within_II": 0.509,
+   "hours_above_26": 0.0
+  },
+  {
+   "room": "1.09",
+   "period": "summer",
+   "t_within_II": 0.546,
+   "hours_above_26": 0.6000000000000001
+  },
+  {
+   "room": "1.12",
+   "period": "summer",
+   "t_within_II": 0.559,
+   "hours_above_26": 23.3
+  },
+  {
+   "room": "1.12",
+   "period": "winter",
+   "t_within_II": 0.865,
+   "hours_above_26": 0.0
+  },
+  {
+   "room": "1.13",
+   "period": "summer",
+   "t_within_II": 0.764,
+   "hours_above_26": 2.3
+  },
+  {
+   "room": "1.14",
+   "period": "summer",
+   "t_within_II": 0.654,
+   "hours_above_26": 17.7
+  },
+  {
+   "room": "2.03",
+   "period": "summer",
+   "t_within_II": 0.646,
+   "hours_above_26": 4.8
+  },
+  {
+   "room": "2.03",
+   "period": "winter",
+   "t_within_II": 0.897,
+   "hours_above_26": 0.0
+  },
+  {
+   "room": "2.05",
+   "period": "summer",
+   "t_within_II": 0.6890000000000001,
+   "hours_above_26": 1.6
+  },
+  {
+   "room": "2.06",
+   "period": "summer",
+   "t_within_II": 0.61,
+   "hours_above_26": 3.4
+  },
+  {
+   "room": "2.07",
+   "period": "summer",
+   "t_within_II": 0.657,
+   "hours_above_26": 2.0
+  },
+  {
+   "room": "2.07",
+   "period": "winter",
+   "t_within_II": 0.869,
+   "hours_above_26": 0.0
+  },
+  {
+   "room": "2.11",
+   "period": "summer",
+   "t_within_II": 0.756,
+   "hours_above_26": 9.9
+  },
+  {
+   "room": "2.12",
+   "period": "summer",
+   "t_within_II": 0.811,
+   "hours_above_26": 7.1
+  },
+  {
+   "room": "2.13",
+   "period": "summer",
+   "t_within_II": 0.6980000000000001,
+   "hours_above_26": 4.1
+  },
+  {
+   "room": "2.14",
+   "period": "summer",
+   "t_within_II": 0.591,
+   "hours_above_26": 8.8
+  },
+  {
+   "room": "2.15",
+   "period": "summer",
+   "t_within_II": 0.762,
+   "hours_above_26": 3.5
+  },
+  {
+   "room": "2.16",
+   "period": "summer",
+   "t_within_II": 0.5,
+   "hours_above_26": 1.2
+  },
+  {
+   "room": "2.17",
+   "period": "summer",
+   "t_within_II": 0.761,
+   "hours_above_26": 2.8
+  },
+  {
+   "room": "2.18",
+   "period": "summer",
+   "t_within_II": 0.761,
+   "hours_above_26": 3.0
+  },
+  {
+   "room": "2.19",
+   "period": "summer",
+   "t_within_II": 0.6000000000000001,
+   "hours_above_26": 3.5
+  },
+  {
+   "room": "2.20",
+   "period": "summer",
+   "t_within_II": 0.764,
+   "hours_above_26": 3.7
+  },
+  {
+   "room": "2.21",
+   "period": "summer",
+   "t_within_II": 0.711,
+   "hours_above_26": 1.3
+  },
+  {
+   "room": "2.22",
+   "period": "summer",
+   "t_within_II": 0.46,
+   "hours_above_26": 2.2
+  },
+  {
+   "room": "2.24",
+   "period": "summer",
+   "t_within_II": 0.758,
+   "hours_above_26": 4.0
+  },
+  {
+   "room": "2.26",
+   "period": "summer",
+   "t_within_II": 0.593,
+   "hours_above_26": 2.0
+  },
+  {
+   "room": "2.27",
+   "period": "summer",
+   "t_within_II": 0.684,
+   "hours_above_26": 3.2
+  },
+  {
+   "room": "2.29",
+   "period": "summer",
+   "t_within_II": 0.655,
+   "hours_above_26": 21.7
+  },
+  {
+   "room": "2.29",
+   "period": "winter",
+   "t_within_II": 0.41200000000000003,
+   "hours_above_26": 48.7
+  },
+  {
+   "room": "2.30",
+   "period": "summer",
+   "t_within_II": 0.81,
+   "hours_above_26": 4.5
+  },
+  {
+   "room": "2.31",
+   "period": "summer",
+   "t_within_II": 0.765,
+   "hours_above_26": 10.1
+  },
+  {
+   "room": "3.03",
+   "period": "summer",
+   "t_within_II": 0.307,
+   "hours_above_26": 0.0
+  },
+  {
+   "room": "3.03",
+   "period": "winter",
+   "t_within_II": 0.896,
+   "hours_above_26": 0.0
+  },
+  {
+   "room": "3.04",
+   "period": "summer",
+   "t_within_II": 0.745,
+   "hours_above_26": 1.0
+  }
+ ],
+ "promise": {
+  "winter": {
+   "co2_kept": 35,
+   "t_kept": 24,
+   "rooms": 37
+  },
+  "summer": {
+   "co2_kept": 37,
+   "t_kept": 18,
+   "rooms": 37
+  }
+ },
+ "q_design_total_ls": 6945
+}

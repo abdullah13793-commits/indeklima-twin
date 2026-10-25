@@ -1,0 +1,27 @@
+﻿{
+ "ingest": {
+  "messages": 896724,
+  "rows": 296220,
+  "rooms": 37
+ },
+ "qc": {
+  "spikes_removed": 403,
+  "completeness": 0.9928,
+  "n_gaps": 0,
+  "n_outages": 1,
+  "n_flatlines": 1
+ },
+ "windows": 372,
+ "findings": 5,
+ "recall_building": "5/5",
+ "recall_data": "2/2",
+ "false_alarms": 0,
+ "seconds": 8.9
+}
+{'fault': 'F1', 'type': 'vav_stuck_min', 'category': 'building', 'room': '2.03', 'period': 'winter', 'detected': True, 'by': 'FDD:R1', 'detection_delay_days': 0.0}
+{'fault': 'F2', 'type': 'co2_sensor_drift', 'category': 'sensor', 'room': '2.11', 'period': 'winter', 'detected': True, 'by': 'FDD:R2', 'detection_delay_days': 0.0}
+{'fault': 'F3', 'type': 'ahu_out_of_hours', 'category': 'building', 'room': 'storey:3', 'period': 'winter', 'detected': True, 'by': 'FDD:R3', 'detection_delay_days': 0.0}
+{'fault': 'F4', 'type': 'solar_shading_failed', 'category': 'building', 'room': '1.05', 'period': 'summer', 'detected': True, 'by': 'FDD:R4', 'detection_delay_days': 0.0}
+{'fault': 'F5', 'type': 'temp_sensor_flatline', 'category': 'data', 'room': '3.04', 'period': 'summer', 'detected': True, 'by': 'QC:flatline', 'detection_delay_days': 0.0}
+{'fault': 'F6', 'type': 'gateway_outage', 'category': 'data', 'room': 'storey:2', 'period': 'summer', 'detected': True, 'by': 'QC:gateway_outage', 'detection_delay_days': 0.38}
+{'fault': 'F7', 'type': 'heating_valve_stuck_open', 'category': 'building', 'room': '2.29', 'period': 'winter', 'detected': True, 'by': 'FDD:R5', 'detection_delay_days': 1.0}

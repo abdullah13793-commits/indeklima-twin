@@ -1,0 +1,7 @@
+{
+ "n_windows": 372,
+ "median_abs_err": 0.0993,
+ "p90_abs_err": 0.2153,
+ "bias": -0.0663,
+ "vav_vs_true_median_abs_err": 0.0182
+}

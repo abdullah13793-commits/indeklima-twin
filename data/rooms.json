@@ -1,0 +1,2135 @@
+[
+ {
+  "id": "0.01",
+  "ifc_guid": "3nTL2dRWEXGfyJHFQsmlQe",
+  "ifc_name": "R-021",
+  "type": "STAIRCASE",
+  "storey": "0",
+  "area_m2": 42.9,
+  "volume_m3": 144.6,
+  "height_m": 3.37,
+  "centroid": [
+   9.24,
+   39.92,
+   42.69
+  ],
+  "bbox": [
+   [
+    6.51,
+    34.98,
+    41.0
+   ],
+   [
+    12.69,
+    43.77,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.02",
+  "ifc_guid": "3M999RFyJFGOx5FMY0rviO",
+  "ifc_name": "R-021",
+  "type": "STAIRCASE",
+  "storey": "0",
+  "area_m2": 42.8,
+  "volume_m3": 144.2,
+  "height_m": 3.37,
+  "centroid": [
+   45.15,
+   39.92,
+   42.68
+  ],
+  "bbox": [
+   [
+    41.71,
+    34.98,
+    41.0
+   ],
+   [
+    47.88,
+    43.77,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.03",
+  "ifc_guid": "3QS2BFWnzyIvAQWxdq83v2",
+  "ifc_name": "R-009",
+  "type": "TOILET",
+  "storey": "0",
+  "area_m2": 30.41,
+  "volume_m3": 104.9,
+  "height_m": 3.45,
+  "centroid": [
+   50.13,
+   39.93,
+   42.72
+  ],
+  "bbox": [
+   [
+    48.11,
+    34.98,
+    41.0
+   ],
+   [
+    53.26,
+    43.77,
+    44.45
+   ]
+  ]
+ },
+ {
+  "id": "0.04",
+  "ifc_guid": "33EePC6AheHfxHoBfXCxCR",
+  "ifc_name": "R-018",
+  "type": "CIRCULATION AREA",
+  "storey": "0",
+  "area_m2": 4.67,
+  "volume_m3": 15.7,
+  "height_m": 3.37,
+  "centroid": [
+   52.8,
+   39.93,
+   42.69
+  ],
+  "bbox": [
+   [
+    51.69,
+    38.88,
+    41.0
+   ],
+   [
+    53.91,
+    40.98,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.05",
+  "ifc_guid": "3nmvfF4$yJIugFmMUKwe9E",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "0",
+  "area_m2": 52.29,
+  "volume_m3": 180.4,
+  "height_m": 3.45,
+  "centroid": [
+   3.16,
+   39.5,
+   42.73
+  ],
+  "bbox": [
+   [
+    0.09,
+    34.98,
+    41.0
+   ],
+   [
+    6.28,
+    43.77,
+    44.45
+   ]
+  ]
+ },
+ {
+  "id": "0.06",
+  "ifc_guid": "1SvZYociYTJfOUGMkf6t2U",
+  "ifc_name": "R-002",
+  "type": "MULTI PURPOSE SPACE",
+  "storey": "0",
+  "area_m2": 260.97,
+  "volume_m3": 879.5,
+  "height_m": 3.37,
+  "centroid": [
+   27.2,
+   39.24,
+   42.69
+  ],
+  "bbox": [
+   [
+    9.6,
+    34.98,
+    41.0
+   ],
+   [
+    44.8,
+    43.77,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.07",
+  "ifc_guid": "17bXAOoKl5IujjxkwlBooA",
+  "ifc_name": "R-002",
+  "type": "MULTI PURPOSE SPACE",
+  "storey": "0",
+  "area_m2": 66.02,
+  "volume_m3": 227.8,
+  "height_m": 3.45,
+  "centroid": [
+   62.4,
+   32.92,
+   42.73
+  ],
+  "bbox": [
+   [
+    60.9,
+    21.9,
+    41.0
+   ],
+   [
+    63.9,
+    43.94,
+    44.45
+   ]
+  ]
+ },
+ {
+  "id": "0.08",
+  "ifc_guid": "2xY0rPUpRIIfEXemZXiCvZ",
+  "ifc_name": "R-018",
+  "type": "CIRCULATION AREA",
+  "storey": "0",
+  "area_m2": 375.63,
+  "volume_m3": 1265.9,
+  "height_m": 3.37,
+  "centroid": [
+   31.72,
+   30.73,
+   42.69
+  ],
+  "bbox": [
+   [
+    -0.23,
+    9.72,
+    41.0
+   ],
+   [
+    60.9,
+    43.94,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.09",
+  "ifc_guid": "3A8yPOlxeZJPmIsuYug1Sc",
+  "ifc_name": "R-032",
+  "type": "TECHNICAL AREA",
+  "storey": "0",
+  "area_m2": 69.45,
+  "volume_m3": 192.4,
+  "height_m": 2.77,
+  "centroid": [
+   29.24,
+   27.11,
+   41.99
+  ],
+  "bbox": [
+   [
+    25.7,
+    21.95,
+    40.6
+   ],
+   [
+    32.9,
+    32.22,
+    43.37
+   ]
+  ]
+ },
+ {
+  "id": "0.10",
+  "ifc_guid": "3H1y2yCyhIHwDQgoY63n$W",
+  "ifc_name": "R-002",
+  "type": "MULTI PURPOSE SPACE",
+  "storey": "0",
+  "area_m2": 103.23,
+  "volume_m3": 356.1,
+  "height_m": 3.45,
+  "centroid": [
+   7.63,
+   15.83,
+   42.73
+  ],
+  "bbox": [
+   [
+    3.24,
+    9.72,
+    41.0
+   ],
+   [
+    11.9,
+    21.93,
+    44.45
+   ]
+  ]
+ },
+ {
+  "id": "0.11",
+  "ifc_guid": "2p_Vibh5cvIvIKE25KPy8b",
+  "ifc_name": "R-029",
+  "type": "BELOW AUDITORIUM",
+  "storey": "0",
+  "area_m2": 165.83,
+  "volume_m3": 459.4,
+  "height_m": 2.77,
+  "centroid": [
+   18.71,
+   15.8,
+   41.99
+  ],
+  "bbox": [
+   [
+    11.9,
+    9.72,
+    40.6
+   ],
+   [
+    25.78,
+    21.95,
+    43.37
+   ]
+  ]
+ },
+ {
+  "id": "0.12",
+  "ifc_guid": "22wMQgVn2QJPw3zNOFRho4",
+  "ifc_name": "R-031",
+  "type": "TECHNICAL AREA",
+  "storey": "0",
+  "area_m2": 93.38,
+  "volume_m3": 258.7,
+  "height_m": 2.77,
+  "centroid": [
+   29.59,
+   15.83,
+   41.98
+  ],
+  "bbox": [
+   [
+    25.78,
+    9.72,
+    40.6
+   ],
+   [
+    33.41,
+    21.95,
+    43.37
+   ]
+  ]
+ },
+ {
+  "id": "0.13",
+  "ifc_guid": "3BeHVpvSCnJR1Ju4rmY4Vo",
+  "ifc_name": "R-032",
+  "type": "TECHNICAL AREA",
+  "storey": "0",
+  "area_m2": 97.96,
+  "volume_m3": 271.4,
+  "height_m": 2.77,
+  "centroid": [
+   37.54,
+   15.84,
+   41.99
+  ],
+  "bbox": [
+   [
+    33.53,
+    9.72,
+    40.6
+   ],
+   [
+    41.54,
+    21.95,
+    43.37
+   ]
+  ]
+ },
+ {
+  "id": "0.14",
+  "ifc_guid": "2S8Pr_YjSTGeHonBImYHKv",
+  "ifc_name": "R-033",
+  "type": "TECHNICAL AREA",
+  "storey": "0",
+  "area_m2": 76.85,
+  "volume_m3": 212.9,
+  "height_m": 2.77,
+  "centroid": [
+   44.8,
+   15.83,
+   41.98
+  ],
+  "bbox": [
+   [
+    41.66,
+    9.71,
+    40.6
+   ],
+   [
+    47.94,
+    21.95,
+    43.37
+   ]
+  ]
+ },
+ {
+  "id": "0.15",
+  "ifc_guid": "0$NPUILWsPIPAoQpVubKR4",
+  "ifc_name": "R-034",
+  "type": "TECHNICAL AREA",
+  "storey": "0",
+  "area_m2": 78.77,
+  "volume_m3": 218.2,
+  "height_m": 2.77,
+  "centroid": [
+   51.28,
+   15.84,
+   41.99
+  ],
+  "bbox": [
+   [
+    48.06,
+    9.72,
+    40.6
+   ],
+   [
+    54.5,
+    21.95,
+    43.37
+   ]
+  ]
+ },
+ {
+  "id": "0.16",
+  "ifc_guid": "2ngoO1l8RYHOnY6Nq3tuDE",
+  "ifc_name": "R-002",
+  "type": "MULTI PURPOSE SPACE",
+  "storey": "0",
+  "area_m2": 197.27,
+  "volume_m3": 680.6,
+  "height_m": 3.45,
+  "centroid": [
+   59.49,
+   11.43,
+   42.72
+  ],
+  "bbox": [
+   [
+    54.73,
+    1.0,
+    41.0
+   ],
+   [
+    64.43,
+    21.9,
+    44.45
+   ]
+  ]
+ },
+ {
+  "id": "0.17",
+  "ifc_guid": "09KDj77CjYH9FuhaGTG9Ko",
+  "ifc_name": "R-018",
+  "type": "STORAGE",
+  "storey": "0",
+  "area_m2": 153.28,
+  "volume_m3": 516.5,
+  "height_m": 3.37,
+  "centroid": [
+   27.25,
+   8.11,
+   42.68
+  ],
+  "bbox": [
+   [
+    -0.23,
+    6.7,
+    41.0
+   ],
+   [
+    54.73,
+    9.72,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.18",
+  "ifc_guid": "01PUbA4e27HBGFEwLec1G0",
+  "ifc_name": "R-018",
+  "type": "STORAGE",
+  "storey": "0",
+  "area_m2": 35.68,
+  "volume_m3": 120.2,
+  "height_m": 3.37,
+  "centroid": [
+   3.03,
+   3.74,
+   42.68
+  ],
+  "bbox": [
+   [
+    -0.23,
+    1.0,
+    41.0
+   ],
+   [
+    6.29,
+    6.48,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.19",
+  "ifc_guid": "3ak2Uzhj1jGxJz0EwSph9Q",
+  "ifc_name": "R-018",
+  "type": "STORAGE",
+  "storey": "0",
+  "area_m2": 33.76,
+  "volume_m3": 113.8,
+  "height_m": 3.37,
+  "centroid": [
+   9.6,
+   3.74,
+   42.68
+  ],
+  "bbox": [
+   [
+    6.51,
+    1.0,
+    41.0
+   ],
+   [
+    12.68,
+    6.48,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.20",
+  "ifc_guid": "27tGQXvjpKHu$5EFOaeEzq",
+  "ifc_name": "R-018",
+  "type": "STORAGE",
+  "storey": "0",
+  "area_m2": 33.84,
+  "volume_m3": 114.1,
+  "height_m": 3.37,
+  "centroid": [
+   16.0,
+   3.74,
+   42.69
+  ],
+  "bbox": [
+   [
+    12.9,
+    1.0,
+    41.0
+   ],
+   [
+    19.09,
+    6.48,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.21",
+  "ifc_guid": "13vluI4RqgGwjlJR3C7_ZL",
+  "ifc_name": "R-018",
+  "type": "STORAGE",
+  "storey": "0",
+  "area_m2": 33.8,
+  "volume_m3": 113.9,
+  "height_m": 3.37,
+  "centroid": [
+   22.4,
+   3.74,
+   42.69
+  ],
+  "bbox": [
+   [
+    19.31,
+    1.0,
+    41.0
+   ],
+   [
+    25.49,
+    6.48,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.22",
+  "ifc_guid": "1RW5uH2QIwI9JhC3yPZTbl",
+  "ifc_name": "R-018",
+  "type": "STORAGE",
+  "storey": "0",
+  "area_m2": 86.35,
+  "volume_m3": 291.0,
+  "height_m": 3.37,
+  "centroid": [
+   33.6,
+   3.74,
+   42.68
+  ],
+  "bbox": [
+   [
+    25.71,
+    1.0,
+    41.0
+   ],
+   [
+    41.49,
+    6.48,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.23",
+  "ifc_guid": "1IBRjs5VelJOT2_23C$Crw",
+  "ifc_name": "R-018",
+  "type": "STORAGE",
+  "storey": "0",
+  "area_m2": 33.8,
+  "volume_m3": 113.9,
+  "height_m": 3.37,
+  "centroid": [
+   44.8,
+   3.74,
+   42.68
+  ],
+  "bbox": [
+   [
+    41.71,
+    1.0,
+    41.0
+   ],
+   [
+    47.89,
+    6.48,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "0.24",
+  "ifc_guid": "1SQawviizuHQ2VOLn1ltrk",
+  "ifc_name": "R-018",
+  "type": "STORAGE",
+  "storey": "0",
+  "area_m2": 34.97,
+  "volume_m3": 117.8,
+  "height_m": 3.37,
+  "centroid": [
+   51.31,
+   3.74,
+   42.68
+  ],
+  "bbox": [
+   [
+    48.11,
+    1.0,
+    41.0
+   ],
+   [
+    54.5,
+    6.48,
+    44.37
+   ]
+  ]
+ },
+ {
+  "id": "1.01",
+  "ifc_guid": "0w8B1Yz2yeHBPN4g6kEO2B",
+  "ifc_name": "R-021",
+  "type": "STAIRCASE",
+  "storey": "1",
+  "area_m2": 43.09,
+  "volume_m3": 148.9,
+  "height_m": 3.45,
+  "centroid": [
+   9.25,
+   39.92,
+   46.4
+  ],
+  "bbox": [
+   [
+    6.51,
+    34.98,
+    44.67
+   ],
+   [
+    12.72,
+    43.77,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.02",
+  "ifc_guid": "3eOmYJn2jcIQe6Aa0vTYiT",
+  "ifc_name": "R-021",
+  "type": "STAIRCASE",
+  "storey": "1",
+  "area_m2": 43.4,
+  "volume_m3": 149.9,
+  "height_m": 3.45,
+  "centroid": [
+   45.16,
+   39.92,
+   46.4
+  ],
+  "bbox": [
+   [
+    41.68,
+    34.98,
+    44.67
+   ],
+   [
+    47.93,
+    43.77,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.03",
+  "ifc_guid": "0jzDDIYcAYHfVJKOBlg4_i",
+  "ifc_name": "R-009",
+  "type": "TOILET",
+  "storey": "1",
+  "area_m2": 30.41,
+  "volume_m3": 105.1,
+  "height_m": 3.45,
+  "centroid": [
+   50.13,
+   39.93,
+   46.4
+  ],
+  "bbox": [
+   [
+    48.11,
+    34.98,
+    44.67
+   ],
+   [
+    53.26,
+    43.77,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.04",
+  "ifc_guid": "0FC5X668V8Iu6MT7VCYdSh",
+  "ifc_name": "R-018",
+  "type": "CIRCULATION AREA",
+  "storey": "1",
+  "area_m2": 4.67,
+  "volume_m3": 16.1,
+  "height_m": 3.45,
+  "centroid": [
+   52.8,
+   39.93,
+   46.4
+  ],
+  "bbox": [
+   [
+    51.69,
+    38.88,
+    44.67
+   ],
+   [
+    53.91,
+    40.98,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.05",
+  "ifc_guid": "1ivjRvF6KwGA066N9CO2HP",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "1",
+  "area_m2": 53.36,
+  "volume_m3": 184.4,
+  "height_m": 3.45,
+  "centroid": [
+   3.1,
+   39.5,
+   46.4
+  ],
+  "bbox": [
+   [
+    -0.04,
+    34.98,
+    44.67
+   ],
+   [
+    6.28,
+    43.77,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.06",
+  "ifc_guid": "0iZd3RMtlDHvwB1_znskAH",
+  "ifc_name": "R-018",
+  "type": "CIRCULATION AREA",
+  "storey": "1",
+  "area_m2": 599.3,
+  "volume_m3": 2070.6,
+  "height_m": 3.45,
+  "centroid": [
+   32.59,
+   22.08,
+   46.4
+  ],
+  "bbox": [
+   [
+    -0.04,
+    3.27,
+    44.67
+   ],
+   [
+    64.04,
+    43.77,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.07",
+  "ifc_guid": "0v0rcuAZxJGgjK1CioAMPz",
+  "ifc_name": "R-013",
+  "type": "ATRIUM",
+  "storey": "1",
+  "area_m2": 169.68,
+  "volume_m3": 586.2,
+  "height_m": 3.45,
+  "centroid": [
+   58.56,
+   19.47,
+   46.4
+  ],
+  "bbox": [
+   [
+    54.38,
+    9.35,
+    44.67
+   ],
+   [
+    64.04,
+    31.87,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.08",
+  "ifc_guid": "3gOXHFlpvXHhEa0tvk8Khq",
+  "ifc_name": "R-002",
+  "type": "MULTI PURPOSE SPACE",
+  "storey": "1",
+  "area_m2": 105.29,
+  "volume_m3": 363.8,
+  "height_m": 3.45,
+  "centroid": [
+   47.82,
+   17.85,
+   46.4
+  ],
+  "bbox": [
+   [
+    41.53,
+    13.67,
+    44.67
+   ],
+   [
+    54.22,
+    22.36,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.09",
+  "ifc_guid": "2nV_oQiWsbGBcWiLENJlKa",
+  "ifc_name": "R-002",
+  "type": "MULTI PURPOSE SPACE",
+  "storey": "1",
+  "area_m2": 269.47,
+  "volume_m3": 931.0,
+  "height_m": 3.45,
+  "centroid": [
+   14.64,
+   15.86,
+   46.4
+  ],
+  "bbox": [
+   [
+    3.49,
+    9.35,
+    44.67
+   ],
+   [
+    25.6,
+    22.36,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.10",
+  "ifc_guid": "2uxiIqiTZaGwQj6ffQWoS5",
+  "ifc_name": "R-020",
+  "type": "STAIRCASE",
+  "storey": "1",
+  "area_m2": 198.58,
+  "volume_m3": 686.1,
+  "height_m": 3.45,
+  "centroid": [
+   33.62,
+   15.71,
+   46.4
+  ],
+  "bbox": [
+   [
+    25.6,
+    9.35,
+    44.67
+   ],
+   [
+    41.53,
+    22.36,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.11",
+  "ifc_guid": "2LNxV_hRaFIefmXGs_40Th",
+  "ifc_name": "R-009",
+  "type": "TOILET",
+  "storey": "1",
+  "area_m2": 36.6,
+  "volume_m3": 126.5,
+  "height_m": 3.45,
+  "centroid": [
+   46.33,
+   11.55,
+   46.4
+  ],
+  "bbox": [
+   [
+    41.49,
+    9.35,
+    44.67
+   ],
+   [
+    51.12,
+    13.52,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.12",
+  "ifc_guid": "2QOIAJJW$uG95OwgilotIH",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "1",
+  "area_m2": 19.82,
+  "volume_m3": 68.9,
+  "height_m": 3.47,
+  "centroid": [
+   3.19,
+   4.87,
+   46.41
+  ],
+  "bbox": [
+   [
+    0.1,
+    3.27,
+    44.67
+   ],
+   [
+    6.29,
+    6.48,
+    48.14
+   ]
+  ]
+ },
+ {
+  "id": "1.13",
+  "ifc_guid": "1zMxz03esEIeoeMLArqIzm",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "1",
+  "area_m2": 91.55,
+  "volume_m3": 318.1,
+  "height_m": 3.47,
+  "centroid": [
+   27.2,
+   4.87,
+   46.41
+  ],
+  "bbox": [
+   [
+    12.91,
+    3.27,
+    44.67
+   ],
+   [
+    41.49,
+    6.48,
+    48.14
+   ]
+  ]
+ },
+ {
+  "id": "1.14",
+  "ifc_guid": "2eQaOEqNZDGPlv7inRkKrj",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "1",
+  "area_m2": 20.35,
+  "volume_m3": 70.7,
+  "height_m": 3.47,
+  "centroid": [
+   51.29,
+   4.87,
+   46.41
+  ],
+  "bbox": [
+   [
+    48.11,
+    3.27,
+    44.67
+   ],
+   [
+    54.47,
+    6.48,
+    48.14
+   ]
+  ]
+ },
+ {
+  "id": "1.15",
+  "ifc_guid": "2s91TdDdsrIQsk0w2bmHB7",
+  "ifc_name": "R-020",
+  "type": "STAIRCASE",
+  "storey": "1",
+  "area_m2": 36.7,
+  "volume_m3": 126.8,
+  "height_m": 3.45,
+  "centroid": [
+   9.58,
+   3.39,
+   46.4
+  ],
+  "bbox": [
+   [
+    6.48,
+    0.44,
+    44.67
+   ],
+   [
+    12.69,
+    6.34,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "1.16",
+  "ifc_guid": "2V5wuXphCUHPk5P2$R971R",
+  "ifc_name": "R-021",
+  "type": "STAIRCASE",
+  "storey": "1",
+  "area_m2": 36.49,
+  "volume_m3": 126.1,
+  "height_m": 3.45,
+  "centroid": [
+   44.8,
+   3.39,
+   46.4
+  ],
+  "bbox": [
+   [
+    41.71,
+    0.44,
+    44.67
+   ],
+   [
+    47.89,
+    6.34,
+    48.12
+   ]
+  ]
+ },
+ {
+  "id": "2.01",
+  "ifc_guid": "0sHBnj1F$IIPAENbgKAjMQ",
+  "ifc_name": "R-009",
+  "type": "TOILET",
+  "storey": "2",
+  "area_m2": 20.56,
+  "volume_m3": 71.0,
+  "height_m": 3.46,
+  "centroid": [
+   50.31,
+   41.44,
+   50.07
+  ],
+  "bbox": [
+   [
+    48.11,
+    38.4,
+    48.34
+   ],
+   [
+    53.26,
+    43.77,
+    51.8
+   ]
+  ]
+ },
+ {
+  "id": "2.02",
+  "ifc_guid": "3RPu1ejnraHQLN$AQtyN_s",
+  "ifc_name": "R-009",
+  "type": "TOILET",
+  "storey": "2",
+  "area_m2": 20.7,
+  "volume_m3": 71.9,
+  "height_m": 3.48,
+  "centroid": [
+   50.3,
+   41.44,
+   50.08
+  ],
+  "bbox": [
+   [
+    48.11,
+    38.44,
+    48.34
+   ],
+   [
+    53.26,
+    43.77,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.03",
+  "ifc_guid": "0K0DDVc70IJAjAnJ$E9sv9",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 33.72,
+  "volume_m3": 117.2,
+  "height_m": 3.48,
+  "centroid": [
+   3.13,
+   41.1,
+   50.08
+  ],
+  "bbox": [
+   [
+    -0.04,
+    38.44,
+    48.34
+   ],
+   [
+    6.29,
+    43.77,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.04",
+  "ifc_guid": "3Lj3izNN1aGRKY9qVUFR0i",
+  "ifc_name": "R-027",
+  "type": "CIRCULATION AREA",
+  "storey": "2",
+  "area_m2": 32.87,
+  "volume_m3": 114.2,
+  "height_m": 3.48,
+  "centroid": [
+   9.59,
+   41.1,
+   50.08
+  ],
+  "bbox": [
+   [
+    6.51,
+    38.44,
+    48.34
+   ],
+   [
+    12.69,
+    43.77,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.05",
+  "ifc_guid": "0DTdgn3mw2HROq9_00rgW1",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 50.25,
+  "volume_m3": 174.6,
+  "height_m": 3.48,
+  "centroid": [
+   17.61,
+   41.1,
+   50.08
+  ],
+  "bbox": [
+   [
+    12.9,
+    38.44,
+    48.34
+   ],
+   [
+    22.32,
+    43.77,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.06",
+  "ifc_guid": "0ZAJGgot7HJfEyHBo0Konm",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 50.25,
+  "volume_m3": 174.6,
+  "height_m": 3.48,
+  "centroid": [
+   27.21,
+   41.1,
+   50.08
+  ],
+  "bbox": [
+   [
+    22.5,
+    38.44,
+    48.34
+   ],
+   [
+    31.92,
+    43.77,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.07",
+  "ifc_guid": "0AOAwEybAOGfZK3auoEIRD",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 50.25,
+  "volume_m3": 174.6,
+  "height_m": 3.48,
+  "centroid": [
+   36.78,
+   41.1,
+   50.08
+  ],
+  "bbox": [
+   [
+    32.06,
+    38.44,
+    48.34
+   ],
+   [
+    41.49,
+    43.77,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.08",
+  "ifc_guid": "2TtRDpLWWoG8RJnW6Evyhe",
+  "ifc_name": "R-027",
+  "type": "CIRCULATION AREA",
+  "storey": "2",
+  "area_m2": 32.84,
+  "volume_m3": 114.1,
+  "height_m": 3.48,
+  "centroid": [
+   44.79,
+   41.1,
+   50.08
+  ],
+  "bbox": [
+   [
+    41.71,
+    38.44,
+    48.34
+   ],
+   [
+    47.89,
+    43.77,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.09",
+  "ifc_guid": "3VlxGZgm2eHODsKJ0FQa0Q",
+  "ifc_name": "R-018",
+  "type": "CIRCULATION AREA",
+  "storey": "2",
+  "area_m2": 4.67,
+  "volume_m3": 16.2,
+  "height_m": 3.48,
+  "centroid": [
+   52.8,
+   39.91,
+   50.08
+  ],
+  "bbox": [
+   [
+    51.69,
+    38.86,
+    48.34
+   ],
+   [
+    53.91,
+    40.96,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.10",
+  "ifc_guid": "2uuKtxWGsPHOfsrZm97Wgg",
+  "ifc_name": "R-027",
+  "type": "CIRCULATION AREA",
+  "storey": "2",
+  "area_m2": 164.92,
+  "volume_m3": 573.1,
+  "height_m": 3.48,
+  "centroid": [
+   27.03,
+   36.92,
+   50.08
+  ],
+  "bbox": [
+   [
+    -0.04,
+    34.98,
+    48.34
+   ],
+   [
+    54.4,
+    38.45,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.11",
+  "ifc_guid": "3XR9kADYbPIfKXzAXRcLfq",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "2",
+  "area_m2": 29.6,
+  "volume_m3": 102.9,
+  "height_m": 3.48,
+  "centroid": [
+   8.0,
+   33.5,
+   50.08
+  ],
+  "bbox": [
+   [
+    3.28,
+    31.9,
+    48.34
+   ],
+   [
+    12.73,
+    35.42,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.12",
+  "ifc_guid": "3uG0pvxdFcHezz_czEFoFX",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "2",
+  "area_m2": 29.6,
+  "volume_m3": 102.9,
+  "height_m": 3.48,
+  "centroid": [
+   17.6,
+   33.5,
+   50.08
+  ],
+  "bbox": [
+   [
+    12.87,
+    31.9,
+    48.34
+   ],
+   [
+    22.32,
+    35.42,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.13",
+  "ifc_guid": "1VHmQ_2AjBJ9Ryk21Pp0r_",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "2",
+  "area_m2": 29.59,
+  "volume_m3": 102.8,
+  "height_m": 3.48,
+  "centroid": [
+   27.2,
+   33.5,
+   50.08
+  ],
+  "bbox": [
+   [
+    22.47,
+    31.9,
+    48.34
+   ],
+   [
+    31.92,
+    35.42,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.14",
+  "ifc_guid": "2ev4xAHsqjJQkTeP5mvBfL",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "2",
+  "area_m2": 29.59,
+  "volume_m3": 102.8,
+  "height_m": 3.48,
+  "centroid": [
+   36.8,
+   33.5,
+   50.08
+  ],
+  "bbox": [
+   [
+    32.07,
+    31.9,
+    48.34
+   ],
+   [
+    41.53,
+    35.42,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.15",
+  "ifc_guid": "2KKBfREgjsHRa5CW7Sebq9",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "2",
+  "area_m2": 39.58,
+  "volume_m3": 137.5,
+  "height_m": 3.48,
+  "centroid": [
+   47.99,
+   33.49,
+   50.08
+  ],
+  "bbox": [
+   [
+    41.68,
+    31.9,
+    48.34
+   ],
+   [
+    54.38,
+    35.42,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.16",
+  "ifc_guid": "1GfJLN9t0YHvqoF8bSkQTp",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 26.79,
+  "volume_m3": 93.1,
+  "height_m": 3.48,
+  "centroid": [
+   5.8,
+   18.98,
+   50.08
+  ],
+  "bbox": [
+   [
+    3.51,
+    16.04,
+    48.34
+   ],
+   [
+    8.07,
+    21.92,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.17",
+  "ifc_guid": "0xmeOrzAAtHuiMjfqZ1M$_",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 26.54,
+  "volume_m3": 92.2,
+  "height_m": 3.48,
+  "centroid": [
+   10.47,
+   18.98,
+   50.08
+  ],
+  "bbox": [
+   [
+    8.21,
+    16.04,
+    48.34
+   ],
+   [
+    12.73,
+    21.92,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.18",
+  "ifc_guid": "31WBEMkzexHx_JBf90KNvU",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 27.41,
+  "volume_m3": 95.2,
+  "height_m": 3.48,
+  "centroid": [
+   15.2,
+   18.98,
+   50.08
+  ],
+  "bbox": [
+   [
+    12.86,
+    16.04,
+    48.34
+   ],
+   [
+    17.53,
+    21.92,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.19",
+  "ifc_guid": "2$dINaww70IguU3rMbHsm1",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 28.23,
+  "volume_m3": 98.1,
+  "height_m": 3.48,
+  "centroid": [
+   20.07,
+   18.98,
+   50.08
+  ],
+  "bbox": [
+   [
+    17.66,
+    16.04,
+    48.34
+   ],
+   [
+    22.47,
+    21.92,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.20",
+  "ifc_guid": "2vH2iuARh0GO4N8ThLySK0",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 25.16,
+  "volume_m3": 87.4,
+  "height_m": 3.48,
+  "centroid": [
+   43.65,
+   18.98,
+   50.08
+  ],
+  "bbox": [
+   [
+    41.51,
+    16.04,
+    48.34
+   ],
+   [
+    45.79,
+    21.92,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.21",
+  "ifc_guid": "2Kmf5H0zIsJujnIQ5pxmOE",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 24.18,
+  "volume_m3": 84.0,
+  "height_m": 3.48,
+  "centroid": [
+   48.0,
+   18.98,
+   50.08
+  ],
+  "bbox": [
+   [
+    45.94,
+    16.04,
+    48.34
+   ],
+   [
+    50.06,
+    21.92,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.22",
+  "ifc_guid": "2zLtwUCQlIGeSdSMB016Dm",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 23.68,
+  "volume_m3": 82.3,
+  "height_m": 3.48,
+  "centroid": [
+   52.21,
+   18.98,
+   50.08
+  ],
+  "bbox": [
+   [
+    50.19,
+    16.04,
+    48.34
+   ],
+   [
+    54.23,
+    21.92,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.23",
+  "ifc_guid": "2NCgVmr_pZJwkzXE3MXhWO",
+  "ifc_name": "R-027",
+  "type": "CIRCULATION AREA",
+  "storey": "2",
+  "area_m2": 571.53,
+  "volume_m3": 1986.1,
+  "height_m": 3.48,
+  "centroid": [
+   38.9,
+   18.15,
+   50.08
+  ],
+  "bbox": [
+   [
+    0.11,
+    3.27,
+    48.34
+   ],
+   [
+    63.89,
+    43.77,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.24",
+  "ifc_guid": "3$DGKgjkENHQbwTx6f9$6y",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "2",
+  "area_m2": 74.25,
+  "volume_m3": 258.0,
+  "height_m": 3.48,
+  "centroid": [
+   32.0,
+   15.92,
+   50.08
+  ],
+  "bbox": [
+   [
+    27.05,
+    12.17,
+    48.34
+   ],
+   [
+    36.95,
+    19.67,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.25",
+  "ifc_guid": "1HfFGyy$PrIRtoSeCY6cKp",
+  "ifc_name": "R-021",
+  "type": "STAIRCASE",
+  "storey": "2",
+  "area_m2": 236.94,
+  "volume_m3": 823.4,
+  "height_m": 3.48,
+  "centroid": [
+   30.03,
+   15.4,
+   50.08
+  ],
+  "bbox": [
+   [
+    3.12,
+    9.35,
+    48.34
+   ],
+   [
+    54.23,
+    21.92,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.26",
+  "ifc_guid": "1tCosX12$wIPdF72mGCokj",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 36.66,
+  "volume_m3": 127.4,
+  "height_m": 3.48,
+  "centroid": [
+   8.19,
+   11.62,
+   50.08
+  ],
+  "bbox": [
+   [
+    3.49,
+    9.38,
+    48.34
+   ],
+   [
+    12.7,
+    13.64,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.27",
+  "ifc_guid": "3FZRrOOFHDGeuk_1hhcyKU",
+  "ifc_name": "R-028",
+  "type": "MEETINGROOM (15P)",
+  "storey": "2",
+  "area_m2": 38.05,
+  "volume_m3": 132.2,
+  "height_m": 3.48,
+  "centroid": [
+   17.58,
+   11.62,
+   50.08
+  ],
+  "bbox": [
+   [
+    12.89,
+    9.38,
+    48.34
+   ],
+   [
+    22.47,
+    13.64,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.28",
+  "ifc_guid": "3b2RMlHRGpGhWzD3dyChz2",
+  "ifc_name": "R-009",
+  "type": "TOILET",
+  "storey": "2",
+  "area_m2": 36.6,
+  "volume_m3": 126.5,
+  "height_m": 3.46,
+  "centroid": [
+   46.33,
+   11.55,
+   50.07
+  ],
+  "bbox": [
+   [
+    41.49,
+    9.35,
+    48.34
+   ],
+   [
+    51.12,
+    13.52,
+    51.8
+   ]
+  ]
+ },
+ {
+  "id": "2.29",
+  "ifc_guid": "0Um6r5Zq$DJwIV803J6RCW",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "2",
+  "area_m2": 19.82,
+  "volume_m3": 68.9,
+  "height_m": 3.48,
+  "centroid": [
+   3.19,
+   4.87,
+   50.08
+  ],
+  "bbox": [
+   [
+    0.1,
+    3.27,
+    48.34
+   ],
+   [
+    6.29,
+    6.48,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.30",
+  "ifc_guid": "1eD0oka8uJHPv4wVCJDnC1",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "2",
+  "area_m2": 91.55,
+  "volume_m3": 318.1,
+  "height_m": 3.48,
+  "centroid": [
+   27.2,
+   4.87,
+   50.08
+  ],
+  "bbox": [
+   [
+    12.91,
+    3.27,
+    48.34
+   ],
+   [
+    41.49,
+    6.48,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.31",
+  "ifc_guid": "0hrB2KYC7UJf7K2UoJwGak",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "2",
+  "area_m2": 20.35,
+  "volume_m3": 70.7,
+  "height_m": 3.48,
+  "centroid": [
+   51.29,
+   4.87,
+   50.08
+  ],
+  "bbox": [
+   [
+    48.11,
+    3.27,
+    48.34
+   ],
+   [
+    54.47,
+    6.48,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.32",
+  "ifc_guid": "3SbepdRpKtIezCkDrgQ7Qa",
+  "ifc_name": "R-020",
+  "type": "STAIRCASE",
+  "storey": "2",
+  "area_m2": 36.48,
+  "volume_m3": 126.8,
+  "height_m": 3.48,
+  "centroid": [
+   9.6,
+   3.39,
+   50.08
+  ],
+  "bbox": [
+   [
+    6.51,
+    0.44,
+    48.34
+   ],
+   [
+    12.69,
+    6.34,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "2.33",
+  "ifc_guid": "2QwfIGmtg9IQgE$jcR0g12",
+  "ifc_name": "R-021",
+  "type": "STAIRCASE",
+  "storey": "2",
+  "area_m2": 36.48,
+  "volume_m3": 126.8,
+  "height_m": 3.48,
+  "centroid": [
+   44.8,
+   3.39,
+   50.08
+  ],
+  "bbox": [
+   [
+    41.71,
+    0.44,
+    48.34
+   ],
+   [
+    47.89,
+    6.34,
+    51.82
+   ]
+  ]
+ },
+ {
+  "id": "3.01",
+  "ifc_guid": "06SOhUS_sfHQsaArterfmp",
+  "ifc_name": "R-021",
+  "type": "STAIRCASE",
+  "storey": "3",
+  "area_m2": 33.06,
+  "volume_m3": 95.9,
+  "height_m": 2.9,
+  "centroid": [
+   59.18,
+   21.17,
+   53.47
+  ],
+  "bbox": [
+   [
+    54.49,
+    19.22,
+    52.02
+   ],
+   [
+    63.87,
+    24.2,
+    54.92
+   ]
+  ]
+ },
+ {
+  "id": "3.02",
+  "ifc_guid": "2tjvB0DSSBIustD8DjMM4W",
+  "ifc_name": "R-021",
+  "type": "STAIRCASE",
+  "storey": "3",
+  "area_m2": 51.1,
+  "volume_m3": 148.2,
+  "height_m": 2.9,
+  "centroid": [
+   31.95,
+   20.83,
+   53.47
+  ],
+  "bbox": [
+   [
+    22.37,
+    19.24,
+    52.02
+   ],
+   [
+    41.52,
+    22.29,
+    54.92
+   ]
+  ]
+ },
+ {
+  "id": "3.03",
+  "ifc_guid": "1OGmr3bbXsIvztB5bfBFVO",
+  "ifc_name": "R-002",
+  "type": "MULTI PURPOSE SPACE",
+  "storey": "3",
+  "area_m2": 108.82,
+  "volume_m3": 378.2,
+  "height_m": 3.48,
+  "centroid": [
+   47.99,
+   17.95,
+   53.76
+  ],
+  "bbox": [
+   [
+    41.52,
+    13.67,
+    52.02
+   ],
+   [
+    54.37,
+    22.21,
+    55.5
+   ]
+  ]
+ },
+ {
+  "id": "3.04",
+  "ifc_guid": "2nmCqv1_T3JAV4_z6jsk7D",
+  "ifc_name": "R-021",
+  "type": "CELLULAR OFFICE (6P)",
+  "storey": "3",
+  "area_m2": 341.53,
+  "volume_m3": 1186.8,
+  "height_m": 3.48,
+  "centroid": [
+   12.85,
+   13.03,
+   53.76
+  ],
+  "bbox": [
+   [
+    3.24,
+    3.34,
+    52.02
+   ],
+   [
+    22.37,
+    22.29,
+    55.5
+   ]
+  ]
+ },
+ {
+  "id": "3.05",
+  "ifc_guid": "1lTtuY_TymHgi69iDeJ3yc",
+  "ifc_name": "R-009",
+  "type": "TOILET",
+  "storey": "3",
+  "area_m2": 37.14,
+  "volume_m3": 129.1,
+  "height_m": 3.48,
+  "centroid": [
+   46.42,
+   11.6,
+   53.76
+  ],
+  "bbox": [
+   [
+    41.74,
+    9.6,
+    52.02
+   ],
+   [
+    51.12,
+    13.68,
+    55.5
+   ]
+  ]
+ },
+ {
+  "id": "3.06",
+  "ifc_guid": "3vzQK_u6GtGRmRamII89Q4",
+  "ifc_name": "R-020",
+  "type": "STAIRCASE",
+  "storey": "3",
+  "area_m2": 37.53,
+  "volume_m3": 130.4,
+  "height_m": 3.48,
+  "centroid": [
+   9.6,
+   3.44,
+   53.76
+  ],
+  "bbox": [
+   [
+    6.48,
+    0.44,
+    52.02
+   ],
+   [
+    12.73,
+    6.44,
+    55.5
+   ]
+  ]
+ }
+]

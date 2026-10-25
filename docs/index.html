@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indeklima Twin</title>
+<meta name="description" content="Every room in a building is designed with a promise. Indeklima Twin reads it from the IFC model and checks, room by room, whether the building keeps it.">
+<meta property="og:title" content="Indeklima Twin: does every room keep its design promise?">
+<meta property="og:description" content="IFC + sensor data → room-by-room verdicts, diagnosed faults, written back to IFC, BCF and Brick. Ask it through MCP.">
+<meta property="og:image" content="https://abdullah13793-commits.github.io/indeklima-twin/media/cover.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='12' width='12' height='9' rx='2' fill='%232f7ae5'/%3E%3Crect x='17' y='6' width='12' height='9' rx='2' fill='%235aa2ff'/%3E%3Crect x='14' y='19' width='12' height='9' rx='2' fill='%23d63b3b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7f9; --bg2:#ffffff; --panel:#ffffff; --line:#e3e6eb; --grid:#eceff3;
+  --ink:#0f1720; --ink2:#4a5563; --ink3:#7b8594;
+  --accent:#1f6fd6; --accent2:#5aa2ff; --series:#2f7ae5; --series-soft:rgba(47,122,229,.16);
+  --promise:#6b7480; --band:rgba(34,160,90,.12); --good:#1f9d57; --warn:#c98a00; --bad:#d63b3b; --data:#7b5cd6;
+  --hero-ink:#f4f6f8; --shadow:0 1px 2px rgba(15,23,32,.06),0 8px 24px rgba(15,23,32,.06);
+}
+:root[data-theme="dark"]{
+  --bg:#0b0d11; --bg2:#10131a; --panel:#141821; --line:#232a36; --grid:#1c222c;
+  --ink:#eef1f5; --ink2:#a9b2bf; --ink3:#727c8a;
+  --accent:#5aa2ff; --accent2:#8cc0ff; --series:#4c95ff; --series-soft:rgba(76,149,255,.18);
+  --promise:#9aa3af; --band:rgba(52,199,120,.12); --good:#3ccf7f; --warn:#f2b33d; --bad:#ff5f5f; --data:#a58bff;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b0d11; --bg2:#10131a; --panel:#141821; --line:#232a36; --grid:#1c222c;
+    --ink:#eef1f5; --ink2:#a9b2bf; --ink3:#727c8a;
+    --accent:#5aa2ff; --accent2:#8cc0ff; --series:#4c95ff; --series-soft:rgba(76,149,255,.18);
+    --promise:#9aa3af; --band:rgba(52,199,120,.12); --good:#3ccf7f; --warn:#f2b33d; --bad:#ff5f5f; --data:#a58bff;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+code,.mono{font-family:"JetBrains Mono",Consolas,monospace;font-size:.88em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+nav.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:22px;height:58px}
+nav.top .brand{font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+nav.top .links{display:flex;gap:18px;margin-left:auto;font-size:14px;overflow-x:auto;scrollbar-width:none}
+nav.top .links a{color:var(--ink2);white-space:nowrap}
+nav.top button{background:none;border:1px solid var(--line);color:var(--ink2);border-radius:8px;width:34px;height:34px;cursor:pointer;flex:none}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.02em;padding:4px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--warn) 60%,transparent);color:var(--warn)}
+
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden;background:#06080b}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;transform:scale(1.04);animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{to{transform:scale(1.1) translate(-1.5%,-1%)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,8,11,.1) 0%,rgba(6,8,11,.25) 45%,rgba(6,8,11,.92) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:72px;color:var(--hero-ink)}
+.hero h1{font-size:clamp(38px,6.2vw,76px);line-height:1.02;letter-spacing:-.035em;margin:14px 0 18px;font-weight:800;max-width:15ch}
+.hero p.lead{font-size:clamp(17px,2vw,21px);max-width:60ch;color:#c9d1db;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid transparent;transition:transform .15s}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn.primary{background:#2f7ae5;color:#fff}
+.btn.ghost{border-color:rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.06)}
+.btn.line{border-color:var(--line);color:var(--ink);background:var(--panel)}
+
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:-38px 0 0;position:relative;z-index:5;box-shadow:var(--shadow)}
+.kpi{background:var(--panel);padding:18px 18px 16px}
+.kpi b{display:block;font-size:30px;letter-spacing:-.03em;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px;color:var(--ink2);line-height:1.35;display:block;margin-top:4px}
+
+section{padding:96px 0 0}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h2{font-size:clamp(28px,3.6vw,44px);letter-spacing:-.03em;line-height:1.1;margin:10px 0 14px;font-weight:800;max-width:22ch}
+h3{font-size:18px;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--ink2);max-width:68ch;font-size:17px;margin:0 0 30px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.pad{padding:22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid2.ask{grid-template-columns:1.35fr 1fr}
+.grid2>*,.grid3>*,.calc>*{min-width:0}
+.muted{color:var(--ink3);font-size:13px}
+
+/* promise calculator */
+.calc{display:grid;grid-template-columns:1.05fr 1fr;gap:20px;align-items:stretch}
+.calc .controls label{display:block;font-size:14px;color:var(--ink2);margin:18px 0 6px}
+.calc .controls label:first-of-type{margin-top:4px}
+.calc .controls .row{display:flex;align-items:center;gap:12px}
+.calc input[type=range]{flex:1;accent-color:var(--series)}
+.calc .val{min-width:76px;text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.chain{display:flex;flex-direction:column;gap:12px;justify-content:center}
+.step{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;background:var(--bg2);border:1px solid var(--line)}
+.step .n{font-size:26px;font-weight:800;letter-spacing:-.02em;min-width:130px;font-variant-numeric:tabular-nums}
+.step .d{font-size:13.5px;color:var(--ink2);line-height:1.4}
+.step.big{border-color:color-mix(in srgb,var(--series) 55%,var(--line));background:color-mix(in srgb,var(--series) 9%,var(--panel))}
+.formula{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--ink3);margin-top:14px}
+
+/* charts */
+.chart{position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{fill:var(--ink3);font:12px Inter,system-ui,sans-serif}
+.chart .gridline{stroke:var(--grid);stroke-width:1}
+.chart .axis{stroke:var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--ink2);margin:8px 0 2px}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.legend i.dot{width:10px;height:10px;border-radius:50%}
+.legend i.dash{background:repeating-linear-gradient(90deg,var(--promise) 0 5px,transparent 5px 8px)!important}
+.tip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:12.5px;line-height:1.45;box-shadow:var(--shadow);opacity:0;transition:opacity .12s;z-index:5;min-width:150px;color:var(--ink)}
+.tip b{font-size:13px}
+.tip .k{color:var(--ink3)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);background:var(--bg2);color:var(--ink2);padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer;font-family:inherit}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip .s{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
+select.chip{appearance:auto}
+.verdict{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:10px;background:var(--bg2);border:1px solid var(--line);font-size:14px;margin-top:12px}
+.verdict .ic{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px}
+
+/* twin embed */
+.twin{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);aspect-ratio:16/9;background:#0b0d11}
+.twin iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.twin .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.twin .play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.55));cursor:pointer;border:0;width:100%}
+.twin .play span{background:#2f7ae5;color:#fff;font-weight:700;padding:14px 22px;border-radius:12px;font-size:16px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+
+/* findings */
+.finds{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.find{padding:18px 18px 16px;border-radius:14px;background:var(--panel);border:1px solid var(--line);position:relative;overflow:hidden}
+.find::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c)}
+.find .h{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15.5px}
+.find .meta{font-size:12px;color:var(--ink3);margin:2px 0 10px}
+.find .ev{font-size:14px;color:var(--ink2);margin:0 0 10px}
+.find .dx{font-size:13.5px;font-weight:600;color:var(--ink)}
+.find .rule{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink3);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+
+/* robustness grid */
+.rgrid{display:grid;grid-template-columns:110px repeat(7,1fr);gap:3px;font-size:12px}
+.rgrid .c{height:26px;border-radius:5px;display:grid;place-items:center;font-weight:700;color:#fff;background:var(--good)}
+.rgrid .c.ho{outline:2px solid var(--accent);outline-offset:-2px}
+.rgrid .c.neg{background:var(--bg2);color:var(--ink3);border:1px dashed var(--line)}
+.rgrid .hd{color:var(--ink3);text-align:center;font-weight:600;align-self:end;padding-bottom:4px;line-height:1.2}
+.rgrid .rl{color:var(--ink2);align-self:center;font-variant-numeric:tabular-nums}
+
+/* chat */
+.chat{background:#0d1016;border-radius:16px;border:1px solid #232a36;padding:22px;color:#e8ecf1;min-height:520px;box-shadow:var(--shadow);font-size:14.5px}
+.chat .bar{display:flex;align-items:center;gap:8px;color:#7b8594;font-size:12.5px;margin-bottom:18px}
+.chat .bar i{width:10px;height:10px;border-radius:50%;background:#2a313d;display:inline-block}
+.chat .q{margin-left:auto;max-width:78%;background:#2f6fd0;color:#fff;padding:12px 16px;border-radius:14px 14px 4px 14px;width:fit-content}
+.chat .tools{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.chat .tool{font-family:"JetBrains Mono",monospace;font-size:12px;border:1px solid #3a6fb8;color:#9cc4ff;border-radius:999px;padding:3px 10px;opacity:0;transform:translateY(4px);transition:all .3s}
+.chat .tool.on{opacity:1;transform:none}
+.chat .a{color:#d5dbe3;line-height:1.6}
+.chat .a li{margin-bottom:8px}
+.chat .a b{color:#fff}
+.chat .cursor{display:inline-block;width:8px;height:16px;background:#5aa2ff;vertical-align:-2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+pre.code{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow-x:auto;font-size:12.5px;line-height:1.55;margin:0}
+
+/* writeback */
+.fmt{padding:20px}
+.fmt .ic{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:12px;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:6px;padding:2px 8px;display:inline-block;margin-bottom:10px}
+.fmt p{color:var(--ink2);font-size:14px;margin:6px 0 0}
+.fmt .opens{font-size:12.5px;color:var(--ink3);margin-top:10px}
+
+table.cmp{width:100%;border-collapse:collapse;font-size:14.5px}
+table.cmp th,table.cmp td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+table.cmp th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:700}
+table.cmp td:first-child{font-weight:600;white-space:nowrap}
+table.cmp tr.us td{background:color-mix(in srgb,var(--series) 8%,transparent)}
+.tablewrap{overflow-x:auto}
+
+video{width:100%;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);display:block;background:#000}
+.pipeline{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;counter-reset:s}
+.pipe{padding:16px;border-radius:12px;background:var(--panel);border:1px solid var(--line);position:relative}
+.pipe::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--accent);display:block;margin-bottom:6px}
+.pipe b{display:block;font-size:15px;margin-bottom:4px}
+.pipe span{font-size:12.5px;color:var(--ink2);line-height:1.4;display:block}
+.pipe.end{border-color:color-mix(in srgb,var(--series) 55%,var(--line))}
+footer{margin-top:110px;border-top:1px solid var(--line);padding:30px 0 50px;color:var(--ink3);font-size:13.5px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}.hero img{animation:none}}
+@media (max-width:960px){
+  .kpis{grid-template-columns:repeat(3,1fr)}
+  .grid2,.grid2.ask,.calc,.grid3{grid-template-columns:1fr}
+  .pipeline{grid-template-columns:repeat(2,1fr)}
+  nav.top .links{display:none}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .kpi b{font-size:24px}
+  .step .n{min-width:96px;font-size:21px}
+  .rgrid{grid-template-columns:70px repeat(7,1fr);font-size:10.5px}
+  section{padding-top:72px}
+}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#">Indeklima Twin</a>
+  <div class="links">
+    <a href="#promise">The promise</a><a href="#check">Promise vs reality</a><a href="#twin">Live twin</a>
+    <a href="#findings">Diagnoses</a><a href="#ask">Ask it</a><a href="#proof">Proof</a><a href="#writeback">Write-back</a>
+    <a href="https://github.com/abdullah13793-commits/indeklima-twin">GitHub ↗</a>
+  </div>
+  <button id="theme" title="Toggle theme" aria-label="Toggle theme">◐</button>
+</div></nav>
+
+<header class="hero">
+  <img src="media/hero.jpg" alt="Building 308 rendered as an exploded 3D twin, rooms glowing by indoor-climate state">
+  <div class="wrap">
+    <span class="tag">● Simulated sensor data · physics-based, planted faults</span>
+    <h1>Every room was designed with a promise.</h1>
+    <p class="lead">Indeklima Twin reads that promise from the building's IFC model and MEP design, checks the sensor data against it room by room, explains every broken promise, and writes the answer back into IFC, BCF and Brick.</p>
+    <div class="btns">
+      <a class="btn primary" href="twin/">Open the live 3D twin →</a>
+      <a class="btn ghost" href="#film">▶ Watch the 60-second film</a>
+      <a class="btn ghost" href="https://github.com/abdullah13793-commits/indeklima-twin">Source on GitHub</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="kpis" id="kpis">
+    <div class="kpi"><b data-count="37">37</b><span>rooms twinned straight from IFC</span></div>
+    <div class="kpi"><b data-count="896724">896,724</b><span>sensor messages ingested</span></div>
+    <div class="kpi"><b>7 / 7</b><span>planted faults found, every run</span></div>
+    <div class="kpi"><b data-count="0">0</b><span>false alarms over 16 runs</span></div>
+    <div class="kpi"><b>±10 %</b><span>airflow recovered from CO₂ decay</span></div>
+    <div class="kpi"><b data-count="3">3</b><span>open formats written back</span></div>
+  </div>
+
+  <!-- 1 promise -->
+  <section id="promise" class="reveal">
+    <div class="eyebrow">01 · The promise</div>
+    <h2>The design already says what each room should do.</h2>
+    <p class="sub">The MEP engineer sized every room for a number of people and an outdoor-air rate (EN 16798-1, category II). From those two numbers physics gives the CO₂ level the room should never exceed. That is the promise. Move the sliders.</p>
+    <div class="calc">
+      <div class="card pad controls">
+        <label for="sP">Design occupants</label>
+        <div class="row"><input id="sP" type="range" min="1" max="40" value="15"><span class="val" id="vP"></span></div>
+        <label for="sA">Floor area</label>
+        <div class="row"><input id="sA" type="range" min="10" max="150" value="34"><span class="val" id="vA"></span></div>
+        <label for="sQ">Airflow actually delivered</label>
+        <div class="row"><input id="sQ" type="range" min="5" max="100" value="100"><span class="val" id="vQ"></span></div>
+        <div class="formula">q = 0.7 L/s·m² × A + 7 L/s × N &nbsp;·&nbsp; C = 420 ppm + N·G / q &nbsp;(G ≈ 0.0052 L/s per person)</div>
+        <p class="muted" style="margin:14px 0 0">Defaults = meeting room 2.03. Drop the delivered airflow to 19 % and you get what its stuck damper did.</p>
+      </div>
+      <div class="chain">
+        <div class="step"><div class="n" id="oQ"></div><div class="d">design outdoor airflow<br>from the MEP design</div></div>
+        <div class="step"><div class="n" id="oC"></div><div class="d">promised CO₂ at full occupancy<br>(category II)</div></div>
+        <div class="step big"><div class="n" id="oM"></div><div class="d" id="oMd"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 check -->
+  <section id="check" class="reveal">
+    <div class="eyebrow">02 · Promise vs reality</div>
+    <h2>35 of 37 rooms keep it. Two don't, for very different reasons.</h2>
+    <p class="sub">Each dot is a room: the CO₂ its own design promises, against what the sensors measured (95th percentile, occupied hours). A generic "CO₂ above 1,000 ppm" alarm would flag the wrong rooms. Click a dot to open its sensor history.</p>
+    <div class="grid2">
+      <div class="card pad">
+        <div class="chips" id="perChips"><button class="chip on" data-p="winter">Winter · Feb</button><button class="chip" data-p="summer">Summer · Jun</button></div>
+        <div class="chart" id="scatter"></div>
+        <div class="legend"><span><i class="dot" style="background:var(--series)"></i>keeps its promise</span><span><i class="dot" style="background:var(--bad)"></i>breaks it</span><span><i style="background:var(--band);height:10px"></i>within promise</span></div>
+      </div>
+      <div class="card pad">
+        <div class="chips" id="roomChips"></div>
+        <div class="chart" id="ts"></div>
+        <div class="legend"><span><i style="background:var(--series)"></i>measured</span><span><i class="dash"></i>design promise</span><span><i style="background:var(--ink3);opacity:.35;height:10px"></i>people in the room</span></div>
+        <div id="verdict"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 twin -->
+  <section id="twin" class="reveal">
+    <div class="eyebrow">03 · The live twin</div>
+    <h2>The whole building, room by room, hour by hour.</h2>
+    <p class="sub">The 3D dashboard is built straight from the IFC spaces. Storeys explode apart, rooms colour by CO₂, temperature, airflow-vs-design or occupancy, and a time slider replays two weeks. Click any room for its promise card.</p>
+    <div class="twin" id="twinBox">
+      <img class="poster" src="media/twin_day.gif" alt="Dashboard timelapse: rooms change colour through a winter day">
+      <button class="play" id="twinPlay" aria-label="Load the interactive 3D twin"><span>Load the interactive 3D twin</span></button>
+    </div>
+    <p class="muted" style="margin-top:10px">Runs in the browser (Three.js, WebGL). <a href="twin/">Open full screen ↗</a></p>
+  </section>
+
+  <!-- 4 findings -->
+  <section id="findings" class="reveal">
+    <div class="eyebrow">04 · Diagnoses, not alarms</div>
+    <h2>Every broken promise comes with evidence and a cause.</h2>
+    <p class="sub">Five rule families, each showing what a commissioning engineer would want to see before sending a technician. Data problems are kept apart: a frozen sensor never sends anyone to a healthy damper.</p>
+    <div class="finds" id="finds"></div>
+    <div class="grid2" style="margin-top:20px">
+      <div class="card pad">
+        <h3>Summer overheating, every room</h3>
+        <p class="muted" style="margin:0 0 8px">Share of occupied hours above 26 °C. The dashed line is the Danish practice limit (100 h/yr ≈ 5 %). Red marks the room whose solar shading stopped deploying.</p>
+        <div class="chart" id="bars"></div>
+      </div>
+      <div class="card pad" style="display:flex;flex-direction:column">
+        <h3>How the shading fault was found</h3>
+        <p class="muted" style="margin:0 0 10px">The VAV cooled harder and hid the temperature rise, so a peak-temperature rule missed it. An inverse daily energy balance did not: the room's effective solar aperture tripled overnight while 36 peers stayed flat.</p>
+        <img src="media/fig_evidence.png" alt="Evidence panels for the diagnosed faults" style="width:100%;border-radius:10px;border:1px solid var(--line);margin-top:6px;background:#fff">
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 ask -->
+  <section id="ask" class="reveal">
+    <div class="eyebrow">05 · Ask your building</div>
+    <h2>Or just ask it, in plain language.</h2>
+    <p class="sub">An MCP server exposes the twin to any AI assistant (Claude, Copilot, IDE agents) through seven read-only tools. Below is a real recorded session, replayed word for word: the question, the tools Claude chose, and its answer.</p>
+    <div class="grid2 ask">
+      <div class="chat" id="chat">
+        <div class="bar"><i></i><i></i><i></i>&nbsp; Claude × Indeklima Twin MCP · recorded session</div>
+        <div class="q" id="chatQ"></div>
+        <div class="tools" id="chatTools"></div>
+        <div class="a" id="chatA"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="card pad">
+          <h3>Seven tools</h3>
+          <p class="muted" style="margin:0 0 10px">building_overview · list_rooms · room_promise · list_findings · room_timeseries · query (sandboxed SQL) · export_bcf</p>
+          <pre class="code">{"mcpServers": {"indeklima-twin": {
+  "command": "python",
+  "args": ["src/mcp_server.py"]}}}</pre>
+        </div>
+        <div class="card pad">
+          <h3>Safe by construction</h3>
+          <p class="muted" style="margin:0">SQL runs on an in-memory copy with file access and configuration locked. Writes and file reads are refused, and the test suite proves it through the official MCP client.</p>
+        </div>
+        <button class="btn line" id="replay" style="justify-content:center">↻ Replay the session</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 proof -->
+  <section id="proof" class="reveal">
+    <div class="eyebrow">06 · Proof</div>
+    <h2>Tested where the truth is known.</h2>
+    <p class="sub">The sensor feed comes from a physics model (CO₂ and moisture mass balance, a thermal model, VAV control, Copenhagen weather) with seven planted faults. The detectors never see the truth. Five of the 16 seeds were held out and never used while designing the rules.</p>
+    <div class="grid2">
+      <div class="card pad">
+        <h3>Every fault, every run</h3>
+        <p class="muted" style="margin:0 0 12px">Rows are independent simulation runs (different occupancy, noise, sensor offsets, message loss). Outlined = held-out seed.</p>
+        <div class="rgrid" id="rgrid"></div>
+      </div>
+      <div class="card pad">
+        <h3>Airflow from CO₂ decay vs truth</h3>
+        <p class="muted" style="margin:0 0 8px" id="achSub"></p>
+        <div class="chart" id="ach"></div>
+      </div>
+    </div>
+    <div class="pipeline" style="margin-top:20px">
+      <div class="pipe"><b>Design</b><span>IFC spaces + MEP airflow (EN 16798-1)</span></div>
+      <div class="pipe"><b>Sensors</b><span>MQTT / JSONL / CSV: CO₂, T, RH, VAV, occupancy</span></div>
+      <div class="pipe"><b>Ingest + QC</b><span>DuckDB → Parquet; gaps, spikes, flatlines, outages</span></div>
+      <div class="pipe"><b>Analytics</b><span>EN 16798-1 categories, overheating, CO₂-decay airflow</span></div>
+      <div class="pipe"><b>Diagnosis</b><span>5 rule families with evidence</span></div>
+      <div class="pipe end"><b>Write-back</b><span>IFC Psets · BCF 2.1 · Brick · dashboard · MCP</span></div>
+    </div>
+  </section>
+
+  <!-- 7 writeback -->
+  <section id="writeback" class="reveal">
+    <div class="eyebrow">07 · Write-back</div>
+    <h2>Nothing new to learn. The answer lands where the team already works.</h2>
+    <p class="sub">No new platform to adopt. Results go back into the open formats the project already opens.</p>
+    <div class="grid3">
+      <div class="card fmt"><span class="ic">IFC4</span><h3>Design intent + verdict on every space</h3><p>Standard property sets (Pset_SpaceOccupancyRequirements, Pset_SpaceThermalRequirements, Pset_SpaceThermalDesign) plus one operations set with the measured performance.</p><div class="opens">Solibri · BIMcollab · Dalux · Revit · Archicad · Bonsai</div></div>
+      <div class="card fmt"><span class="ic">BCF 2.1</span><h3>One issue per finding</h3><p>Room selected, camera set, evidence and diagnosis in the description. Lands in the coordination tool like any clash.</p><div class="opens">Solibri · BIMcollab · Revit · Archicad · Dalux</div></div>
+      <div class="card fmt"><span class="ic">Brick</span><h3>The sensor model, linked</h3><p>Rooms, VAVs, AHU zones and every sensor point, each tied to its MQTT topic and IFC GlobalId. 1,812 triples, validated.</p><div class="opens">BMS and IoT platforms that speak Brick</div></div>
+    </div>
+    <img src="media/05_writeback.png" alt="Write-back: the same room in IFC properties, a BCF issue and the Brick graph" style="width:100%;margin-top:20px;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow)">
+  </section>
+
+  <!-- 8 fit -->
+  <section id="fit" class="reveal">
+    <div class="eyebrow">08 · Where it fits</div>
+    <h2>Simulation tools predict the promise. This checks it is kept.</h2>
+    <p class="sub">It doesn't replace anything. It connects the design the project already has to the sensors it installed later.</p>
+    <div class="card tablewrap"><table class="cmp">
+      <tr><th>Tool</th><th>When</th><th>Question it answers</th></tr>
+      <tr><td>IDA ICE, EnergyPlus, BSim</td><td>Design</td><td>Will this design work? (predictions from assumptions)</td></tr>
+      <tr><td>BMS alarms, IoT dashboards</td><td>Operation</td><td>Is CO₂ above a fixed threshold right now?</td></tr>
+      <tr><td>Digital-twin platforms</td><td>Operation</td><td>Where is each sensor in the model?</td></tr>
+      <tr class="us"><td>Indeklima Twin</td><td>Operation</td><td>Does each room still do what <em>its own design</em> promised, and if not, why? Answered in IFC, BCF and Brick.</td></tr>
+    </table></div>
+  </section>
+
+  <!-- 9 film -->
+  <section id="film" class="reveal">
+    <div class="eyebrow">09 · The film</div>
+    <h2>The whole idea in 60 seconds.</h2>
+    <video controls preload="none" poster="media/film_poster.jpg" playsinline><source src="media/indeklima_twin_film.mp4" type="video/mp4"></video>
+  </section>
+
+  <section class="reveal" style="padding-top:80px">
+    <div class="card pad" style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
+      <div><h3 style="font-size:22px">Run it on your building</h3><p class="muted" style="margin:0">Bring an IFC model and a sensor export (MQTT, CSV or BMS trend logs). Python, DuckDB, IfcOpenShell. MIT licensed.</p></div>
+      <div class="btns"><a class="btn primary" href="https://github.com/abdullah13793-commits/indeklima-twin">View the code</a><a class="btn line" href="https://github.com/abdullah13793-commits/indeklima-twin/raw/main/reports/Indeklima_Twin_Building308_report.pdf">PDF report</a></div>
+    </div>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  Sensor data on this page are <b>simulated</b> with a physics model and contain planted faults, so the diagnostics can be scored against ground truth. Geometry: IFC4 renovation design model of Building 308. Design airflows: DS/EN 16798-1 cat. II. Weather: Copenhagen-Kastrup TMYx.
+</div></footer>
+
+<script>
+(() => {
+const $ = s => document.querySelector(s);
+const root = document.documentElement;
+try { const t = localStorage.getItem('it-theme'); if (t) root.dataset.theme = t; } catch (e) {}
+$('#theme').onclick = () => {
+  const dark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#0b0d11';
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('it-theme', root.dataset.theme); } catch (e) {}
+  drawAll();
+};
+const css = v => getComputedStyle(root).getPropertyValue(v).trim();
+const fmt = n => Math.round(n).toLocaleString('en-US');
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function svg(box, w, h) { box.innerHTML = ''; const s = el('svg', {viewBox: `0 0 ${w} ${h}`, role: 'img'}); box.appendChild(s); const tip = document.createElement('div'); tip.className = 'tip'; box.appendChild(tip); return [s, tip]; }
+function showTip(tip, box, x, y, html) { tip.innerHTML = html; tip.style.opacity = 1; const bw = box.clientWidth; const tw = tip.offsetWidth; let left = x + 14; if (left + tw > bw) left = x - tw - 14; tip.style.left = Math.max(0, left) + 'px'; tip.style.top = Math.max(0, y - 10) + 'px'; }
+const lin = (d0, d1, r0, r1) => v => r0 + (v - d0) / (d1 - d0) * (r1 - r0);
+function ticks(lo, hi, n) { const step = Math.pow(10, Math.floor(Math.log10((hi - lo) / n))); const err = (hi - lo) / n / step; const m = err >= 7.5 ? 10 : err >= 3.5 ? 5 : err >= 1.5 ? 2 : 1; const s = m * step; const out = []; for (let v = Math.ceil(lo / s) * s; v <= hi + 1e-9; v += s) out.push(+v.toFixed(6)); return out; }
+
+/* reveal + count-up */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); if (e.target.id === 'ask') playChat(); } }), {threshold: .12});
+document.querySelectorAll('.reveal').forEach(s => io.observe(s));
+document.querySelectorAll('[data-count]').forEach(b => { const to = +b.dataset.count; if (!to) return; const t0 = performance.now(); const step = t => { const k = Math.min(1, (t - t0) / 1400); b.textContent = fmt(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); });
+
+/* promise calculator */
+function calc() {
+  const N = +$('#sP').value, A = +$('#sA').value, pct = +$('#sQ').value;
+  const q = 0.7 * A + 7 * N, qd = q * pct / 100;
+  const promise = 420 + N * 0.0052 / q * 1e6, actual = 420 + N * 0.0052 / qd * 1e6;
+  $('#vP').textContent = N + ' people'; $('#vA').textContent = A + ' m²'; $('#vQ').textContent = pct + ' %';
+  $('#oQ').textContent = fmt(q) + ' L/s'; $('#oC').textContent = fmt(promise) + ' ppm';
+  $('#oM').textContent = fmt(actual) + ' ppm';
+  const kept = actual <= 420 + 1.15 * (promise - 420) + 50;
+  $('#oM').style.color = kept ? 'var(--good)' : 'var(--bad)';
+  $('#oMd').innerHTML = `what the room reaches at ${pct} % airflow<br><b style="color:${kept ? 'var(--good)' : 'var(--bad)'}">${kept ? 'promise kept' : 'promise broken'}</b>`;
+}
+['#sP', '#sA', '#sQ'].forEach(s => $(s).addEventListener('input', calc)); calc();
+
+/* data */
+let ROOMS, SERIES = {}, FIND, SUM, ACH, CHAT, period = 'winter', room = '2.03';
+const J = u => fetch(u).then(r => r.json());
+Promise.all([J('twin/data/rooms.json'), J('twin/data/findings.json'), J('twin/data/summary.json'), J('data/ach_windows.json'), J('data/mcp_demo.json'), J('twin/data/series_winter.json')])
+  .then(([r, f, s, a, c, sw]) => { ROOMS = r; FIND = f; SUM = s; ACH = a; CHAT = c; SERIES.winter = sw; init(); });
+
+function brokenWhy(id) { const f = FIND.find(x => x.room === id && x.period === period); return f ? f.diagnosis : null; }
+
+function init() {
+  const chips = $('#roomChips');
+  const r1 = FIND.find(f => f.rule === 'R1'), r2 = FIND.find(f => f.rule === 'R2');
+  const ok = Object.keys(ROOMS).sort().find(k => ROOMS[k].kind === 'meeting' && !ROOMS[k].findings.length && Object.values(ROOMS[k].promise.verdict).every(v => v.co2_kept && v.t_kept));
+  room = r1.room;
+  const picks = [[r1.room, 'bad', 'stuck VAV'], [r2.room, 'warn', 'sensor drift'], [ok, 'good', 'healthy']].filter(p => p[0]);
+  picks.forEach(([id, c, l]) => { const b = document.createElement('button'); b.className = 'chip' + (id === room ? ' on' : ''); b.dataset.r = id; b.innerHTML = `<span class="s" style="background:var(--${c})"></span>${id} · ${l}`; chips.appendChild(b); });
+  const sel = document.createElement('select'); sel.className = 'chip'; sel.setAttribute('aria-label', 'Any room');
+  sel.innerHTML = '<option value="">any room…</option>' + Object.keys(ROOMS).sort().map(k => `<option>${k}</option>`).join('');
+  chips.appendChild(sel);
+  chips.addEventListener('click', e => { const b = e.target.closest('button'); if (b) pickRoom(b.dataset.r); });
+  sel.onchange = () => sel.value && pickRoom(sel.value);
+  $('#perChips').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; period = b.dataset.p; $('#perChips').querySelectorAll('.chip').forEach(x => x.classList.toggle('on', x === b)); loadPeriod().then(drawAll); });
+  renderFinds(); renderGrid();
+  $('#achSub').textContent = `${SUM.ach.n_windows} decay windows · median error ${(SUM.ach.median_abs_err * 100).toFixed(1)} % · bias ${(SUM.ach.bias * 100).toFixed(1)} % · shaded band ±15 %`;
+  drawAll();
+  new ResizeObserver(() => drawAll()).observe($('#scatter'));
+}
+function loadPeriod() { return SERIES[period] ? Promise.resolve() : J(`twin/data/series_${period}.json`).then(s => { SERIES[period] = s; }); }
+function pickRoom(id) { room = id; document.querySelectorAll('#roomChips button').forEach(b => b.classList.toggle('on', b.dataset.r === id)); drawTS(); drawScatter(); }
+function drawAll() { if (!ROOMS) return; drawScatter(); drawTS(); drawBars(); drawACH(); }
+
+/* scatter */
+function drawScatter() {
+  const box = $('#scatter'), W = 560, H = 420, m = {l: 54, r: 14, t: 12, b: 44};
+  const [s, tip] = svg(box, W, H);
+  const pts = Object.entries(ROOMS).map(([id, r]) => ({id, r, x: r.promise.co2_design_ppm, y: r.kpi[period].co2_p95, kept: r.promise.verdict[period].co2_kept}));
+  const hi = Math.max(1600, ...pts.map(p => p.y)) * 1.06, lo = Math.floor(Math.min(...pts.map(p => Math.min(p.x, p.y))) / 100) * 100 - 50;
+  const X = lin(lo, hi, m.l, W - m.r), Y = lin(lo, hi, H - m.b, m.t);
+  ticks(lo, hi, 6).forEach(v => { el('line', {x1: m.l, x2: W - m.r, y1: Y(v), y2: Y(v), class: 'gridline'}, s); el('text', {x: m.l - 8, y: Y(v) + 4, 'text-anchor': 'end'}, s).textContent = fmt(v); el('text', {x: X(v), y: H - m.b + 18, 'text-anchor': 'middle'}, s).textContent = fmt(v); });
+  const lim = v => 420 + 1.15 * (v - 420) + 50;
+  el('path', {d: `M${X(lo)},${Y(lo)} L${X(hi)},${Y(hi)} L${X(hi)},${Y(Math.min(hi, lim(hi)))} L${X((hi - 470) / 1.15 + 420)},${Y(hi)} L${X(lo)},${Y(lim(lo))}Z`, fill: css('--band')}, s);
+  el('line', {x1: X(lo), y1: Y(lo), x2: X(hi), y2: Y(hi), stroke: css('--promise'), 'stroke-dasharray': '5 4', 'stroke-width': 1.5}, s);
+  el('text', {x: (m.l + W - m.r) / 2, y: H - 6, 'text-anchor': 'middle'}, s).textContent = 'CO₂ the design promises (ppm)';
+  const yl = el('text', {x: 14, y: (m.t + H - m.b) / 2, 'text-anchor': 'middle', transform: `rotate(-90 14 ${(m.t + H - m.b) / 2})`}, s); yl.textContent = 'measured CO₂, P95 occupied (ppm)';
+  pts.sort((a, b) => a.kept - b.kept).reverse();
+  pts.forEach(p => {
+    const c = el('circle', {cx: X(p.x), cy: Y(p.y), r: p.id === room ? 9 : 6.5, fill: p.kept ? css('--series') : css('--bad'), stroke: p.id === room ? css('--ink') : css('--panel'), 'stroke-width': 2, style: 'cursor:pointer'}, s);
+    const hit = el('circle', {cx: X(p.x), cy: Y(p.y), r: 14, fill: 'transparent', style: 'cursor:pointer'}, s);
+    const html = `<b>Room ${p.id}</b> · ${p.r.kind}<br><span class="k">design</span> ${p.r.persons} people · ${p.r.q_design_ls} L/s<br><span class="k">promised</span> ${fmt(p.x)} ppm<br><span class="k">measured P95</span> ${fmt(p.y)} ppm<br><b style="color:${p.kept ? 'var(--good)' : 'var(--bad)'}">${p.kept ? 'promise kept' : 'promise broken'}</b>${!p.kept && brokenWhy(p.id) ? '<br>' + brokenWhy(p.id) : ''}`;
+    hit.addEventListener('mousemove', e => { const b = box.getBoundingClientRect(); showTip(tip, box, e.clientX - b.left, e.clientY - b.top, html); });
+    hit.addEventListener('mouseleave', () => tip.style.opacity = 0);
+    hit.addEventListener('click', () => pickRoom(p.id));
+    if (!p.kept) { const t = el('text', {x: X(p.x) + 13, y: Y(p.y) + 4, style: `fill:${css('--ink')};font-weight:600`}, s); t.textContent = p.id + (brokenWhy(p.id) ? (brokenWhy(p.id).includes('drift') ? ' · sensor drift' : ' · real breach') : ''); }
+  });
+}
+
+/* time series: CO2 / airflow / people, stacked panels sharing a time axis */
+function drawTS() {
+  const box = $('#ts'), S = SERIES[period]; if (!S || !ROOMS[room]) return;
+  const R = ROOMS[room], d = S.rooms[room], n = S.n, W = 560, m = {l: 54, r: 12};
+  const panels = [{k: 'co2', h: 170, unit: 'ppm', label: 'CO₂', ref: R.promise.co2_design_ppm, refL: 'promise'},
+                  {k: 'q', h: 120, unit: 'L/s', label: 'airflow', ref: R.q_design_ls, refL: 'design'},
+                  {k: 'occ', h: 60, unit: '', label: 'people', ref: null}];
+  const gap = 16, H = panels.reduce((a, p) => a + p.h + gap, 0) + 24;
+  const [s, tip] = svg(box, W, H);
+  const X = lin(0, n - 1, m.l, W - m.r);
+  let y0 = 6; const scales = [];
+  panels.forEach(p => {
+    const v = d[p.k]; const vmax = Math.max(p.ref || 0, ...v.filter(x => x != null)) * 1.22, vmin = p.k === 'co2' ? 400 : 0;
+    const Y = lin(vmin, vmax, y0 + p.h, y0); scales.push({p, Y, v});
+    ticks(vmin, vmax, p.k === 'occ' ? 2 : 3).forEach(t => { el('line', {x1: m.l, x2: W - m.r, y1: Y(t), y2: Y(t), class: 'gridline'}, s); el('text', {x: m.l - 8, y: Y(t) + 4, 'text-anchor': 'end'}, s).textContent = fmt(t); });
+    el('text', {x: m.l + 4, y: y0 + 12, style: `fill:${css('--ink2')};font-weight:600`}, s).textContent = `${p.label}${p.unit ? ' (' + p.unit + ')' : ''}`;
+    if (p.k === 'occ') {
+      let dd = `M${X(0)},${Y(0)}`; v.forEach((val, i) => dd += `L${X(i)},${Y(val || 0)}`); dd += `L${X(n - 1)},${Y(0)}Z`;
+      el('path', {d: dd, fill: css('--ink3'), opacity: .35}, s);
+    } else {
+      if (p.ref) { el('line', {x1: m.l, x2: W - m.r, y1: Y(p.ref), y2: Y(p.ref), stroke: css('--promise'), 'stroke-dasharray': '5 4', 'stroke-width': 1.5}, s); el('text', {x: W - m.r, y: Y(p.ref) - 5, 'text-anchor': 'end', style: `fill:${css('--ink2')}`}, s).textContent = `${p.refL} ${fmt(p.ref)}`; }
+      let dd = '', pen = false; v.forEach((val, i) => { if (val == null) { pen = false; return; } dd += (pen ? 'L' : 'M') + X(i).toFixed(1) + ',' + Y(val).toFixed(1); pen = true; });
+      el('path', {d: dd, fill: 'none', stroke: css('--series'), 'stroke-width': 1.6, 'stroke-linejoin': 'round'}, s);
+    }
+    y0 += p.h + gap;
+  });
+  const t0 = new Date(S.t0.replace(' ', 'T'));
+  for (let day = 0; day <= n / 96; day += 2) { const i = day * 96; if (i >= n) break; const dt = new Date(t0.getTime() + i * 9e5); el('text', {x: X(i), y: H - 4, 'text-anchor': 'middle'}, s).textContent = dt.toLocaleDateString('en-GB', {day: '2-digit', month: 'short'}); }
+  const cross = el('line', {y1: 0, y2: H - 20, stroke: css('--ink3'), 'stroke-width': 1, opacity: 0}, s);
+  const hit = el('rect', {x: m.l, y: 0, width: W - m.l - m.r, height: H - 20, fill: 'transparent'}, s);
+  hit.addEventListener('mousemove', e => {
+    const b = box.getBoundingClientRect(); const sx = (e.clientX - b.left) / b.width * W;
+    const i = Math.max(0, Math.min(n - 1, Math.round((sx - m.l) / (W - m.l - m.r) * (n - 1))));
+    cross.setAttribute('x1', X(i)); cross.setAttribute('x2', X(i)); cross.setAttribute('opacity', .6);
+    const dt = new Date(t0.getTime() + i * 9e5);
+    showTip(tip, box, e.clientX - b.left, e.clientY - b.top, `<b>${dt.toLocaleString('en-GB', {weekday: 'short', day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit'})}</b><br><span class="k">CO₂</span> ${fmt(d.co2[i])} ppm <span class="k">(promise ${fmt(R.promise.co2_design_ppm)})</span><br><span class="k">airflow</span> ${fmt(d.q[i])} L/s <span class="k">(design ${fmt(R.q_design_ls)})</span><br><span class="k">people</span> ${d.occ[i]} <span class="k">· temp</span> ${(d.t[i] / 10).toFixed(1)} °C`);
+  });
+  hit.addEventListener('mouseleave', () => { tip.style.opacity = 0; cross.setAttribute('opacity', 0); });
+  const v = R.promise.verdict[period], f = FIND.filter(x => x.room === room);
+  const ok = v.co2_kept && v.t_kept;
+  $('#verdict').innerHTML = `<div class="verdict"><span class="ic" style="background:var(--${ok ? 'good' : (f.some(x => x.category === 'sensor') ? 'warn' : 'bad')})">${ok ? '✓' : '!'}</span><div><b>Room ${room}</b> · ${R.kind}, ${R.area_m2} m², designed for ${R.persons} people and ${R.q_design_ls} L/s → promise ${fmt(R.promise.co2_design_ppm)} ppm. ${period}: CO₂ ${v.co2_kept ? 'kept' : '<b style="color:var(--bad)">broken</b>'}, temperature ${v.t_kept ? 'kept' : '<b style="color:var(--bad)">broken</b>'}.${f.length ? '<br>' + f.map(x => `<b>${x.diagnosis}</b> (${x.evidence})`).join('<br>') : ''}</div></div>`;
+}
+
+/* overheating bars */
+function drawBars() {
+  const box = $('#bars');
+  const rows = Object.entries(ROOMS).map(([id, r]) => ({id, r, v: r.kpi.summer.occupied_h ? r.kpi.summer.hours_above_26 / r.kpi.summer.occupied_h * 100 : 0})).sort((a, b) => b.v - a.v);
+  const bh = 11, g = 3, m = {l: 40, r: 40, t: 6, b: 26}, W = 560, H = m.t + m.b + rows.length * (bh + g);
+  const [s, tip] = svg(box, W, H);
+  const vmax = Math.max(...rows.map(r => r.v)) * 1.05, X = lin(0, vmax, m.l, W - m.r);
+  ticks(0, vmax, 5).forEach(t => { el('line', {x1: X(t), x2: X(t), y1: m.t, y2: H - m.b, class: 'gridline'}, s); el('text', {x: X(t), y: H - 8, 'text-anchor': 'middle'}, s).textContent = t + ' %'; });
+  const shade = FIND.find(f => f.rule === 'R4');
+  rows.forEach((r, i) => {
+    const y = m.t + i * (bh + g), over = r.v > 5;
+    const col = shade && r.id === shade.room ? css('--bad') : over ? css('--series') : css('--series-soft');
+    el('rect', {x: m.l, y, width: Math.max(2, X(r.v) - m.l), height: bh, rx: 3, fill: col}, s);
+    el('text', {x: m.l - 6, y: y + bh - 1.5, 'text-anchor': 'end', style: 'font-size:10.5px'}, s).textContent = r.id;
+    const hit = el('rect', {x: 0, y: y - 1, width: W, height: bh + g, fill: 'transparent'}, s);
+    hit.addEventListener('mousemove', e => { const b = box.getBoundingClientRect(); showTip(tip, box, e.clientX - b.left, e.clientY - b.top, `<b>Room ${r.id}</b> · ${r.r.kind}<br>${r.v.toFixed(1)} % of occupied hours above 26 °C<br><span class="k">${over ? 'above' : 'within'} the 5 % practice limit</span>${shade && r.id === shade.room ? '<br><b style="color:var(--bad)">' + shade.diagnosis + '</b>' : ''}`); });
+    hit.addEventListener('mouseleave', () => tip.style.opacity = 0);
+  });
+  el('line', {x1: X(5), x2: X(5), y1: m.t, y2: H - m.b, stroke: css('--ink2'), 'stroke-dasharray': '4 3', 'stroke-width': 1.5}, s);
+  el('text', {x: X(5) + 6, y: H - m.b - 6, style: `fill:${css('--ink2')}`}, s).textContent = 'limit ≈ 5 %';
+}
+
+/* ach scatter */
+function drawACH() {
+  const box = $('#ach'), W = 560, H = 380, m = {l: 44, r: 12, t: 10, b: 40};
+  const [s, tip] = svg(box, W, H);
+  const hi = Math.ceil(Math.max(...ACH.map(a => Math.max(a[1], a[2]))) * 1.05);
+  const X = lin(0, hi, m.l, W - m.r), Y = lin(0, hi, H - m.b, m.t);
+  ticks(0, hi, 5).forEach(v => { el('line', {x1: m.l, x2: W - m.r, y1: Y(v), y2: Y(v), class: 'gridline'}, s); el('text', {x: m.l - 8, y: Y(v) + 4, 'text-anchor': 'end'}, s).textContent = v; el('text', {x: X(v), y: H - m.b + 18, 'text-anchor': 'middle'}, s).textContent = v; });
+  el('path', {d: `M${X(0)},${Y(0)} L${X(hi / 1.15)},${Y(hi)} L${X(hi)},${Y(hi)} L${X(hi)},${Y(hi * .85)}Z`, fill: css('--band')}, s);
+  el('line', {x1: X(0), y1: Y(0), x2: X(hi), y2: Y(hi), stroke: css('--promise'), 'stroke-dasharray': '5 4', 'stroke-width': 1.5}, s);
+  ACH.forEach(a => {
+    const c = el('circle', {cx: X(a[2]), cy: Y(a[1]), r: 4, fill: css('--series'), 'fill-opacity': .55, stroke: css('--panel'), 'stroke-width': .8}, s);
+    c.addEventListener('mousemove', e => { const b = box.getBoundingClientRect(); showTip(tip, box, e.clientX - b.left, e.clientY - b.top, `<b>Room ${a[0]}</b><br><span class="k">true</span> ${a[2]} 1/h<br><span class="k">from CO₂ decay</span> ${a[1]} 1/h<br><span class="k">error</span> ${(a[3] * 100).toFixed(0)} %`); });
+    c.addEventListener('mouseleave', () => tip.style.opacity = 0);
+  });
+  el('text', {x: (m.l + W - m.r) / 2, y: H - 4, 'text-anchor': 'middle'}, s).textContent = 'true outdoor-air change rate (1/h)';
+  el('text', {x: 12, y: (m.t + H - m.b) / 2, 'text-anchor': 'middle', transform: `rotate(-90 12 ${(m.t + H - m.b) / 2})`}, s).textContent = 'inferred from CO₂ decay (1/h)';
+}
+
+/* findings cards */
+function renderFinds() {
+  const col = {building: 'var(--bad)', sensor: 'var(--warn)', data: 'var(--data)'};
+  const ttl = {airflow_insufficient: 'Airflow not responding to demand', co2_sensor_drift: 'CO₂ sensor drifting', ahu_out_of_hours: 'AHU zone running out of hours', solar_gain_increase: 'Solar shading not deploying', heating_no_setback: 'Heating ignores night setback', flatline: 'Sensor frozen', gateway_outage: 'Gateway offline'};
+  $('#finds').innerHTML = FIND.map(f => `<div class="find" style="--c:${col[f.category]}"><div class="h">${ttl[f.type] || f.type}<span class="rule">${f.rule}</span></div><div class="meta">${f.room.replace('storey:', 'storey ')} · ${f.period} · ${f.category === 'data' ? 'data quality' : f.category} · since ${String(f.start).slice(0, 10)}</div><p class="ev">${f.evidence}</p><div class="dx">→ ${f.diagnosis}</div></div>`).join('');
+}
+
+/* robustness grid */
+function renderGrid() {
+  const heads = ['R1 VAV', 'R2 drift', 'R3 AHU', 'R4 shade', 'R5 setback', 'gateway', 'frozen'];
+  let h = '<div></div>' + heads.map(x => `<div class="hd">${x}</div>`).join('');
+  SUM.robustness.forEach(r => { const all = r.recall_building === '5/5' && r.recall_data === '2/2' && !r.false_alarms; h += `<div class="rl">seed ${r.seed}${r.held_out ? ' · held out' : ''}</div>` + heads.map(() => `<div class="c${r.held_out ? ' ho' : ''}" style="${all ? '' : 'background:var(--bad)'}">✓</div>`).join(''); });
+  h += `<div class="rl">no faults</div>` + heads.map(() => '<div class="c neg">0</div>').join('');
+  $('#rgrid').innerHTML = h + `<div class="muted" style="grid-column:1/-1;margin-top:8px">${SUM.robustness.length} runs · every planted fault found · 0 false alarms · fault-free control: 0 findings</div>`;
+}
+
+/* chat replay */
+let chatTimer = [];
+function playChat() {
+  if (!CHAT) { setTimeout(playChat, 300); return; }
+  chatTimer.forEach(clearTimeout); chatTimer = [];
+  $('#chatQ').textContent = ''; $('#chatTools').innerHTML = ''; $('#chatA').innerHTML = '';
+  const q = CHAT.question; let i = 0;
+  const typeQ = () => { $('#chatQ').textContent = q.slice(0, ++i); if (i < q.length) chatTimer.push(setTimeout(typeQ, 28)); else chatTimer.push(setTimeout(tools, 500)); };
+  const tools = () => { CHAT.calls.forEach((c, k) => { const t = document.createElement('span'); t.className = 'tool'; t.textContent = c; $('#chatTools').appendChild(t); chatTimer.push(setTimeout(() => t.classList.add('on'), 350 * k)); }); chatTimer.push(setTimeout(answer, 350 * CHAT.calls.length + 400)); };
+  const md = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+  const items = CHAT.answer.split('\n').filter(Boolean).map(x => x.replace(/^- /, ''));
+  const answer = () => { const ul = document.createElement('ul'); ul.style.paddingLeft = '18px'; $('#chatA').appendChild(ul); let li = 0, ch = 0, cur;
+    const tick = () => { if (li >= items.length) return; if (!cur) { cur = document.createElement('li'); ul.appendChild(cur); } ch += 6; const done = ch >= items[li].length; cur.innerHTML = md(items[li].slice(0, ch)) + (done ? '' : '<span class="cursor"></span>'); if (done) { li++; ch = 0; cur = null; } chatTimer.push(setTimeout(tick, done ? 260 : 16)); }; tick(); };
+  typeQ();
+}
+$('#replay').onclick = playChat;
+
+/* twin embed */
+$('#twinPlay').onclick = () => { const f = document.createElement('iframe'); f.src = 'twin/?theme=dark'; f.title = 'Indeklima Twin 3D dashboard'; f.allow = 'fullscreen'; $('#twinBox').innerHTML = ''; $('#twinBox').appendChild(f); };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+[
+ {
+  "id": "F1",
+  "type": "vav_stuck_min",
+  "room": "2.03",
+  "period": "winter",
+  "start_day": 3,
+  "end_day": 14,
+  "category": "building",
+  "note": "VAV damper stuck at minimum airflow"
+ },
+ {
+  "id": "F2",
+  "type": "co2_sensor_drift",
+  "room": "2.11",
+  "period": "winter",
+  "start_day": 2,
+  "end_day": 14,
+  "rate_ppm_per_day": 18,
+  "category": "sensor",
+  "note": "CO2 sensor drifts upward ~18 ppm/day; VAV over-ventilates on the false reading"
+ },
+ {
+  "id": "F3",
+  "type": "ahu_out_of_hours",
+  "room": "storey:3",
+  "period": "winter",
+  "start_day": 7,
+  "end_day": 14,
+  "category": "building",
+  "note": "AHU zone for storey 3 left in manual: runs 24/7 at design airflow"
+ },
+ {
+  "id": "F4",
+  "type": "solar_shading_failed",
+  "room": "1.05",
+  "period": "summer",
+  "start_day": 7,
+  "end_day": 14,
+  "category": "building",
+  "note": "external solar shading stuck retracted from day 7 (g 0.20 -> 0.60)"
+ },
+ {
+  "id": "F5",
+  "type": "temp_sensor_flatline",
+  "room": "3.04",
+  "period": "summer",
+  "start_day": 4,
+  "end_day": 7,
+  "category": "data",
+  "note": "temperature sensor frozen at its last value"
+ },
+ {
+  "id": "F6",
+  "type": "gateway_outage",
+  "room": "storey:2",
+  "period": "summer",
+  "start_day": 9,
+  "end_day": 9,
+  "hours": [
+   9,
+   15
+  ],
+  "category": "data",
+  "note": "LoRa/IoT gateway for storey 2 offline for 6 h"
+ },
+ {
+  "id": "F7",
+  "type": "heating_valve_stuck_open",
+  "room": "2.29",
+  "period": "winter",
+  "start_day": 5,
+  "end_day": 14,
+  "category": "building",
+  "note": "radiator thermostatic valve stuck fully open"
+ }
+]

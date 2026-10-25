@@ -1,0 +1,34 @@
+{
+ "ingest": {
+  "messages": 896724,
+  "rows": 296220,
+  "rooms": 37
+ },
+ "qc": {
+  "spikes_removed": 403,
+  "completeness": 0.9928,
+  "n_gaps": 0,
+  "n_outages": 1,
+  "n_flatlines": 1
+ },
+ "qc_findings": [
+  {
+   "kind": "gateway_outage",
+   "room": "storey:2",
+   "period": "summer",
+   "start": "2026-06-24 09:00:00",
+   "end": "2026-06-24 14:55:00",
+   "minutes": 360,
+   "rooms": 22
+  },
+  {
+   "kind": "flatline",
+   "room": "3.04",
+   "period": "summer",
+   "variable": "t",
+   "start": "2026-06-19 00:05:00",
+   "end": "2026-06-21 22:00:00",
+   "minutes": 4200
+  }
+ ]
+}

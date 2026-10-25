@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+config/local_paths.json
+out/
+data/raw/
+data/store/
+data/truth_state.parquet
+renders/
+publish/

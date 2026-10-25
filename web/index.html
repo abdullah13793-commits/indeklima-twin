@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indeklima Twin · Building 308</title>
+<style>
+:root{
+  color-scheme: dark;
+  --page:#0d0d0d; --surface:#1a1a19; --surface-2:#232321; --line:#2c2c2a; --axis:#383835;
+  --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+  --seq-0:#184f95; --seq-1:#256abf; --seq-2:#3987e5; --seq-3:#6da7ec; --seq-4:#9ec5f4; --seq-5:#cde2fb;
+  --div-cold:#3987e5; --div-mid:#383835; --div-warm:#e66767;
+}
+@media (prefers-color-scheme: light){
+  :root:where(:not([data-theme="dark"])){
+    color-scheme: light;
+    --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#f0efec; --line:#e1e0d9; --axis:#c3c2b7;
+    --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781; --ring:rgba(11,11,11,.10);
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+    --seq-0:#cde2fb; --seq-1:#9ec5f4; --seq-2:#6da7ec; --seq-3:#3987e5; --seq-4:#256abf; --seq-5:#104281;
+    --div-cold:#2a78d6; --div-mid:#f0efec; --div-warm:#e34948;
+  }
+}
+:root[data-theme="light"]{
+    color-scheme: light;
+    --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#f0efec; --line:#e1e0d9; --axis:#c3c2b7;
+    --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781; --ring:rgba(11,11,11,.10);
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+    --seq-0:#cde2fb; --seq-1:#9ec5f4; --seq-2:#6da7ec; --seq-3:#3987e5; --seq-4:#256abf; --seq-5:#104281;
+    --div-cold:#2a78d6; --div-mid:#f0efec; --div-warm:#e34948;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--page);color:var(--ink);font:13px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+header h1{font-size:16px;margin:0;font-weight:650;letter-spacing:.2px}
+header .sub{color:var(--ink-2)}
+.badge{border:1px solid var(--warning);color:var(--warning);border-radius:999px;padding:2px 9px;font-size:11px;font-weight:600;letter-spacing:.3px}
+header .sp{flex:1}
+button,select{font:inherit;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:7px;padding:5px 10px;cursor:pointer}
+button.on{background:var(--ink);color:var(--page);border-color:var(--ink)}
+.seg{display:inline-flex;gap:4px}
+.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;padding:12px 18px}
+.kpi{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:10px 12px}
+.kpi .v{font-size:22px;font-weight:650}
+.kpi .l{color:var(--ink-2);font-size:12px}
+main{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:12px;padding:0 18px 18px;height:calc(100vh - 190px);min-height:560px}
+#viewer{position:relative;background:var(--surface);border:1px solid var(--ring);border-radius:12px;overflow:hidden}
+#gl{width:100%;height:100%;display:block}
+.overlay{position:absolute;left:12px;right:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.overlay.top{top:10px}.overlay.bottom{bottom:10px}
+.panel-chip{background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--ring);border-radius:9px;padding:6px 9px;backdrop-filter:blur(6px)}
+#time{flex:1;min-width:200px}
+#clock{font-variant-numeric:tabular-nums;min-width:150px}
+.legend{display:flex;align-items:center;gap:8px}
+.ramp{width:170px;height:10px;border-radius:5px}
+.legend .ticks{display:flex;justify-content:space-between;width:170px;color:var(--muted);font-size:11px}
+#tip{position:absolute;pointer-events:none;background:var(--surface-2);border:1px solid var(--ring);border-radius:8px;padding:6px 9px;font-size:12px;display:none;z-index:5;white-space:nowrap}
+aside{display:flex;flex-direction:column;gap:12px;min-height:0;overflow:auto}
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:12px 14px}
+.card h2{font-size:13px;margin:0 0 8px;font-weight:650}
+.find{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:8px;border-radius:8px;cursor:pointer;border:1px solid transparent}
+.find:hover{background:var(--surface-2)}
+.find.sel{border-color:var(--ink-2)}
+.ico{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:#111}
+.find .t{font-weight:600}
+.find .e{color:var(--ink-2);font-size:12px}
+.tag{font-size:11px;color:var(--muted)}
+.promise{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pbox{border:1px solid var(--line);border-radius:9px;padding:8px}
+.pbox .k{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+.pbox .v{font-size:18px;font-weight:650}
+.verdict{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:3px 9px;font-size:12px}
+.dot{width:8px;height:8px;border-radius:50%}
+.chart{width:100%;height:118px;display:block}
+.chart text{fill:var(--muted);font-size:10px}
+.ctitle{display:flex;justify-content:space-between;color:var(--ink-2);font-size:12px;margin-top:6px}
+.muted{color:var(--muted)}
+footer{padding:0 18px 16px;color:var(--muted);font-size:12px}
+@media (max-width:1000px){main{grid-template-columns:1fr;height:auto}#viewer{height:60vh}.kpis{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Indeklima Twin</h1>
+  <span class="sub">Building 308 · renovation design model · 37 monitored rooms</span>
+  <span class="badge" title="Physics-based simulated sensor feed; the pipeline accepts real MQTT / CSV data unchanged">SIMULATED SENSOR DATA</span>
+  <span class="sp"></span>
+  <span class="seg" id="periodSeg"><button data-p="winter" class="on">Winter · Feb</button><button data-p="summer">Summer · Jun</button></span>
+  <span class="seg" id="metricSeg"><button data-m="co2" class="on">CO₂</button><button data-m="t">Temperature</button><button data-m="q">Airflow / design</button><button data-m="occ">Occupancy</button></span>
+  <button id="theme" title="Toggle light/dark">◐</button>
+</header>
+<section class="kpis" id="kpis"></section>
+<main>
+  <div id="viewer">
+    <canvas id="gl"></canvas>
+    <div id="tip"></div>
+    <div class="overlay top">
+      <span class="panel-chip seg" id="storeySeg"><button data-s="all" class="on">All storeys</button><button data-s="0">0</button><button data-s="1">1</button><button data-s="2">2</button><button data-s="3">3</button></span>
+      <span class="panel-chip legend"><span id="legLabel" class="muted"></span><span><div class="ramp" id="ramp"></div><div class="ticks" id="ticks"></div></span></span>
+    </div>
+    <div class="overlay bottom">
+      <span class="panel-chip" style="display:flex;gap:10px;align-items:center;flex:1">
+        <button id="play">▶</button>
+        <input type="range" id="time" min="0" max="1343" value="0">
+        <span id="clock"></span>
+      </span>
+    </div>
+  </div>
+  <aside>
+    <div class="card"><h2>Findings <span class="tag" id="fcount"></span></h2><div id="findings"></div></div>
+    <div class="card" id="roomCard"><h2 id="roomTitle">Select a room</h2><div id="roomBody" class="muted">Click a room in the model or a finding.</div></div>
+  </aside>
+</main>
+<footer>Geometry: IFC4 renovation design model of Building 308. Design airflows: DS/EN 16798-1 cat. II (0.7 L/s·m² + 7 L/s·person), as in the project's MEP design. Weather: Copenhagen-Kastrup TMYx. Sensor data are simulated with a physics model and contain planted faults to test the diagnostics.</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
+<script>
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const S = {period:'winter', metric:'co2', storey:'all', i:0, playing:false, room:null, data:{}, rooms:null, findings:[], summary:null};
+const fmtTime = (t0, i) => { const d = new Date(new Date(t0).getTime() + i*15*60000);
+  return d.toLocaleString('en-GB',{weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}); };
+
+async function load(){
+  const j = p => fetch(p).then(r => r.json());
+  [S.rooms, S.findings, S.summary, S.data.winter, S.data.summer] = await Promise.all(
+    [j('data/rooms.json'), j('data/findings.json'), j('data/summary.json'), j('data/series_winter.json'), j('data/series_summer.json')]);
+  kpis(); renderFindings(); initGL(); setTime(S.data[S.period].n > 500 ? 4*24*1+40 : 0);
+}
+
+// ---------------- KPIs
+function kpis(){
+  const s = S.summary, p = s.promise;
+  const kept = Object.values(S.rooms).filter(r => Object.values(r.promise.verdict).every(v => v.co2_kept && v.t_kept)).length;
+  const items = [
+    [s.rooms_monitored, 'rooms twinned from IFC'],
+    [`${kept}/${s.rooms_monitored}`, 'rooms keep their design promise (both seasons)'],
+    [`${p.winter.co2_kept}/${p.winter.rooms}`, 'keep the CO₂ promise (winter)'],
+    [s.building_faults, `building faults diagnosed · ${s.false_alarms} false alarms`],
+    [`${Math.round(s.ach.median_abs_err*100)} %`, 'airflow from CO₂ decay vs truth (median error)'],
+    [`${(s.completeness*100).toFixed(1)} %`, `data completeness · ${s.spikes_removed} spikes removed`]];
+  document.getElementById('kpis').innerHTML = items.map(([v,l]) => `<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('');
+}
+
+// ---------------- colour scales
+function lerpHex(a, b, t){ const pa=parseInt(a.slice(1),16), pb=parseInt(b.slice(1),16);
+  const c = [16,8,0].map(s => Math.round(((pa>>s)&255)*(1-t) + ((pb>>s)&255)*t)); return `rgb(${c.join(',')})`; }
+function seqColor(t){ const st=[0,1,2,3,4,5].map(i=>css(`--seq-${i}`)); t=Math.max(0,Math.min(1,t)); const x=t*5, i=Math.min(4,Math.floor(x)); return lerpHex(st[i], st[i+1], x-i); }
+function divColor(t){ t=Math.max(-1,Math.min(1,t)); return t<0 ? lerpHex(css('--div-mid'), css('--div-cold'), -t) : lerpHex(css('--div-mid'), css('--div-warm'), t); }
+const SCALE = {
+  co2: {label:'CO₂ ppm (cat. I/II/III limits)', f:v => seqColor((v-420)/1100), ticks:['420','970','1220','1520+'], grad:()=>`linear-gradient(90deg,${[0,.2,.4,.6,.8,1].map(seqColor).join(',')})`},
+  t:   {label:'Temperature °C vs cat. II band', f:v => divColor((v - mid())/2.5), ticks:()=>{const m=mid();return [(m-2.5).toFixed(1), m.toFixed(1), (m+2.5).toFixed(1)]}, grad:()=>`linear-gradient(90deg,${divColor(-1)},${divColor(0)},${divColor(1)})`},
+  q:   {label:'Airflow, % of design', f:v => seqColor(v/100), ticks:['0','50','100 %'], grad:()=>`linear-gradient(90deg,${[0,.25,.5,.75,1].map(seqColor).join(',')})`},
+  occ: {label:'Occupants / design occupants', f:v => seqColor(v), ticks:['0','50','100 %'], grad:()=>`linear-gradient(90deg,${[0,.25,.5,.75,1].map(seqColor).join(',')})`},
+};
+const mid = () => S.period==='winter' ? 22 : 24.5;
+function legend(){ const s=SCALE[S.metric]; document.getElementById('legLabel').textContent=s.label;
+  document.getElementById('ramp').style.background=s.grad();
+  const t = typeof s.ticks==='function' ? s.ticks() : s.ticks; document.getElementById('ticks').innerHTML=t.map(x=>`<span>${x}</span>`).join(''); }
+function value(room, i){
+  const sr = S.data[S.period].rooms[room]; if(!sr) return null; const d = S.rooms[room];
+  if(S.metric==='co2') return sr.co2[i];
+  if(S.metric==='t') return sr.t[i]==null?null:sr.t[i]/10;
+  if(S.metric==='q') return sr.q[i]==null?null:100*sr.q[i]/d.q_design_ls;
+  return sr.occ[i]==null?null:sr.occ[i]/d.persons;
+}
+
+// ---------------- 3D
+const EXPLODE = 7;   // m of extra gap between storeys in the exploded view
+let plates = [];
+let scene, camera, renderer, controls, roomMeshes = {}, ctx = [], ray = new THREE.Raycaster(), mouse = new THREE.Vector2();
+function initGL(){
+  const cv = document.getElementById('gl');
+  renderer = new THREE.WebGLRenderer({canvas:cv, antialias:true, preserveDrawingBuffer:true});
+  renderer.setPixelRatio(Math.min(2, devicePixelRatio));
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(35, 1, 0.5, 2000);
+  controls = new THREE.OrbitControls(camera, cv); controls.enableDamping = true;
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 0.9));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.6); sun.position.set(-60, 120, 80); scene.add(sun);
+  new THREE.GLTFLoader().load('building.glb?v=' + Date.now().toString(36).slice(0,5), g => {
+    const root = g.scene; root.rotation.x = -Math.PI/2;           // IFC is Z-up
+    const box = new THREE.Box3().setFromObject(root), c = box.getCenter(new THREE.Vector3());
+    root.position.sub(c); root.position.y += (box.max.y-box.min.y)/2;
+    root.traverse(o => {
+      if(!o.isMesh) return;
+      const nm = [o.name, o.parent?.name].map(s => /^R_(\d+)_(\d+)/.exec(s||'')).find(Boolean);
+      const id = nm ? nm[1] + '.' + nm[2] : null;
+      if(id && S.rooms[id]){
+        o.material = new THREE.MeshStandardMaterial({color:0x888888, roughness:.7, metalness:0, side:THREE.DoubleSide, flatShading:true});
+        o.geometry.computeVertexNormals(); o.userData.z0 = o.position.z;
+        o.userData.room = id; roomMeshes[id] = o;
+        const edges = new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry, 30), new THREE.LineBasicMaterial({color:0x000000, transparent:true, opacity:.25}));
+        o.add(edges);
+      } else if(id){
+        o.material = new THREE.MeshStandardMaterial({color:0x777770, transparent:true, opacity:0.08, depthWrite:false}); ctx.push(o);
+      } else {
+        o.material = new THREE.MeshStandardMaterial({color:0x9a988f, transparent:true, opacity:0.16, depthWrite:false}); ctx.push(o);
+      }
+    });
+    scene.add(root); ctx.forEach(o => o.visible = false);
+    // one translucent plate per storey (from its rooms' footprint), exploded with the rooms
+    const byStorey = {}; Object.values(roomMeshes).forEach(m => { m.geometry.computeBoundingBox(); const b = m.geometry.boundingBox.clone(); const st = S.rooms[m.userData.room].storey;
+      (byStorey[st] = byStorey[st] || new THREE.Box3()).union(b); });
+    plates = Object.entries(byStorey).map(([st, b]) => { const g = new THREE.BoxGeometry(b.max.x-b.min.x+4, b.max.y-b.min.y+4, 0.25);
+      const p = new THREE.Mesh(g, new THREE.MeshStandardMaterial({color:0x9a988f, transparent:true, opacity:.18, depthWrite:false}));
+      p.position.set((b.min.x+b.max.x)/2, (b.min.y+b.max.y)/2, b.min.z - 0.2); p.userData = {st, z0:b.min.z - 0.2}; root.children[0] ? root.add(p) : root.add(p); return p; });
+    const size = box.getSize(new THREE.Vector3()).length() + 3*EXPLODE;
+    camera.position.set(size*0.78, size*0.82, size*0.95); controls.target.set(0, 10, 0); controls.update();
+    paint(); resize(); animate(); window.Twin.ready = true;
+  });
+  addEventListener('resize', resize);
+  cv.addEventListener('mousemove', e => hover(e)); cv.addEventListener('click', e => { const id = pick(e); if(id) selectRoom(id); });
+}
+function resize(){ const v = document.getElementById('viewer'); renderer.setSize(v.clientWidth, v.clientHeight, false); camera.aspect = v.clientWidth/v.clientHeight; camera.updateProjectionMatrix(); }
+function animate(){ requestAnimationFrame(animate); controls.update(); renderer.setClearColor(css('--surface')); renderer.render(scene, camera); }
+function pick(e){ const r = e.target.getBoundingClientRect(); mouse.set(((e.clientX-r.left)/r.width)*2-1, -((e.clientY-r.top)/r.height)*2+1);
+  ray.setFromCamera(mouse, camera); const hit = ray.intersectObjects(Object.values(roomMeshes).filter(m => m.visible), false)[0]; return hit ? hit.object.userData.room : null; }
+function hover(e){ const id = pick(e), tip = document.getElementById('tip');
+  if(!id){ tip.style.display='none'; return; } const d = S.rooms[id], v = value(id, S.i);
+  const unit = {co2:' ppm', t:' °C', q:' % of design', occ:''}[S.metric];
+  const shown = v==null ? 'no data' : S.metric==='occ' ? `${Math.round(v*d.persons)} / ${d.persons} people` : `${S.metric==='t'?v.toFixed(1):Math.round(v)}${unit}`;
+  tip.innerHTML = `<b>${id}</b> · ${d.kind}<br>${shown}`; const r = e.target.getBoundingClientRect();
+  tip.style.left = (e.clientX - r.left + 14)+'px'; tip.style.top = (e.clientY - r.top + 10)+'px'; tip.style.display='block'; }
+function paint(){
+  for(const [id, m] of Object.entries(roomMeshes)){
+    const v = value(id, S.i), d = S.rooms[id];
+    m.visible = S.storey==='all' || d.storey===S.storey;
+    m.position.z = (m.userData.z0||0) + (S.storey==='all' ? (+d.storey) * EXPLODE : 0);
+    m.material.color.set(v==null ? css('--muted') : SCALE[S.metric].f(v));
+    const dark = getComputedStyle(document.documentElement).colorScheme === 'dark';
+    m.material.emissive.set(v==null ? 0x000000 : SCALE[S.metric].f(v)); m.material.emissiveIntensity = (dark ? .35 : 0) + (id===S.room ? .5 : 0);
+    m.scale.setScalar(1);
+  }
+  plates.forEach(p => { p.visible = S.storey==='all' || p.userData.st===S.storey; p.position.z = p.userData.z0 + (S.storey==='all' ? (+p.userData.st)*EXPLODE : 0); });
+  legend();
+}
+
+// ---------------- time
+function setTime(i){ S.i = i; document.getElementById('time').value = i; document.getElementById('time').max = S.data[S.period].n-1;
+  document.getElementById('clock').textContent = fmtTime(S.data[S.period].t0, i); paint(); if(S.room) drawCharts(); }
+document.getElementById('time').oninput = e => setTime(+e.target.value);
+document.getElementById('play').onclick = () => { S.playing = !S.playing; document.getElementById('play').textContent = S.playing?'❚❚':'▶'; };
+setInterval(() => { if(S.playing) setTime((S.i+1) % S.data[S.period].n); }, 90);
+
+// ---------------- findings
+const ICON = {building:['critical','!'], sensor:['serious','~'], data:['warning','i']};
+function renderFindings(){
+  const list = S.findings.slice().sort((a,b)=> (a.category==='data') - (b.category==='data'));
+  document.getElementById('fcount').textContent = `${list.length} · ${S.summary.false_alarms} false alarms`;
+  document.getElementById('findings').innerHTML = list.map((f,k) => {
+    const [st, ch] = ICON[f.category];
+    const name = {airflow_insufficient:'Airflow not responding', co2_sensor_drift:'CO₂ sensor drifting', ahu_out_of_hours:'AHU running out of hours',
+      solar_gain_increase:'Solar shading not deploying', heating_no_setback:'Heating ignores night setback', flatline:'Sensor frozen', gateway_outage:'Gateway offline'}[f.type] || f.type;
+    return `<div class="find" data-k="${k}"><span class="ico" style="background:var(--${st})">${ch}</span><div>
+      <div class="t">${name} <span class="tag">· ${f.room.replace('storey:','storey ')} · ${f.period} · ${f.category==='data'?'data (QC)':f.category}</span></div>
+      <div class="e">${f.evidence}</div><div class="tag">→ ${f.diagnosis}</div></div></div>`; }).join('');
+  document.querySelectorAll('.find').forEach(el => el.onclick = () => {
+    const f = list[+el.dataset.k]; document.querySelectorAll('.find').forEach(x=>x.classList.remove('sel')); el.classList.add('sel');
+    setPeriod(f.period);
+    const rid = f.room.startsWith('storey:') ? Object.keys(S.rooms).find(r => S.rooms[r].storey===f.room.slice(7)) : f.room;
+    const t0 = new Date(S.data[f.period].t0).getTime(), ts = new Date(String(f.start).replace(' ','T')).getTime();
+    selectRoom(rid); setTime(Math.max(0, Math.min(S.data[f.period].n-1, Math.round((ts - t0)/9e5) + (f.type==='ahu_out_of_hours'?88:40))));
+  });
+}
+
+// ---------------- room card + charts
+function selectRoom(id){ S.room = id; const d = S.rooms[id], p = d.promise, k = d.kpi[S.period] || {};
+  document.getElementById('roomTitle').innerHTML = `Room ${id} <span class="tag">· ${d.kind} · storey ${d.storey} · ${d.area_m2} m² · ${d.persons} people</span>`;
+  const v = p.verdict[S.period] || {}; const pill = (ok, txt) => `<span class="pill"><span class="dot" style="background:var(--${ok?'good':'critical'})"></span>${ok?'✓':'✗'} ${txt}</span>`;
+  document.getElementById('roomBody').innerHTML = `
+    <div class="promise">
+      <div class="pbox"><div class="k">Design promise</div><div class="v">${p.co2_design_ppm} ppm</div><div class="muted">at ${d.persons} people and ${d.q_design_ls} L/s (EN 16798-1 cat. II)</div></div>
+      <div class="pbox"><div class="k">Operation (${S.period})</div><div class="v">${k.co2_p95 ?? '–'} ppm</div><div class="muted">CO₂ P95 when occupied · ${Math.round((k.t_within_II??0)*100)} % of hours in cat. II temp.</div></div>
+    </div>
+    <div class="verdict">${pill(v.co2_kept,'CO₂ promise')}${pill(v.t_kept, S.period==='summer'?'overheating ≤ 100 h/yr':'temperature in cat. II')}
+      ${d.findings.length?`<span class="pill"><span class="dot" style="background:var(--critical)"></span>${d.findings.join(', ')}</span>`:''}</div>
+    <div class="ctitle"><span>CO₂ (ppm)</span><span class="muted">dashed: promise · cat. II limit</span></div><svg class="chart" id="c1"></svg>
+    <div class="ctitle"><span>Temperature (°C)</span><span class="muted">band: cat. II</span></div><svg class="chart" id="c2"></svg>
+    <div class="ctitle"><span>Airflow (L/s)</span><span class="muted">dashed: design · min</span></div><svg class="chart" id="c3"></svg>`;
+  drawCharts(); paint(); }
+function drawCharts(){ const id = S.room, sr = S.data[S.period].rooms[id], d = S.rooms[id]; if(!sr) return;
+  line('c1', sr.co2, v=>v, [d.promise.co2_design_ppm, 420+800], null, [380, Math.max(1300, ...sr.co2.filter(x=>x!=null))]);
+  const band = S.period==='winter'?[20,24]:[23,26];
+  line('c2', sr.t, v=>v/10, [], band, [Math.min(18, ...sr.t.filter(x=>x!=null).map(x=>x/10)), Math.max(28, ...sr.t.filter(x=>x!=null).map(x=>x/10))]);
+  line('c3', sr.q, v=>v, [d.q_design_ls, d.q_min_ls], null, [0, d.q_design_ls*1.25]); }
+function line(svgId, arr, f, refs, band, [lo, hi]){
+  const svg = document.getElementById(svgId), W = svg.clientWidth || 360, H = 118, L = 34, R = 6, T = 6, B = 16, n = arr.length;
+  const x = i => L + (W-L-R)*i/(n-1), y = v => T + (H-T-B)*(1-(v-lo)/(hi-lo));
+  let p = '', pen = false; arr.forEach((v,i) => { if(v==null){pen=false;return;} p += (pen?'L':'M') + x(i).toFixed(1) + ' ' + y(f(v)).toFixed(1); pen = true; });
+  const days = []; for(let i=0;i<n;i+=96) days.push(i);
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.innerHTML = `
+    ${band?`<rect x="${L}" y="${y(band[1])}" width="${W-L-R}" height="${y(band[0])-y(band[1])}" fill="var(--good)" opacity=".10"/>`:''}
+    ${days.map(i=>`<line x1="${x(i)}" x2="${x(i)}" y1="${T}" y2="${H-B}" stroke="var(--line)"/>`).join('')}
+    ${[lo,(lo+hi)/2,hi].map(v=>`<text x="${L-4}" y="${y(v)+3}" text-anchor="end">${Math.round(v)}</text>`).join('')}
+    ${refs.map(v=>`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--ink-2)" stroke-dasharray="4 3" opacity=".7"/>`).join('')}
+    <path d="${p}" fill="none" stroke="var(--s1)" stroke-width="1.6" stroke-linejoin="round"/>
+    <line x1="${x(S.i)}" x2="${x(S.i)}" y1="${T}" y2="${H-B}" stroke="var(--ink)" stroke-width="1.2"/>
+    ${days.map((i,k)=>k%2?'':`<text x="${x(i)+2}" y="${H-4}">${new Date(new Date(S.data[S.period].t0).getTime()+i*9e5).toLocaleDateString('en-GB',{day:'2-digit',month:'short'})}</text>`).join('')}
+    <rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent" class="hit"/>`;
+  svg.querySelector('.hit').onmousemove = e => { const r = svg.getBoundingClientRect(); const i = Math.round((e.clientX - r.left - L*r.width/W)/((W-L-R)*r.width/W)*(n-1));
+    if(i>=0 && i<n){ const v = arr[i]; svg.querySelector('title')?.remove(); const tt = document.createElementNS('http://www.w3.org/2000/svg','title');
+      tt.textContent = `${fmtTime(S.data[S.period].t0, i)}: ${v==null?'no data':(+f(v)).toFixed(svgId==='c2'?1:0)}`; svg.appendChild(tt); } };
+  svg.querySelector('.hit').onclick = e => { const r = svg.getBoundingClientRect(); setTime(Math.max(0,Math.min(n-1,Math.round((e.clientX - r.left - L*r.width/W)/((W-L-R)*r.width/W)*(n-1))))); };
+}
+
+// ---------------- controls
+function setPeriod(p){ S.period = p; document.querySelectorAll('#periodSeg button').forEach(b=>b.classList.toggle('on', b.dataset.p===p)); if(S.room) selectRoom(S.room); setTime(Math.min(S.i, S.data[p].n-1)); }
+document.querySelectorAll('#periodSeg button').forEach(b => b.onclick = () => setPeriod(b.dataset.p));
+document.querySelectorAll('#metricSeg button').forEach(b => b.onclick = () => { S.metric = b.dataset.m; document.querySelectorAll('#metricSeg button').forEach(x=>x.classList.toggle('on', x===b)); paint(); });
+document.querySelectorAll('#storeySeg button').forEach(b => b.onclick = () => { S.storey = b.dataset.s; document.querySelectorAll('#storeySeg button').forEach(x=>x.classList.toggle('on', x===b));
+  ctx.forEach(o => o.visible = S.storey!=='all'); paint(); });
+document.getElementById('theme').onclick = () => { const r = document.documentElement; const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+  const cur = r.dataset.theme || (dark?'dark':'light'); r.dataset.theme = cur==='dark'?'light':'dark'; paint(); if(S.room) selectRoom(S.room); kpis(); };
+// automation hook (gallery screenshots / video frames)
+window.Twin = {ready:false, setTime, setPeriod, selectRoom,
+  setMetric: m => document.querySelector('#metricSeg [data-m=\x22'+m+'\x22]').click(),
+  setStorey: s => document.querySelector('#storeySeg [data-s=\x22'+s+'\x22]').click(),
+  orbit: (deg, dist=1, h=null) => { const t = controls.target, v = camera.position.clone().sub(t); const r = Math.hypot(v.x, v.z) * dist;
+    const a = Math.atan2(v.z, v.x) + deg*Math.PI/180; camera.position.set(t.x + r*Math.cos(a), h==null ? camera.position.y : h, t.z + r*Math.sin(a)); controls.update(); },
+  render: () => { controls.update(); renderer.render(scene, camera); }};
+const q = new URLSearchParams(location.search);
+load().then(() => { if(q.get('period')) setPeriod(q.get('period')); if(q.get('metric')) document.querySelector(`#metricSeg [data-m="${q.get('metric')}"]`)?.click();
+  if(q.get('room')) selectRoom(q.get('room')); if(q.get('t')) setTime(+q.get('t')); if(q.get('theme')) document.documentElement.dataset.theme = q.get('theme'); });
+</script>
+</body>
+</html>

@@ -1,0 +1,2066 @@
+{
+ "server": "indeklima-twin",
+ "tools": [
+  "building_overview",
+  "export_bcf",
+  "list_findings",
+  "list_rooms",
+  "query",
+  "room_promise",
+  "room_timeseries"
+ ],
+ "overview": {
+  "building": "Building 308 (renovation design model)",
+  "data": "SIMULATED sensor feed with planted faults",
+  "rooms_monitored": 37,
+  "promise": {
+   "winter": {
+    "co2_kept": 35,
+    "t_kept": 24,
+    "rooms": 37
+   },
+   "summer": {
+    "co2_kept": 37,
+    "t_kept": 18,
+    "rooms": 37
+   }
+  },
+  "findings": [
+   {
+    "rule": "R1",
+    "title": "Airflow not responding to demand",
+    "room": "2.03",
+    "period": "winter",
+    "category": "building"
+   },
+   {
+    "rule": "R2",
+    "title": "CO2 sensor drifting",
+    "room": "2.11",
+    "period": "winter",
+    "category": "sensor"
+   },
+   {
+    "rule": "R3",
+    "title": "AHU zone running out of hours",
+    "room": "storey:3",
+    "period": "winter",
+    "category": "building"
+   },
+   {
+    "rule": "R4",
+    "title": "Solar shading not deploying",
+    "room": "1.05",
+    "period": "summer",
+    "category": "building"
+   },
+   {
+    "rule": "R5",
+    "title": "Heating ignores night setback",
+    "room": "2.29",
+    "period": "winter",
+    "category": "building"
+   },
+   {
+    "rule": "QC",
+    "title": "Gateway offline (data)",
+    "room": "storey:2",
+    "period": "summer",
+    "category": "data"
+   },
+   {
+    "rule": "QC",
+    "title": "Sensor frozen (data)",
+    "room": "3.04",
+    "period": "summer",
+    "category": "data"
+   }
+  ],
+  "data_completeness": 0.9928,
+  "false_alarms_in_validation": 0,
+  "airflow_from_co2_decay_median_error": 0.0993
+ },
+ "broken": [
+  {
+   "room": "1.05",
+   "kind": "meeting",
+   "storey": "1",
+   "area_m2": 53.36,
+   "design_persons": 15,
+   "design_airflow_ls": 142.4,
+   "promised_co2_ppm": 968,
+   "measured_co2_p95_ppm": {
+    "summer": 949,
+    "winter": 920
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": [
+    "R4"
+   ]
+  },
+  {
+   "room": "1.07",
+   "kind": "atrium",
+   "storey": "1",
+   "area_m2": 169.68,
+   "design_persons": 11,
+   "design_airflow_ls": 195.8,
+   "promised_co2_ppm": 712,
+   "measured_co2_p95_ppm": {
+    "summer": 542,
+    "winter": 554
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": []
+  },
+  {
+   "room": "1.12",
+   "kind": "office",
+   "storey": "1",
+   "area_m2": 19.82,
+   "design_persons": 6,
+   "design_airflow_ls": 55.9,
+   "promised_co2_ppm": 978,
+   "measured_co2_p95_ppm": {
+    "summer": 897,
+    "winter": 975
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": []
+  },
+  {
+   "room": "1.14",
+   "kind": "office",
+   "storey": "1",
+   "area_m2": 20.35,
+   "design_persons": 6,
+   "design_airflow_ls": 56.2,
+   "promised_co2_ppm": 975,
+   "measured_co2_p95_ppm": {
+    "summer": 961,
+    "winter": 940
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.03",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 33.72,
+   "design_persons": 15,
+   "design_airflow_ls": 128.6,
+   "promised_co2_ppm": 1027,
+   "measured_co2_p95_ppm": {
+    "summer": 1009,
+    "winter": 2442
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": false
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": [
+    "R1"
+   ]
+  },
+  {
+   "room": "2.05",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 50.25,
+   "design_persons": 15,
+   "design_airflow_ls": 140.2,
+   "promised_co2_ppm": 976,
+   "measured_co2_p95_ppm": {
+    "summer": 923,
+    "winter": 937
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": true,
+    "winter": false
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.06",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 50.25,
+   "design_persons": 15,
+   "design_airflow_ls": 140.2,
+   "promised_co2_ppm": 976,
+   "measured_co2_p95_ppm": {
+    "summer": 960,
+    "winter": 970
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.07",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 50.25,
+   "design_persons": 15,
+   "design_airflow_ls": 140.2,
+   "promised_co2_ppm": 976,
+   "measured_co2_p95_ppm": {
+    "summer": 942,
+    "winter": 929
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.11",
+   "kind": "office",
+   "storey": "2",
+   "area_m2": 29.6,
+   "design_persons": 6,
+   "design_airflow_ls": 62.7,
+   "promised_co2_ppm": 918,
+   "measured_co2_p95_ppm": {
+    "summer": 920,
+    "winter": 1077
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": false
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": true
+   },
+   "open_findings": [
+    "R2"
+   ]
+  },
+  {
+   "room": "2.12",
+   "kind": "office",
+   "storey": "2",
+   "area_m2": 29.6,
+   "design_persons": 6,
+   "design_airflow_ls": 62.7,
+   "promised_co2_ppm": 918,
+   "measured_co2_p95_ppm": {
+    "summer": 854,
+    "winter": 905
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": true
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.14",
+   "kind": "office",
+   "storey": "2",
+   "area_m2": 29.59,
+   "design_persons": 6,
+   "design_airflow_ls": 62.7,
+   "promised_co2_ppm": 918,
+   "measured_co2_p95_ppm": {
+    "summer": 914,
+    "winter": 899
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": true
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.17",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 26.54,
+   "design_persons": 15,
+   "design_airflow_ls": 123.6,
+   "promised_co2_ppm": 1051,
+   "measured_co2_p95_ppm": {
+    "summer": 1003,
+    "winter": 991
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": true
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.18",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 27.41,
+   "design_persons": 15,
+   "design_airflow_ls": 124.2,
+   "promised_co2_ppm": 1048,
+   "measured_co2_p95_ppm": {
+    "summer": 1004,
+    "winter": 1016
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": true
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.19",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 28.23,
+   "design_persons": 15,
+   "design_airflow_ls": 124.8,
+   "promised_co2_ppm": 1045,
+   "measured_co2_p95_ppm": {
+    "summer": 1011,
+    "winter": 988
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": true
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.20",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 25.16,
+   "design_persons": 15,
+   "design_airflow_ls": 122.6,
+   "promised_co2_ppm": 1056,
+   "measured_co2_p95_ppm": {
+    "summer": 1029,
+    "winter": 1043
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.22",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 23.68,
+   "design_persons": 15,
+   "design_airflow_ls": 121.6,
+   "promised_co2_ppm": 1061,
+   "measured_co2_p95_ppm": {
+    "summer": 1047,
+    "winter": 1072
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.26",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 36.66,
+   "design_persons": 15,
+   "design_airflow_ls": 130.7,
+   "promised_co2_ppm": 1017,
+   "measured_co2_p95_ppm": {
+    "summer": 970,
+    "winter": 958
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": true
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.27",
+   "kind": "meeting",
+   "storey": "2",
+   "area_m2": 38.05,
+   "design_persons": 15,
+   "design_airflow_ls": 131.6,
+   "promised_co2_ppm": 1013,
+   "measured_co2_p95_ppm": {
+    "summer": 984,
+    "winter": 966
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": true
+   },
+   "open_findings": []
+  },
+  {
+   "room": "2.29",
+   "kind": "office",
+   "storey": "2",
+   "area_m2": 19.82,
+   "design_persons": 6,
+   "design_airflow_ls": 55.9,
+   "promised_co2_ppm": 978,
+   "measured_co2_p95_ppm": {
+    "summer": 965,
+    "winter": 932
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": [
+    "R5"
+   ]
+  },
+  {
+   "room": "2.31",
+   "kind": "office",
+   "storey": "2",
+   "area_m2": 20.35,
+   "design_persons": 6,
+   "design_airflow_ls": 56.2,
+   "promised_co2_ppm": 975,
+   "measured_co2_p95_ppm": {
+    "summer": 933,
+    "winter": 927
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": false,
+    "winter": false
+   },
+   "open_findings": []
+  },
+  {
+   "room": "3.03",
+   "kind": "multipurpose",
+   "storey": "3",
+   "area_m2": 108.82,
+   "design_persons": 27,
+   "design_airflow_ls": 265.2,
+   "promised_co2_ppm": 949,
+   "measured_co2_p95_ppm": {
+    "summer": 882,
+    "winter": 934
+   },
+   "co2_promise_kept": {
+    "summer": true,
+    "winter": true
+   },
+   "temperature_promise_kept": {
+    "summer": true,
+    "winter": false
+   },
+   "open_findings": [
+    "R3"
+   ]
+  }
+ ],
+ "promise": {
+  "room": "2.03",
+  "kind": "meeting",
+  "storey": "2",
+  "area_m2": 33.72,
+  "design_persons": 15,
+  "design_airflow_ls": 128.6,
+  "promised_co2_ppm": 1027,
+  "measured_co2_p95_ppm": {
+   "summer": 1009,
+   "winter": 2442
+  },
+  "co2_promise_kept": {
+   "summer": true,
+   "winter": false
+  },
+  "temperature_promise_kept": {
+   "summer": false,
+   "winter": false
+  },
+  "open_findings": [
+   "R1"
+  ],
+  "kpi": {
+   "summer": {
+    "co2_within_II": 1.0,
+    "t_within_II": 0.646,
+    "co2_p95": 1009,
+    "hours_above_26": 4.8,
+    "hours_above_27": 2.6,
+    "too_warm_II": 0.148,
+    "too_cool_II": 0.20600000000000002,
+    "occupied_h": 32.0
+   },
+   "winter": {
+    "co2_within_II": 0.678,
+    "t_within_II": 0.897,
+    "co2_p95": 2442,
+    "hours_above_26": 0.0,
+    "hours_above_27": 0.0,
+    "too_warm_II": 0.031,
+    "too_cool_II": 0.07200000000000001,
+    "occupied_h": 38.1
+   }
+  },
+  "ventilation_from_co2_decay": {
+   "n_windows": 28.0,
+   "ach_co2_median": 0.76,
+   "ach_vav_median": 0.73,
+   "ratio_median": 1.01,
+   "ach_design": 3.95
+  },
+  "explanations": [
+   {
+    "title": "Airflow not responding to demand",
+    "evidence": "CO2 up to 2783 ppm while airflow stayed at 24 L/s (min 24, design 129 L/s) on 7 days",
+    "diagnosis": "VAV damper / actuator not responding to CO2 demand",
+    "period": "winter",
+    "since": "2026-02-05"
+   },
+   {
+    "title": "Gateway offline (data)",
+    "evidence": "gateway outage for 6.0 h on 22 rooms",
+    "diagnosis": "data issue: not reported as a building fault",
+    "period": "summer",
+    "since": "2026-06-24 09:00:00"
+   }
+  ]
+ },
+ "findings": [
+  {
+   "rule": "R1",
+   "title": "Airflow not responding to demand",
+   "room": "2.03",
+   "period": "winter",
+   "category": "building",
+   "since": "2026-02-05",
+   "evidence": "CO2 up to 2783 ppm while airflow stayed at 24 L/s (min 24, design 129 L/s) on 7 days",
+   "diagnosis": "VAV damper / actuator not responding to CO2 demand"
+  },
+  {
+   "rule": "R3",
+   "title": "AHU zone running out of hours",
+   "room": "storey:3",
+   "period": "winter",
+   "category": "building",
+   "since": "2026-02-09",
+   "evidence": "100 % of storey-3 rooms ventilated at 284 L/s median with nobody in, 7 nights; ~96 kWh fan energy wasted",
+   "diagnosis": "AHU zone schedule overridden (manual / BMS time program)"
+  },
+  {
+   "rule": "R4",
+   "title": "Solar shading not deploying",
+   "room": "1.05",
+   "period": "summer",
+   "category": "building",
+   "since": "2026-06-22",
+   "evidence": "effective solar aperture (inverse energy balance) rose from 1.1 to 3.4 m2 (x3.2) from 2026-06-22; peer rooms unchanged (median x0.53)",
+   "diagnosis": "external solar shading not deploying (motor / control / wind lock)"
+  },
+  {
+   "rule": "R5",
+   "title": "Heating ignores night setback",
+   "room": "2.29",
+   "period": "winter",
+   "category": "building",
+   "since": "2026-02-08",
+   "evidence": "night temperature 29.6 C on 8 nights (setback 19 C; other rooms 20.8 C the same nights)",
+   "diagnosis": "radiator valve / thermostat stuck open"
+  }
+ ],
+ "ts": {
+  "room": "2.03",
+  "period": "winter",
+  "resolution_min": 120,
+  "columns": [
+   "time",
+   "co2_ppm",
+   "temp_c",
+   "rh_pct",
+   "airflow_ls",
+   "occupants"
+  ],
+  "rows": [
+   [
+    "2026-02-02 00:00:00",
+    445.0,
+    20.7,
+    31.8,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-02 02:00:00",
+    440.0,
+    20.2,
+    32.6,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-02 04:00:00",
+    435.0,
+    19.8,
+    33.1,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-02 06:00:00",
+    427.0,
+    19.9,
+    31.7,
+    23.7,
+    0.0
+   ],
+   [
+    "2026-02-02 08:00:00",
+    519.0,
+    20.5,
+    30.6,
+    32.9,
+    2.0
+   ],
+   [
+    "2026-02-02 10:00:00",
+    777.0,
+    21.4,
+    32.1,
+    88.0,
+    6.0
+   ],
+   [
+    "2026-02-02 12:00:00",
+    933.0,
+    22.8,
+    30.7,
+    120.2,
+    13.3
+   ],
+   [
+    "2026-02-02 14:00:00",
+    666.0,
+    24.3,
+    25.1,
+    56.8,
+    2.5
+   ],
+   [
+    "2026-02-02 16:00:00",
+    466.0,
+    23.7,
+    24.3,
+    23.4,
+    0.0
+   ],
+   [
+    "2026-02-02 18:00:00",
+    438.0,
+    22.7,
+    24.7,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-02 20:00:00",
+    430.0,
+    21.9,
+    26.2,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-02 22:00:00",
+    429.0,
+    21.2,
+    27.7,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-03 00:00:00",
+    426.0,
+    20.6,
+    29.1,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-03 02:00:00",
+    428.0,
+    20.1,
+    29.9,
+    3.3,
+    0.1
+   ],
+   [
+    "2026-02-03 04:00:00",
+    428.0,
+    19.7,
+    31.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-03 06:00:00",
+    425.0,
+    19.9,
+    29.8,
+    23.6,
+    0.0
+   ],
+   [
+    "2026-02-03 08:00:00",
+    709.0,
+    20.7,
+    31.7,
+    73.6,
+    6.8
+   ],
+   [
+    "2026-02-03 10:00:00",
+    642.0,
+    21.3,
+    30.3,
+    48.7,
+    1.8
+   ],
+   [
+    "2026-02-03 12:00:00",
+    467.0,
+    21.3,
+    27.8,
+    23.6,
+    0.0
+   ],
+   [
+    "2026-02-03 14:00:00",
+    695.0,
+    22.2,
+    28.7,
+    72.4,
+    6.3
+   ],
+   [
+    "2026-02-03 16:00:00",
+    517.0,
+    22.1,
+    26.4,
+    23.8,
+    0.0
+   ],
+   [
+    "2026-02-03 18:00:00",
+    457.0,
+    21.3,
+    27.3,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-03 20:00:00",
+    450.0,
+    20.6,
+    28.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-03 22:00:00",
+    445.0,
+    20.0,
+    28.8,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-04 00:00:00",
+    435.0,
+    19.4,
+    29.1,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-04 02:00:00",
+    433.0,
+    18.9,
+    29.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-04 04:00:00",
+    437.0,
+    18.7,
+    28.9,
+    3.3,
+    0.1
+   ],
+   [
+    "2026-02-04 06:00:00",
+    427.0,
+    19.3,
+    26.7,
+    23.6,
+    0.0
+   ],
+   [
+    "2026-02-04 08:00:00",
+    522.0,
+    20.2,
+    25.4,
+    33.4,
+    2.0
+   ],
+   [
+    "2026-02-04 10:00:00",
+    673.0,
+    20.9,
+    27.0,
+    52.1,
+    3.8
+   ],
+   [
+    "2026-02-04 12:00:00",
+    912.0,
+    22.2,
+    28.1,
+    117.4,
+    11.8
+   ],
+   [
+    "2026-02-04 14:00:00",
+    710.0,
+    24.0,
+    22.3,
+    63.4,
+    3.5
+   ],
+   [
+    "2026-02-04 16:00:00",
+    470.0,
+    23.5,
+    19.9,
+    23.6,
+    0.0
+   ],
+   [
+    "2026-02-04 18:00:00",
+    440.0,
+    22.4,
+    21.8,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-04 20:00:00",
+    433.0,
+    21.5,
+    22.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-04 22:00:00",
+    434.0,
+    20.6,
+    23.8,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-05 00:00:00",
+    425.0,
+    19.9,
+    25.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-05 02:00:00",
+    427.0,
+    19.2,
+    26.1,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-05 04:00:00",
+    426.0,
+    18.7,
+    26.6,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-05 06:00:00",
+    419.0,
+    19.3,
+    25.4,
+    23.5,
+    0.0
+   ],
+   [
+    "2026-02-05 08:00:00",
+    413.0,
+    20.1,
+    24.2,
+    23.7,
+    0.0
+   ],
+   [
+    "2026-02-05 10:00:00",
+    617.0,
+    20.6,
+    26.7,
+    23.5,
+    4.5
+   ],
+   [
+    "2026-02-05 12:00:00",
+    1853.0,
+    22.2,
+    43.9,
+    23.7,
+    6.0
+   ],
+   [
+    "2026-02-05 14:00:00",
+    1047.0,
+    22.1,
+    35.7,
+    23.5,
+    2.5
+   ],
+   [
+    "2026-02-05 16:00:00",
+    813.0,
+    21.7,
+    34.0,
+    23.4,
+    0.0
+   ],
+   [
+    "2026-02-05 18:00:00",
+    581.0,
+    20.8,
+    32.1,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-05 20:00:00",
+    554.0,
+    20.2,
+    33.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-05 22:00:00",
+    529.0,
+    19.6,
+    34.7,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-06 00:00:00",
+    509.0,
+    19.2,
+    36.3,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-06 02:00:00",
+    494.0,
+    18.9,
+    37.7,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-06 04:00:00",
+    476.0,
+    18.7,
+    38.2,
+    3.3,
+    0.1
+   ],
+   [
+    "2026-02-06 06:00:00",
+    445.0,
+    19.4,
+    38.0,
+    23.7,
+    0.0
+   ],
+   [
+    "2026-02-06 08:00:00",
+    424.0,
+    20.1,
+    37.2,
+    23.5,
+    0.0
+   ],
+   [
+    "2026-02-06 10:00:00",
+    544.0,
+    20.5,
+    38.3,
+    23.6,
+    2.0
+   ],
+   [
+    "2026-02-06 12:00:00",
+    2041.0,
+    22.0,
+    54.9,
+    23.6,
+    13.5
+   ],
+   [
+    "2026-02-06 14:00:00",
+    2419.0,
+    23.5,
+    55.0,
+    23.5,
+    5.4
+   ],
+   [
+    "2026-02-06 16:00:00",
+    1046.0,
+    22.9,
+    38.8,
+    23.7,
+    0.0
+   ],
+   [
+    "2026-02-06 18:00:00",
+    662.0,
+    22.0,
+    35.4,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-06 20:00:00",
+    625.0,
+    21.3,
+    36.6,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-06 22:00:00",
+    586.0,
+    20.7,
+    37.3,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-07 00:00:00",
+    554.0,
+    20.1,
+    37.9,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-07 02:00:00",
+    528.0,
+    19.6,
+    37.8,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-07 04:00:00",
+    513.0,
+    19.1,
+    38.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-07 06:00:00",
+    492.0,
+    18.8,
+    38.8,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-07 08:00:00",
+    480.0,
+    18.8,
+    37.9,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-07 10:00:00",
+    471.0,
+    19.1,
+    36.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-07 12:00:00",
+    460.0,
+    19.7,
+    35.1,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-07 14:00:00",
+    448.0,
+    20.3,
+    33.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-07 16:00:00",
+    445.0,
+    20.2,
+    33.1,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-07 18:00:00",
+    441.0,
+    19.7,
+    34.4,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-07 20:00:00",
+    436.0,
+    19.3,
+    35.4,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-07 22:00:00",
+    440.0,
+    18.9,
+    36.0,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-08 00:00:00",
+    427.0,
+    18.8,
+    36.5,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-08 02:00:00",
+    428.0,
+    18.7,
+    36.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-08 04:00:00",
+    425.0,
+    18.7,
+    35.3,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-08 06:00:00",
+    423.0,
+    18.7,
+    35.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-08 08:00:00",
+    420.0,
+    18.7,
+    34.2,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-08 10:00:00",
+    418.0,
+    18.7,
+    34.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-08 12:00:00",
+    424.0,
+    18.9,
+    34.3,
+    3.3,
+    0.1
+   ],
+   [
+    "2026-02-08 14:00:00",
+    420.0,
+    19.0,
+    34.4,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-08 16:00:00",
+    416.0,
+    18.9,
+    34.9,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-08 18:00:00",
+    418.0,
+    18.8,
+    35.7,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-08 20:00:00",
+    417.0,
+    18.7,
+    35.9,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-08 22:00:00",
+    416.0,
+    18.7,
+    35.6,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-09 00:00:00",
+    421.0,
+    18.7,
+    35.9,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-09 02:00:00",
+    417.0,
+    18.7,
+    36.4,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-09 04:00:00",
+    417.0,
+    18.7,
+    36.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-09 06:00:00",
+    418.0,
+    19.4,
+    35.5,
+    23.7,
+    0.0
+   ],
+   [
+    "2026-02-09 08:00:00",
+    417.0,
+    20.1,
+    34.2,
+    23.5,
+    0.0
+   ],
+   [
+    "2026-02-09 10:00:00",
+    658.0,
+    20.8,
+    36.4,
+    23.6,
+    4.0
+   ],
+   [
+    "2026-02-09 12:00:00",
+    1329.0,
+    21.9,
+    42.9,
+    23.5,
+    5.8
+   ],
+   [
+    "2026-02-09 14:00:00",
+    2260.0,
+    24.1,
+    47.6,
+    23.6,
+    9.5
+   ],
+   [
+    "2026-02-09 16:00:00",
+    1316.0,
+    24.3,
+    34.1,
+    23.8,
+    0.0
+   ],
+   [
+    "2026-02-09 18:00:00",
+    769.0,
+    23.2,
+    30.1,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-09 20:00:00",
+    710.0,
+    22.3,
+    30.9,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-09 22:00:00",
+    657.0,
+    21.5,
+    32.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-10 00:00:00",
+    612.0,
+    20.7,
+    32.9,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-10 02:00:00",
+    578.0,
+    20.1,
+    33.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-10 04:00:00",
+    546.0,
+    19.4,
+    34.4,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-10 06:00:00",
+    480.0,
+    19.7,
+    30.9,
+    23.5,
+    0.0
+   ],
+   [
+    "2026-02-10 08:00:00",
+    539.0,
+    20.2,
+    29.7,
+    23.5,
+    3.4
+   ],
+   [
+    "2026-02-10 10:00:00",
+    1351.0,
+    21.5,
+    41.8,
+    23.5,
+    3.3
+   ],
+   [
+    "2026-02-10 12:00:00",
+    906.0,
+    21.7,
+    35.0,
+    23.6,
+    3.5
+   ],
+   [
+    "2026-02-10 14:00:00",
+    1160.0,
+    22.5,
+    38.1,
+    23.4,
+    1.8
+   ],
+   [
+    "2026-02-10 16:00:00",
+    620.0,
+    22.0,
+    30.6,
+    23.4,
+    0.0
+   ],
+   [
+    "2026-02-10 18:00:00",
+    492.0,
+    21.1,
+    30.2,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-10 20:00:00",
+    478.0,
+    20.4,
+    31.0,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-10 22:00:00",
+    470.0,
+    19.8,
+    32.0,
+    3.2,
+    0.1
+   ],
+   [
+    "2026-02-11 00:00:00",
+    463.0,
+    19.2,
+    32.9,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-11 02:00:00",
+    455.0,
+    18.8,
+    33.6,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-11 04:00:00",
+    446.0,
+    18.7,
+    33.8,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-11 06:00:00",
+    433.0,
+    19.3,
+    31.7,
+    23.4,
+    0.0
+   ],
+   [
+    "2026-02-11 08:00:00",
+    738.0,
+    20.3,
+    35.3,
+    23.7,
+    6.0
+   ],
+   [
+    "2026-02-11 10:00:00",
+    1119.0,
+    21.2,
+    38.7,
+    23.6,
+    0.0
+   ],
+   [
+    "2026-02-11 12:00:00",
+    586.0,
+    21.2,
+    31.8,
+    23.4,
+    0.0
+   ],
+   [
+    "2026-02-11 14:00:00",
+    1179.0,
+    22.2,
+    37.4,
+    23.5,
+    10.0
+   ],
+   [
+    "2026-02-11 16:00:00",
+    1472.0,
+    22.9,
+    36.9,
+    23.5,
+    0.0
+   ],
+   [
+    "2026-02-11 18:00:00",
+    852.0,
+    21.9,
+    28.7,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-11 20:00:00",
+    767.0,
+    21.0,
+    29.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-11 22:00:00",
+    702.0,
+    20.2,
+    30.1,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-12 00:00:00",
+    658.0,
+    19.6,
+    30.8,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-12 02:00:00",
+    614.0,
+    19.0,
+    31.4,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-12 04:00:00",
+    576.0,
+    18.7,
+    31.5,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-12 06:00:00",
+    498.0,
+    19.3,
+    27.8,
+    23.5,
+    0.0
+   ],
+   [
+    "2026-02-12 08:00:00",
+    435.0,
+    20.0,
+    22.7,
+    23.7,
+    0.0
+   ],
+   [
+    "2026-02-12 10:00:00",
+    514.0,
+    20.6,
+    20.7,
+    23.4,
+    3.0
+   ],
+   [
+    "2026-02-12 12:00:00",
+    1658.0,
+    22.2,
+    33.7,
+    23.3,
+    6.0
+   ],
+   [
+    "2026-02-12 14:00:00",
+    1309.0,
+    23.5,
+    25.4,
+    23.6,
+    4.0
+   ],
+   [
+    "2026-02-12 16:00:00",
+    861.0,
+    23.3,
+    19.6,
+    23.5,
+    0.1
+   ],
+   [
+    "2026-02-12 18:00:00",
+    602.0,
+    22.1,
+    17.1,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-12 20:00:00",
+    561.0,
+    21.1,
+    17.1,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-12 22:00:00",
+    535.0,
+    20.2,
+    18.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-13 00:00:00",
+    513.0,
+    19.5,
+    19.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-13 02:00:00",
+    498.0,
+    18.8,
+    20.0,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-13 04:00:00",
+    483.0,
+    18.6,
+    20.9,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-13 06:00:00",
+    444.0,
+    19.2,
+    22.1,
+    23.4,
+    0.0
+   ],
+   [
+    "2026-02-13 08:00:00",
+    429.0,
+    20.0,
+    22.7,
+    23.8,
+    0.0
+   ],
+   [
+    "2026-02-13 10:00:00",
+    460.0,
+    20.5,
+    23.4,
+    23.5,
+    1.3
+   ],
+   [
+    "2026-02-13 12:00:00",
+    942.0,
+    21.4,
+    30.6,
+    23.9,
+    2.5
+   ],
+   [
+    "2026-02-13 14:00:00",
+    1167.0,
+    22.0,
+    33.2,
+    23.5,
+    6.8
+   ],
+   [
+    "2026-02-13 16:00:00",
+    1800.0,
+    23.0,
+    39.8,
+    23.3,
+    4.5
+   ],
+   [
+    "2026-02-13 18:00:00",
+    1151.0,
+    22.1,
+    33.0,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-13 20:00:00",
+    1024.0,
+    21.2,
+    33.4,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-13 22:00:00",
+    913.0,
+    20.3,
+    32.7,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-14 00:00:00",
+    825.0,
+    19.6,
+    32.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-14 02:00:00",
+    748.0,
+    18.9,
+    33.1,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-14 04:00:00",
+    692.0,
+    18.7,
+    32.4,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-14 06:00:00",
+    642.0,
+    18.6,
+    31.8,
+    3.3,
+    0.1
+   ],
+   [
+    "2026-02-14 08:00:00",
+    595.0,
+    18.6,
+    30.5,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-14 10:00:00",
+    569.0,
+    18.9,
+    29.2,
+    3.3,
+    0.1
+   ],
+   [
+    "2026-02-14 12:00:00",
+    538.0,
+    19.3,
+    28.4,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-14 14:00:00",
+    518.0,
+    19.5,
+    27.6,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-14 16:00:00",
+    495.0,
+    19.3,
+    27.8,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-14 18:00:00",
+    481.0,
+    18.8,
+    28.1,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-14 20:00:00",
+    469.0,
+    18.6,
+    28.2,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-14 22:00:00",
+    467.0,
+    18.6,
+    27.9,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-15 00:00:00",
+    450.0,
+    18.5,
+    27.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-15 02:00:00",
+    445.0,
+    18.5,
+    26.9,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-15 04:00:00",
+    440.0,
+    18.5,
+    26.6,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-15 06:00:00",
+    439.0,
+    18.5,
+    26.2,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-15 08:00:00",
+    436.0,
+    18.6,
+    25.3,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-15 10:00:00",
+    429.0,
+    19.0,
+    23.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-15 12:00:00",
+    432.0,
+    19.5,
+    22.2,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-15 14:00:00",
+    428.0,
+    20.6,
+    19.9,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-15 16:00:00",
+    432.0,
+    21.2,
+    18.4,
+    3.2,
+    0.0
+   ],
+   [
+    "2026-02-15 18:00:00",
+    421.0,
+    20.4,
+    19.1,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-15 20:00:00",
+    428.0,
+    19.6,
+    19.5,
+    3.3,
+    0.0
+   ],
+   [
+    "2026-02-15 22:00:00",
+    419.0,
+    19.0,
+    20.5,
+    3.3,
+    0.0
+   ]
+  ]
+ },
+ "sql": {
+  "columns": [
+   "room",
+   "peak"
+  ],
+  "rows": [
+   [
+    "2.03",
+    2783.0
+   ],
+   [
+    "2.11",
+    1141.0
+   ],
+   [
+    "2.22",
+    1103.0
+   ]
+  ]
+ },
+ "sql_write": {
+  "error": "only a single SELECT / WITH statement is allowed"
+ },
+ "sql_file": {
+  "error": "Permission Error: Cannot access file \"C:/Windows/win.ini\" - file system operations are disabled by configuration\n\nLINE 1: SELECT * FROM (select * from read_csv('C:/Windows/win.ini')) LIMIT 500\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+ },
+ "bcf": {
+  "path": "out\\IndeklimaTwin_findings.bcfzip",
+  "topics": 7,
+  "titles": [
+   "Airflow not responding to demand - 2.03",
+   "CO2 sensor drifting - 2.11",
+   "AHU zone running out of hours - storey:3",
+   "Solar shading not deploying - 1.05",
+   "Heating ignores night setback - 2.29",
+   "Gateway offline (data) - storey:2",
+   "Sensor frozen (data) - 3.04"
+  ]
+ }
+}

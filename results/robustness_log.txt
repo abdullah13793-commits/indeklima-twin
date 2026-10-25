@@ -1,0 +1,25 @@
+﻿{'seed': 1, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.1101, 'missed': [], 'false': []}
+{'seed': 2, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.0961, 'missed': [], 'false': []}
+{'seed': 3, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.0975, 'missed': [], 'false': []}
+{'seed': 4, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.0958, 'missed': [], 'false': []}
+{'seed': 5, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.0898, 'missed': [], 'false': []}
+{'seed': 6, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.1051, 'missed': [], 'false': []}
+{'seed': 7, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.0806, 'missed': [], 'false': []}
+{'seed': 8, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.0928, 'missed': [], 'false': []}
+{'seed': 9, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.1044, 'missed': [], 'false': []}
+{'seed': 10, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.09, 'missed': [], 'false': []}
+{'seed': 11, 'held_out': True, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.1, 'missed': [], 'false': []}
+{'seed': 12, 'held_out': True, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.0994, 'missed': [], 'false': []}
+{'seed': 13, 'held_out': True, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.112, 'missed': [], 'false': []}
+{'seed': 14, 'held_out': True, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.0997, 'missed': [], 'false': []}
+{'seed': 15, 'held_out': True, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.1001, 'missed': [], 'false': []}
+{'seed': 308, 'held_out': False, 'recall_building': '5/5', 'recall_data': '2/2', 'false_alarms': 0, 'ach_median_abs_err': 0.0993, 'missed': [], 'false': []}
+{'fdd_findings': 0, 'qc_outages': 0, 'qc_flatlines': 0, 'qc_gaps': 0}
+{'n_windows': 372, 'median_abs_err': 0.0993, 'p90_abs_err': 0.2153, 'bias': -0.0663, 'vav_vs_true_median_abs_err': 0.0182}
+{'findings.json': 0.0, 'rooms.json': 0.04, 'series_summer.json': 0.65, 'series_winter.json': 0.64, 'summary.json': 0.01}
+{'ifc_spaces_enriched': 37, 'bcf_topics': 7, 'brick_triples': 1812}
+ok fig_promise
+ok fig_ach
+ok fig_comfort
+ok fig_evidence
+ok fig_pipeline

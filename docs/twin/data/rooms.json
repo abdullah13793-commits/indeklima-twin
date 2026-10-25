@@ -1,0 +1,2080 @@
+{
+"0.05": {
+"kind": "meeting",
+"storey": "0",
+"area_m2": 52.29,
+"volume_m3": 180.4,
+"persons": 15,
+"q_design_ls": 141.6,
+"q_min_ls": 36.6,
+"facades": {},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.554,
+"co2_p95": 973,
+"hours_above_26": 0.8,
+"hours_above_27": 0.0,
+"too_warm_II": 0.02,
+"too_cool_II": 0.426,
+"occupied_h": 37.0
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.994,
+"co2_p95": 958,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.006,
+"occupied_h": 29.4
+}
+},
+"ventilation": {
+"n_windows": 18.0,
+"ach_co2_median": 0.73,
+"ach_vav_median": 0.92,
+"ratio_median": 0.81,
+"ach_design": 2.83
+},
+"promise": {
+"co2_design_ppm": 971,
+"co2_limit_ppm": 1103,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"0.06": {
+"kind": "multipurpose",
+"storey": "0",
+"area_m2": 260.97,
+"volume_m3": 879.5,
+"persons": 65,
+"q_design_ls": 637.7,
+"q_min_ls": 182.7,
+"facades": {},
+"type": "MULTI PURPOSE SPACE",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.5730000000000001,
+"co2_p95": 938,
+"hours_above_26": 0.30000000000000004,
+"hours_above_27": 0.0,
+"too_warm_II": 0.009000000000000001,
+"too_cool_II": 0.419,
+"occupied_h": 37.8
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.971,
+"co2_p95": 909,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.029,
+"occupied_h": 31.2
+}
+},
+"ventilation": {
+"n_windows": 15.0,
+"ach_co2_median": 0.75,
+"ach_vav_median": 0.85,
+"ratio_median": 0.86,
+"ach_design": 2.61
+},
+"promise": {
+"co2_design_ppm": 950,
+"co2_limit_ppm": 1080,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"0.07": {
+"kind": "multipurpose",
+"storey": "0",
+"area_m2": 66.02,
+"volume_m3": 227.8,
+"persons": 17,
+"q_design_ls": 165.2,
+"q_min_ls": 46.2,
+"facades": {},
+"type": "MULTI PURPOSE SPACE",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.589,
+"co2_p95": 920,
+"hours_above_26": 0.5,
+"hours_above_27": 0.0,
+"too_warm_II": 0.014,
+"too_cool_II": 0.397,
+"occupied_h": 35.1
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.998,
+"co2_p95": 902,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.002,
+"occupied_h": 40.0
+}
+},
+"ventilation": {
+"n_windows": 16.0,
+"ach_co2_median": 0.84,
+"ach_vav_median": 0.83,
+"ratio_median": 0.99,
+"ach_design": 2.61
+},
+"promise": {
+"co2_design_ppm": 955,
+"co2_limit_ppm": 1085,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"0.10": {
+"kind": "multipurpose",
+"storey": "0",
+"area_m2": 103.23,
+"volume_m3": 356.1,
+"persons": 26,
+"q_design_ls": 254.3,
+"q_min_ls": 72.3,
+"facades": {},
+"type": "MULTI PURPOSE SPACE",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.422,
+"co2_p95": 889,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.578,
+"occupied_h": 26.1
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.987,
+"co2_p95": 922,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.013000000000000001,
+"occupied_h": 31.1
+}
+},
+"ventilation": {
+"n_windows": 15.0,
+"ach_co2_median": 0.76,
+"ach_vav_median": 0.86,
+"ratio_median": 0.88,
+"ach_design": 2.57
+},
+"promise": {
+"co2_design_ppm": 952,
+"co2_limit_ppm": 1081,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"0.11": {
+"kind": "auditorium",
+"storey": "0",
+"area_m2": 165.83,
+"volume_m3": 459.4,
+"persons": 83,
+"q_design_ls": 697.1,
+"q_min_ls": 116.1,
+"facades": {},
+"type": "BELOW AUDITORIUM",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.708,
+"co2_p95": 1033,
+"hours_above_26": 1.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.035,
+"too_cool_II": 0.257,
+"occupied_h": 28.2
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.969,
+"co2_p95": 1037,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.024,
+"too_cool_II": 0.007,
+"occupied_h": 34.5
+}
+},
+"ventilation": {
+"n_windows": 7.0,
+"ach_co2_median": 0.88,
+"ach_vav_median": 1.05,
+"ratio_median": 0.86,
+"ach_design": 5.46
+},
+"promise": {
+"co2_design_ppm": 1039,
+"co2_limit_ppm": 1182,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"0.16": {
+"kind": "multipurpose",
+"storey": "0",
+"area_m2": 197.27,
+"volume_m3": 680.6,
+"persons": 49,
+"q_design_ls": 481.1,
+"q_min_ls": 138.1,
+"facades": {},
+"type": "MULTI PURPOSE SPACE",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.526,
+"co2_p95": 938,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.47400000000000003,
+"occupied_h": 32.7
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.978,
+"co2_p95": 940,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.022,
+"occupied_h": 37.3
+}
+},
+"ventilation": {
+"n_windows": 14.0,
+"ach_co2_median": 0.78,
+"ach_vav_median": 0.86,
+"ratio_median": 0.85,
+"ach_design": 2.54
+},
+"promise": {
+"co2_design_ppm": 950,
+"co2_limit_ppm": 1079,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"1.05": {
+"kind": "meeting",
+"storey": "1",
+"area_m2": 53.36,
+"volume_m3": 184.4,
+"persons": 15,
+"q_design_ls": 142.4,
+"q_min_ls": 37.4,
+"facades": {
+"N": 21.8,
+"W": 30.3
+},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.46900000000000003,
+"co2_p95": 949,
+"hours_above_26": 12.6,
+"hours_above_27": 11.2,
+"too_warm_II": 0.34600000000000003,
+"too_cool_II": 0.185,
+"occupied_h": 36.4
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.784,
+"co2_p95": 920,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.216,
+"occupied_h": 36.2
+}
+},
+"ventilation": {
+"n_windows": 26.0,
+"ach_co2_median": 0.96,
+"ach_vav_median": 0.95,
+"ratio_median": 0.95,
+"ach_design": 2.78
+},
+"promise": {
+"co2_design_ppm": 968,
+"co2_limit_ppm": 1100,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": [
+"R4"
+]
+},
+"1.07": {
+"kind": "atrium",
+"storey": "1",
+"area_m2": 169.68,
+"volume_m3": 586.2,
+"persons": 11,
+"q_design_ls": 195.8,
+"q_min_ls": 118.8,
+"facades": {
+"E": 77.7
+},
+"type": "ATRIUM",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.713,
+"co2_p95": 542,
+"hours_above_26": 8.8,
+"hours_above_27": 0.0,
+"too_warm_II": 0.095,
+"too_cool_II": 0.193,
+"occupied_h": 93.3
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.754,
+"co2_p95": 554,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.246,
+"occupied_h": 92.7
+}
+},
+"ventilation": {},
+"promise": {
+"co2_design_ppm": 712,
+"co2_limit_ppm": 806,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": []
+},
+"1.08": {
+"kind": "multipurpose",
+"storey": "1",
+"area_m2": 105.29,
+"volume_m3": 363.8,
+"persons": 26,
+"q_design_ls": 255.7,
+"q_min_ls": 73.7,
+"facades": {},
+"type": "MULTI PURPOSE SPACE",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.509,
+"co2_p95": 898,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.491,
+"occupied_h": 37.2
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.992,
+"co2_p95": 927,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.008,
+"occupied_h": 32.8
+}
+},
+"ventilation": {
+"n_windows": 10.0,
+"ach_co2_median": 0.77,
+"ach_vav_median": 0.83,
+"ratio_median": 0.91,
+"ach_design": 2.53
+},
+"promise": {
+"co2_design_ppm": 949,
+"co2_limit_ppm": 1078,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"1.09": {
+"kind": "multipurpose",
+"storey": "1",
+"area_m2": 269.47,
+"volume_m3": 931.0,
+"persons": 67,
+"q_design_ls": 657.6,
+"q_min_ls": 188.6,
+"facades": {},
+"type": "MULTI PURPOSE SPACE",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.546,
+"co2_p95": 900,
+"hours_above_26": 0.6000000000000001,
+"hours_above_27": 0.0,
+"too_warm_II": 0.018000000000000002,
+"too_cool_II": 0.437,
+"occupied_h": 32.8
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.996,
+"co2_p95": 925,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.004,
+"occupied_h": 39.6
+}
+},
+"ventilation": {
+"n_windows": 13.0,
+"ach_co2_median": 0.71,
+"ach_vav_median": 0.85,
+"ratio_median": 0.85,
+"ach_design": 2.54
+},
+"promise": {
+"co2_design_ppm": 950,
+"co2_limit_ppm": 1079,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"1.12": {
+"kind": "office",
+"storey": "1",
+"area_m2": 19.82,
+"volume_m3": 68.9,
+"persons": 6,
+"q_design_ls": 55.9,
+"q_min_ls": 13.9,
+"facades": {
+"W": 11.1
+},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.559,
+"co2_p95": 897,
+"hours_above_26": 23.3,
+"hours_above_27": 12.8,
+"too_warm_II": 0.23500000000000001,
+"too_cool_II": 0.20600000000000002,
+"occupied_h": 99.2
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.865,
+"co2_p95": 975,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.124,
+"too_cool_II": 0.011,
+"occupied_h": 93.1
+}
+},
+"ventilation": {
+"n_windows": 2.0,
+"ach_co2_median": 0.72,
+"ach_vav_median": 0.76,
+"ratio_median": 0.95,
+"ach_design": 2.92
+},
+"promise": {
+"co2_design_ppm": 978,
+"co2_limit_ppm": 1112,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": []
+},
+"1.13": {
+"kind": "office",
+"storey": "1",
+"area_m2": 91.55,
+"volume_m3": 318.1,
+"persons": 9,
+"q_design_ls": 127.1,
+"q_min_ls": 64.1,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.764,
+"co2_p95": 828,
+"hours_above_26": 2.3,
+"hours_above_27": 0.0,
+"too_warm_II": 0.024,
+"too_cool_II": 0.211,
+"occupied_h": 95.8
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.993,
+"co2_p95": 829,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.007,
+"occupied_h": 94.8
+}
+},
+"ventilation": {
+"n_windows": 1.0,
+"ach_co2_median": 0.78,
+"ach_vav_median": 0.73,
+"ratio_median": 1.07,
+"ach_design": 1.44
+},
+"promise": {
+"co2_design_ppm": 788,
+"co2_limit_ppm": 893,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"1.14": {
+"kind": "office",
+"storey": "1",
+"area_m2": 20.35,
+"volume_m3": 70.7,
+"persons": 6,
+"q_design_ls": 56.2,
+"q_min_ls": 14.2,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.654,
+"co2_p95": 961,
+"hours_above_26": 17.7,
+"hours_above_27": 10.2,
+"too_warm_II": 0.196,
+"too_cool_II": 0.15,
+"occupied_h": 90.1
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.9450000000000001,
+"co2_p95": 940,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.055,
+"too_cool_II": 0.0,
+"occupied_h": 91.5
+}
+},
+"ventilation": {
+"n_windows": 4.0,
+"ach_co2_median": 1.15,
+"ach_vav_median": 0.81,
+"ratio_median": 1.1,
+"ach_design": 2.86
+},
+"promise": {
+"co2_design_ppm": 975,
+"co2_limit_ppm": 1108,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": []
+},
+"2.03": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 33.72,
+"volume_m3": 117.2,
+"persons": 15,
+"q_design_ls": 128.6,
+"q_min_ls": 23.6,
+"facades": {
+"N": 22.0,
+"W": 18.5
+},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.646,
+"co2_p95": 1009,
+"hours_above_26": 4.8,
+"hours_above_27": 2.6,
+"too_warm_II": 0.148,
+"too_cool_II": 0.20600000000000002,
+"occupied_h": 32.0
+},
+"winter": {
+"co2_within_II": 0.678,
+"t_within_II": 0.897,
+"co2_p95": 2442,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.031,
+"too_cool_II": 0.07200000000000001,
+"occupied_h": 38.1
+}
+},
+"ventilation": {
+"n_windows": 28.0,
+"ach_co2_median": 0.76,
+"ach_vav_median": 0.73,
+"ratio_median": 1.01,
+"ach_design": 3.95
+},
+"promise": {
+"co2_design_ppm": 1027,
+"co2_limit_ppm": 1168,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": false,
+"t_kept": false
+}
+}
+},
+"findings": [
+"R1"
+]
+},
+"2.05": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 50.25,
+"volume_m3": 174.6,
+"persons": 15,
+"q_design_ls": 140.2,
+"q_min_ls": 35.2,
+"facades": {
+"N": 32.8
+},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.6890000000000001,
+"co2_p95": 923,
+"hours_above_26": 1.6,
+"hours_above_27": 0.0,
+"too_warm_II": 0.047,
+"too_cool_II": 0.265,
+"occupied_h": 34.0
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.91,
+"co2_p95": 937,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.09,
+"occupied_h": 38.8
+}
+},
+"ventilation": {
+"n_windows": 19.0,
+"ach_co2_median": 0.86,
+"ach_vav_median": 0.84,
+"ratio_median": 1.06,
+"ach_design": 2.89
+},
+"promise": {
+"co2_design_ppm": 976,
+"co2_limit_ppm": 1110,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": []
+},
+"2.06": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 50.25,
+"volume_m3": 174.6,
+"persons": 15,
+"q_design_ls": 140.2,
+"q_min_ls": 35.2,
+"facades": {
+"N": 32.8
+},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.61,
+"co2_p95": 960,
+"hours_above_26": 3.4,
+"hours_above_27": 0.0,
+"too_warm_II": 0.117,
+"too_cool_II": 0.272,
+"occupied_h": 29.1
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.913,
+"co2_p95": 970,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.08700000000000001,
+"occupied_h": 37.2
+}
+},
+"ventilation": {
+"n_windows": 20.0,
+"ach_co2_median": 0.81,
+"ach_vav_median": 0.88,
+"ratio_median": 0.88,
+"ach_design": 2.89
+},
+"promise": {
+"co2_design_ppm": 976,
+"co2_limit_ppm": 1110,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": []
+},
+"2.07": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 50.25,
+"volume_m3": 174.6,
+"persons": 15,
+"q_design_ls": 140.2,
+"q_min_ls": 35.2,
+"facades": {
+"N": 32.8
+},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.657,
+"co2_p95": 942,
+"hours_above_26": 2.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.061,
+"too_cool_II": 0.28200000000000003,
+"occupied_h": 32.8
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.869,
+"co2_p95": 929,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.131,
+"occupied_h": 34.2
+}
+},
+"ventilation": {
+"n_windows": 21.0,
+"ach_co2_median": 0.81,
+"ach_vav_median": 0.85,
+"ratio_median": 0.92,
+"ach_design": 2.89
+},
+"promise": {
+"co2_design_ppm": 976,
+"co2_limit_ppm": 1110,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": []
+},
+"2.11": {
+"kind": "office",
+"storey": "2",
+"area_m2": 29.6,
+"volume_m3": 102.9,
+"persons": 6,
+"q_design_ls": 62.7,
+"q_min_ls": 20.7,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.756,
+"co2_p95": 920,
+"hours_above_26": 9.9,
+"hours_above_27": 1.9,
+"too_warm_II": 0.115,
+"too_cool_II": 0.129,
+"occupied_h": 86.0
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.995,
+"co2_p95": 1077,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.003,
+"too_cool_II": 0.002,
+"occupied_h": 85.8
+}
+},
+"ventilation": {
+"n_windows": 2.0,
+"ach_co2_median": 0.94,
+"ach_vav_median": 1.23,
+"ratio_median": 0.78,
+"ach_design": 2.19
+},
+"promise": {
+"co2_design_ppm": 918,
+"co2_limit_ppm": 1042,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": false,
+"t_kept": true
+}
+}
+},
+"findings": [
+"R2"
+]
+},
+"2.12": {
+"kind": "office",
+"storey": "2",
+"area_m2": 29.6,
+"volume_m3": 102.9,
+"persons": 6,
+"q_design_ls": 62.7,
+"q_min_ls": 20.7,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.811,
+"co2_p95": 854,
+"hours_above_26": 7.1,
+"hours_above_27": 1.8,
+"too_warm_II": 0.083,
+"too_cool_II": 0.106,
+"occupied_h": 85.7
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.995,
+"co2_p95": 905,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.005,
+"occupied_h": 92.4
+}
+},
+"ventilation": {
+"n_windows": 4.0,
+"ach_co2_median": 0.82,
+"ach_vav_median": 0.75,
+"ratio_median": 1.05,
+"ach_design": 2.19
+},
+"promise": {
+"co2_design_ppm": 918,
+"co2_limit_ppm": 1042,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.13": {
+"kind": "office",
+"storey": "2",
+"area_m2": 29.59,
+"volume_m3": 102.8,
+"persons": 6,
+"q_design_ls": 62.7,
+"q_min_ls": 20.7,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.6980000000000001,
+"co2_p95": 885,
+"hours_above_26": 4.1,
+"hours_above_27": 0.0,
+"too_warm_II": 0.047,
+"too_cool_II": 0.255,
+"occupied_h": 86.7
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.994,
+"co2_p95": 879,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.006,
+"occupied_h": 89.8
+}
+},
+"ventilation": {
+"n_windows": 4.0,
+"ach_co2_median": 0.95,
+"ach_vav_median": 1.06,
+"ratio_median": 0.9,
+"ach_design": 2.2
+},
+"promise": {
+"co2_design_ppm": 918,
+"co2_limit_ppm": 1042,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.14": {
+"kind": "office",
+"storey": "2",
+"area_m2": 29.59,
+"volume_m3": 102.8,
+"persons": 6,
+"q_design_ls": 62.7,
+"q_min_ls": 20.7,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.591,
+"co2_p95": 914,
+"hours_above_26": 8.8,
+"hours_above_27": 3.1,
+"too_warm_II": 0.099,
+"too_cool_II": 0.31,
+"occupied_h": 88.2
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.988,
+"co2_p95": 899,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.012,
+"occupied_h": 93.0
+}
+},
+"ventilation": {
+"n_windows": 5.0,
+"ach_co2_median": 0.74,
+"ach_vav_median": 0.78,
+"ratio_median": 0.99,
+"ach_design": 2.2
+},
+"promise": {
+"co2_design_ppm": 918,
+"co2_limit_ppm": 1042,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.15": {
+"kind": "office",
+"storey": "2",
+"area_m2": 39.58,
+"volume_m3": 137.5,
+"persons": 6,
+"q_design_ls": 69.7,
+"q_min_ls": 27.7,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.762,
+"co2_p95": 869,
+"hours_above_26": 3.5,
+"hours_above_27": 0.0,
+"too_warm_II": 0.041,
+"too_cool_II": 0.197,
+"occupied_h": 85.9
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.994,
+"co2_p95": 895,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.006,
+"occupied_h": 96.1
+}
+},
+"ventilation": {},
+"promise": {
+"co2_design_ppm": 868,
+"co2_limit_ppm": 985,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.16": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 26.79,
+"volume_m3": 93.1,
+"persons": 15,
+"q_design_ls": 123.8,
+"q_min_ls": 18.8,
+"facades": {},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.5,
+"co2_p95": 1049,
+"hours_above_26": 1.2,
+"hours_above_27": 0.0,
+"too_warm_II": 0.043000000000000003,
+"too_cool_II": 0.457,
+"occupied_h": 29.0
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.963,
+"co2_p95": 1048,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.037,
+"occupied_h": 38.0
+}
+},
+"ventilation": {
+"n_windows": 8.0,
+"ach_co2_median": 0.68,
+"ach_vav_median": 0.83,
+"ratio_median": 0.79,
+"ach_design": 4.79
+},
+"promise": {
+"co2_design_ppm": 1050,
+"co2_limit_ppm": 1195,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.17": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 26.54,
+"volume_m3": 92.2,
+"persons": 15,
+"q_design_ls": 123.6,
+"q_min_ls": 18.6,
+"facades": {},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.761,
+"co2_p95": 1003,
+"hours_above_26": 2.8,
+"hours_above_27": 0.2,
+"too_warm_II": 0.084,
+"too_cool_II": 0.155,
+"occupied_h": 33.8
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.994,
+"co2_p95": 991,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.006,
+"occupied_h": 28.9
+}
+},
+"ventilation": {
+"n_windows": 12.0,
+"ach_co2_median": 0.94,
+"ach_vav_median": 0.89,
+"ratio_median": 1.05,
+"ach_design": 4.83
+},
+"promise": {
+"co2_design_ppm": 1051,
+"co2_limit_ppm": 1196,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.18": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 27.41,
+"volume_m3": 95.2,
+"persons": 15,
+"q_design_ls": 124.2,
+"q_min_ls": 19.2,
+"facades": {},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.761,
+"co2_p95": 1004,
+"hours_above_26": 3.0,
+"hours_above_27": 0.8,
+"too_warm_II": 0.094,
+"too_cool_II": 0.145,
+"occupied_h": 32.1
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 1.0,
+"co2_p95": 1016,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.0,
+"occupied_h": 39.1
+}
+},
+"ventilation": {
+"n_windows": 15.0,
+"ach_co2_median": 0.91,
+"ach_vav_median": 0.95,
+"ratio_median": 0.96,
+"ach_design": 4.7
+},
+"promise": {
+"co2_design_ppm": 1048,
+"co2_limit_ppm": 1192,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.19": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 28.23,
+"volume_m3": 98.1,
+"persons": 15,
+"q_design_ls": 124.8,
+"q_min_ls": 19.8,
+"facades": {},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.6000000000000001,
+"co2_p95": 1011,
+"hours_above_26": 3.5,
+"hours_above_27": 1.2,
+"too_warm_II": 0.10400000000000001,
+"too_cool_II": 0.296,
+"occupied_h": 33.5
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.989,
+"co2_p95": 988,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.011,
+"occupied_h": 38.6
+}
+},
+"ventilation": {
+"n_windows": 11.0,
+"ach_co2_median": 0.94,
+"ach_vav_median": 0.97,
+"ratio_median": 0.92,
+"ach_design": 4.58
+},
+"promise": {
+"co2_design_ppm": 1045,
+"co2_limit_ppm": 1189,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.20": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 25.16,
+"volume_m3": 87.4,
+"persons": 15,
+"q_design_ls": 122.6,
+"q_min_ls": 17.6,
+"facades": {},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.764,
+"co2_p95": 1029,
+"hours_above_26": 3.7,
+"hours_above_27": 0.8,
+"too_warm_II": 0.112,
+"too_cool_II": 0.124,
+"occupied_h": 32.8
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.9390000000000001,
+"co2_p95": 1043,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.059000000000000004,
+"too_cool_II": 0.002,
+"occupied_h": 35.6
+}
+},
+"ventilation": {
+"n_windows": 9.0,
+"ach_co2_median": 0.87,
+"ach_vav_median": 0.89,
+"ratio_median": 0.92,
+"ach_design": 5.05
+},
+"promise": {
+"co2_design_ppm": 1056,
+"co2_limit_ppm": 1202,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": []
+},
+"2.21": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 24.18,
+"volume_m3": 84.0,
+"persons": 15,
+"q_design_ls": 121.9,
+"q_min_ls": 16.9,
+"facades": {},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.711,
+"co2_p95": 1072,
+"hours_above_26": 1.3,
+"hours_above_27": 0.2,
+"too_warm_II": 0.041,
+"too_cool_II": 0.248,
+"occupied_h": 32.2
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.98,
+"co2_p95": 1073,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.007,
+"too_cool_II": 0.012,
+"occupied_h": 34.2
+}
+},
+"ventilation": {
+"n_windows": 10.0,
+"ach_co2_median": 1.0,
+"ach_vav_median": 1.02,
+"ratio_median": 0.84,
+"ach_design": 5.22
+},
+"promise": {
+"co2_design_ppm": 1060,
+"co2_limit_ppm": 1206,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.22": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 23.68,
+"volume_m3": 82.3,
+"persons": 15,
+"q_design_ls": 121.6,
+"q_min_ls": 16.6,
+"facades": {},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.46,
+"co2_p95": 1047,
+"hours_above_26": 2.2,
+"hours_above_27": 0.8,
+"too_warm_II": 0.073,
+"too_cool_II": 0.468,
+"occupied_h": 31.0
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.914,
+"co2_p95": 1072,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.07100000000000001,
+"too_cool_II": 0.015,
+"occupied_h": 39.8
+}
+},
+"ventilation": {
+"n_windows": 13.0,
+"ach_co2_median": 1.07,
+"ach_vav_median": 1.13,
+"ratio_median": 0.86,
+"ach_design": 5.32
+},
+"promise": {
+"co2_design_ppm": 1061,
+"co2_limit_ppm": 1208,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": []
+},
+"2.24": {
+"kind": "office",
+"storey": "2",
+"area_m2": 74.25,
+"volume_m3": 258.0,
+"persons": 7,
+"q_design_ls": 101.0,
+"q_min_ls": 52.0,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.758,
+"co2_p95": 766,
+"hours_above_26": 4.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.046,
+"too_cool_II": 0.196,
+"occupied_h": 86.3
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.997,
+"co2_p95": 811,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.003,
+"occupied_h": 90.6
+}
+},
+"ventilation": {},
+"promise": {
+"co2_design_ppm": 780,
+"co2_limit_ppm": 884,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.26": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 36.66,
+"volume_m3": 127.4,
+"persons": 15,
+"q_design_ls": 130.7,
+"q_min_ls": 25.7,
+"facades": {},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.593,
+"co2_p95": 970,
+"hours_above_26": 2.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.06,
+"too_cool_II": 0.34700000000000003,
+"occupied_h": 33.3
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.983,
+"co2_p95": 958,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.017,
+"occupied_h": 33.8
+}
+},
+"ventilation": {
+"n_windows": 14.0,
+"ach_co2_median": 0.8,
+"ach_vav_median": 0.87,
+"ratio_median": 0.95,
+"ach_design": 3.69
+},
+"promise": {
+"co2_design_ppm": 1017,
+"co2_limit_ppm": 1156,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.27": {
+"kind": "meeting",
+"storey": "2",
+"area_m2": 38.05,
+"volume_m3": 132.2,
+"persons": 15,
+"q_design_ls": 131.6,
+"q_min_ls": 26.6,
+"facades": {},
+"type": "MEETINGROOM (15P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.684,
+"co2_p95": 984,
+"hours_above_26": 3.2,
+"hours_above_27": 0.0,
+"too_warm_II": 0.083,
+"too_cool_II": 0.232,
+"occupied_h": 39.1
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.983,
+"co2_p95": 966,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.017,
+"occupied_h": 34.2
+}
+},
+"ventilation": {
+"n_windows": 18.0,
+"ach_co2_median": 0.83,
+"ach_vav_median": 0.88,
+"ratio_median": 0.92,
+"ach_design": 3.58
+},
+"promise": {
+"co2_design_ppm": 1013,
+"co2_limit_ppm": 1152,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.29": {
+"kind": "office",
+"storey": "2",
+"area_m2": 19.82,
+"volume_m3": 68.9,
+"persons": 6,
+"q_design_ls": 55.9,
+"q_min_ls": 13.9,
+"facades": {
+"W": 11.2
+},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.655,
+"co2_p95": 965,
+"hours_above_26": 21.7,
+"hours_above_27": 11.2,
+"too_warm_II": 0.25,
+"too_cool_II": 0.095,
+"occupied_h": 86.8
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.41200000000000003,
+"co2_p95": 932,
+"hours_above_26": 48.7,
+"hours_above_27": 48.7,
+"too_warm_II": 0.588,
+"too_cool_II": 0.0,
+"occupied_h": 95.1
+}
+},
+"ventilation": {
+"n_windows": 1.0,
+"ach_co2_median": 0.94,
+"ach_vav_median": 0.82,
+"ratio_median": 1.14,
+"ach_design": 2.92
+},
+"promise": {
+"co2_design_ppm": 978,
+"co2_limit_ppm": 1112,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": [
+"R5"
+]
+},
+"2.30": {
+"kind": "office",
+"storey": "2",
+"area_m2": 91.55,
+"volume_m3": 318.1,
+"persons": 9,
+"q_design_ls": 127.1,
+"q_min_ls": 64.1,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.81,
+"co2_p95": 830,
+"hours_above_26": 4.5,
+"hours_above_27": 0.0,
+"too_warm_II": 0.049,
+"too_cool_II": 0.14100000000000001,
+"occupied_h": 91.8
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.999,
+"co2_p95": 796,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.001,
+"occupied_h": 95.0
+}
+},
+"ventilation": {
+"n_windows": 2.0,
+"ach_co2_median": 0.71,
+"ach_vav_median": 0.74,
+"ratio_median": 0.95,
+"ach_design": 1.44
+},
+"promise": {
+"co2_design_ppm": 788,
+"co2_limit_ppm": 893,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": []
+},
+"2.31": {
+"kind": "office",
+"storey": "2",
+"area_m2": 20.35,
+"volume_m3": 70.7,
+"persons": 6,
+"q_design_ls": 56.2,
+"q_min_ls": 14.2,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.765,
+"co2_p95": 933,
+"hours_above_26": 10.1,
+"hours_above_27": 2.1,
+"too_warm_II": 0.116,
+"too_cool_II": 0.12,
+"occupied_h": 87.2
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.923,
+"co2_p95": 927,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.075,
+"too_cool_II": 0.002,
+"occupied_h": 96.6
+}
+},
+"ventilation": {
+"n_windows": 1.0,
+"ach_co2_median": 0.78,
+"ach_vav_median": 0.93,
+"ratio_median": 0.85,
+"ach_design": 2.86
+},
+"promise": {
+"co2_design_ppm": 975,
+"co2_limit_ppm": 1108,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": false
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": []
+},
+"3.03": {
+"kind": "multipurpose",
+"storey": "3",
+"area_m2": 108.82,
+"volume_m3": 378.2,
+"persons": 27,
+"q_design_ls": 265.2,
+"q_min_ls": 76.2,
+"facades": {},
+"type": "MULTI PURPOSE SPACE",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.307,
+"co2_p95": 882,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.6930000000000001,
+"occupied_h": 30.4
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.896,
+"co2_p95": 934,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.10400000000000001,
+"occupied_h": 32.9
+}
+},
+"ventilation": {
+"n_windows": 14.0,
+"ach_co2_median": 0.73,
+"ach_vav_median": 0.86,
+"ratio_median": 0.88,
+"ach_design": 2.52
+},
+"promise": {
+"co2_design_ppm": 949,
+"co2_limit_ppm": 1079,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": false
+}
+}
+},
+"findings": [
+"R3"
+]
+},
+"3.04": {
+"kind": "office",
+"storey": "3",
+"area_m2": 341.53,
+"volume_m3": 1186.8,
+"persons": 34,
+"q_design_ls": 477.1,
+"q_min_ls": 239.1,
+"facades": {},
+"type": "CELLULAR OFFICE (6P)",
+"kpi": {
+"summer": {
+"co2_within_II": 1.0,
+"t_within_II": 0.745,
+"co2_p95": 782,
+"hours_above_26": 1.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.01,
+"too_cool_II": 0.222,
+"occupied_h": 103.0
+},
+"winter": {
+"co2_within_II": 1.0,
+"t_within_II": 0.97,
+"co2_p95": 792,
+"hours_above_26": 0.0,
+"hours_above_27": 0.0,
+"too_warm_II": 0.0,
+"too_cool_II": 0.03,
+"occupied_h": 104.2
+}
+},
+"ventilation": {},
+"promise": {
+"co2_design_ppm": 791,
+"co2_limit_ppm": 896,
+"cat": "II",
+"verdict": {
+"summer": {
+"co2_kept": true,
+"t_kept": true
+},
+"winter": {
+"co2_kept": true,
+"t_kept": true
+}
+}
+},
+"findings": [
+"R3"
+]
+}
+}
